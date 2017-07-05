@@ -23,4 +23,6 @@ class ContactController extends Controller
      * @return \Illuminate\Http\Response
      */
 
+
+
 }
