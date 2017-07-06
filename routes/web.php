@@ -1,5 +1,6 @@
 <?php
-
+use App\User;
+use App\Contact;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,11 +11,13 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+function user()
+{
+    return new User;
+}
+function contact()
+{
+    return new Contact;
+}
 
-
-
-Auth::routes();
-
-Route::get('/', 'HomeController@index');
-
-Route::get('/addcontact', 'ContactController@addcontact');
+Route::get('/login', 'LoginController@login');
