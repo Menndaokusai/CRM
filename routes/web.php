@@ -1,5 +1,5 @@
 <?php
-
+use App\Contact;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,8 +11,9 @@
 |
 */
 
+function contacts()
+{
+    return new Contact;
+}
 
-
-Auth::routes();
-
-Route::get('/', 'HomeController@index');
+Route::get('/contacts/add','ContactController@add');

@@ -6,23 +6,16 @@ use Illuminate\Http\Request;
 
 class ContactController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-
-    public function __construct()
+    //
+    public function add(Request $request)
     {
-        $this->middleware('auth');
+
+        $contact=contacts();
+        $contact->name=$request->get('name');
+        $contact->phone=$request->get('phone');
+
+        $contact->save();
+
+        return '添加成功！';
     }
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
-
-
-
 }
