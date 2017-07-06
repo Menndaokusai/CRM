@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class ContactController extends Controller
 {
@@ -10,7 +11,7 @@ class ContactController extends Controller
     public function add(Request $request)
     {
 
-        $contact=contacts();
+        $contact=contact();
         $contact->name=$request->get('name');
         $contact->phone=$request->get('phone');
 
