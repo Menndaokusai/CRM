@@ -15,9 +15,33 @@ function user()
 {
     return new User;
 }
+
 function contact()
 {
     return new Contact;
 }
 
-Route::get('/login', 'LoginController@login');
+function is_logged()
+{
+    return session('user_id') ?: false;
+}
+
+function err($msg = null)
+{
+    return ['status' => 0, 'msg' => $msg];
+}
+
+function suc($data_to_add = [])
+{
+    $data = ['status' => 1, 'data' => []];
+    if ($data_to_add)
+        $data['data'] =$data_to_add;
+    return $data;
+}
+Route::group(['middleware' => 'web'], function () {
+
+    Route::any('/signup', 'LoginController@signup');
+    Route::any('/login', 'LoginController@login');
+    Route::any('/logout', 'LoginController@logout');
+
+});
