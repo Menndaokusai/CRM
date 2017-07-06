@@ -10,7 +10,10 @@ class ContactController extends Controller
     //
     public function add(Request $request)
     {
-
+        if(!is_logged())
+        {
+            return err('请先登录');
+        }
         $contact=contact();
         $contact->title=$request->get('title');
         $contact->desc=$request->get('desc');
@@ -21,6 +24,10 @@ class ContactController extends Controller
     }
     public function del(Request $request)
     {
+        if(!is_logged())
+        {
+            return err('请先登录');
+        }
         $contact=contact()->find($request->get('id'));
         return $contact->delete()?['status'=>1,'msg'=>'删除成功']:['status'=>0,'msg'=>'删除失败'];
     }
@@ -46,6 +53,10 @@ class ContactController extends Controller
     }
     public function read()
     {
+        if(!is_logged())
+        {
+            return err('请先登录');
+        }
         $contact=contact()
             ->orderBy('created_at')
             ->get(['id','title','desc','created_at','updated_at'])
