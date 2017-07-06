@@ -44,5 +44,5 @@ Route::group(['middleware' => 'web'], function () {
     Route::any('/signup', 'UserController@signup');
     Route::any('/login', 'UserController@login');
     Route::any('/logout', 'UserController@logout');
-
+    Route::any('/contacts/add','ContactController@add');
 });
