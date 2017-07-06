@@ -23,8 +23,20 @@ class ContactController extends Controller
     {
 
     }
-    public function updt()
+    public function updt(Request $request)
     {
+        $contact=Contact()->find($request->get('id'));
+        if($request->get('name')){
+            $contact->name=$request->get('name');
+        }
+
+        if($request->get('desc')){
+            $contact->phone=$request->get('phone');
+        }
+
+        $contact->save();
+
+        return 1;
 
     }
     public function read()
