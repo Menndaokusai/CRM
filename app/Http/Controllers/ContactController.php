@@ -18,4 +18,16 @@ class ContactController extends Controller
 
         return '添加成功！';
     }
+    public function del()
+    {
+
+    }
+    public function updt()
+    {
+
+    }
+    public function read()
+    {
+
+    }
 }
