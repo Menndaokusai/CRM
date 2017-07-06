@@ -46,4 +46,6 @@ Route::group(['middleware' => 'web'], function () {
     Route::any('/logout', 'UserController@logout');
     Route::any('/contacts/add','ContactController@add');
     Route::any('/contacts/updt','ContactController@updt');
+    Route::any('/contacts/read','ContactController@read');
+    Route::any('/contacts/del','ContactController@del');
 });

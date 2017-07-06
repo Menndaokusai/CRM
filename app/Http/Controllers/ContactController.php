@@ -12,35 +12,44 @@ class ContactController extends Controller
     {
 
         $contact=contact();
-        $contact->name=$request->get('name');
-        $contact->phone=$request->get('phone');
+        $contact->title=$request->get('title');
+        $contact->desc=$request->get('desc');
 
         $contact->save();
 
         return '添加成功！';
     }
-    public function del()
+    public function del(Request $request)
     {
-
+        $contact=contact()->find($request->get('id'));
+        return $contact->delete()?['status'=>1,'msg'=>'删除成功']:['status'=>0,'msg'=>'删除失败'];
     }
     public function updt(Request $request)
     {
+        if(!is_logged())
+        {
+            return err('请先登录');
+        }
         $contact=Contact()->find($request->get('id'));
-        if($request->get('name')){
-            $contact->name=$request->get('name');
+        if($request->get('title')){
+            $contact->title=$request->get('title');
         }
 
         if($request->get('desc')){
-            $contact->phone=$request->get('phone');
+            $contact->desc=$request->get('desc');
         }
 
         $contact->save();
 
-        return 1;
+        return suc('success');
 
     }
     public function read()
     {
-
+        $contact=contact()
+            ->orderBy('created_at')
+            ->get(['id','title','desc','created_at','updated_at'])
+            ->keyBy('id');
+        return ['status' => 1, 'data' => $contact];
     }
 }
