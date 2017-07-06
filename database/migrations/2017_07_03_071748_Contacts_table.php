@@ -22,7 +22,6 @@ class ContactsTable extends Migration
             $table->text('work_address',22);
             $table->string('asst_phone',22);
             $table->string('asst_name',22);
-            $table->string('title',64);
             $table->string('sex',4);
             $table->text('source');
             $table->string('department');
