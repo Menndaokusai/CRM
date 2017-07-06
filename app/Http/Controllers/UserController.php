@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
 
-    public function signup(){
-        $username=Request::get('username');
-        $password=Request::get('password');
+    public function signup(Request $request){
+        $username=$request->get('username');
+        $password=$request->get('password');
         if(!($username && $password)) {
             return err('用户名和密码皆不可为空');
         }
@@ -31,9 +32,9 @@ class UserController extends Controller
         }
     }
 
-    public function login(){
-        $username=Request::get('username');
-        $password=Request::get('password');
+    public function login(Request $request){
+        $username=$request->get('username');
+        $password=$request->get('password');
         if(!$username || !$password) {
             return err( '用户名和密码皆不可为空');
         }
@@ -54,7 +55,7 @@ class UserController extends Controller
         return suc(['id'=>$user->id,'msg' => '登陆成功']);
 }
 
-    public function loginout(){
+    public function logout(){
         session()->forget('username');
         session()->forget('user_id');
 

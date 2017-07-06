@@ -38,10 +38,11 @@ function suc($data_to_add = [])
         $data['data'] =$data_to_add;
     return $data;
 }
+
 Route::group(['middleware' => 'web'], function () {
 
-    Route::any('/signup', 'LoginController@signup');
-    Route::any('/login', 'LoginController@login');
-    Route::any('/logout', 'LoginController@logout');
+    Route::any('/signup', 'UserController@signup');
+    Route::any('/login', 'UserController@login');
+    Route::any('/logout', 'UserController@logout');
 
 });
