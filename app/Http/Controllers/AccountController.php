@@ -14,13 +14,19 @@ class AccountController extends Controller
         {
             return err('请先登录');
         }
-        $contact=contact();
-        $contact->title=$request->get('title');
-        $contact->desc=$request->get('desc');
+        $account=account();
+        $account->name=$request->get('name');
+        $account->account_type=$request->get('account_type');
+        $account->officephone=$request->get('officephone');
+        $account->alternatephone=$request->get('alternatephone');
+        $account->address=$request->get('address');
+        $account->ownership=$request->get('ownership');
+        $account->email=$request->get('email');
+        $account->manager=$request->get('manager');
 
-        $contact->save();
+        $account->save();
 
-        return '添加成功！';
+        return suc();
     }
     public function del(Request $request)
     {
@@ -28,8 +34,8 @@ class AccountController extends Controller
         {
             return err('请先登录');
         }
-        $contact=contact()->find($request->get('id'));
-        return $contact->delete()?['status'=>1,'msg'=>'删除成功']:['status'=>0,'msg'=>'删除失败'];
+        $account=account()->find($request->get('id'));
+        return $account->delete()?['status'=>1,'msg'=>'删除成功']:['status'=>0,'msg'=>'删除失败'];
     }
     public function updt(Request $request)
     {
@@ -37,18 +43,35 @@ class AccountController extends Controller
         {
             return err('请先登录');
         }
-        $contact=Contact()->find($request->get('id'));
-        if($request->get('title')){
-            $contact->title=$request->get('title');
+        $account=account()->find($request->get('id'));
+        if($request->get('name')){
+            $account->name=$request->get('name');
+        }
+        if($request->get('account_type')){
+            $account->account_type=$request->get('account_type');
+        }
+        if($request->get('officephone')){
+            $account->officephone=$request->get('officephone');
+        }
+        if($request->get('alternatephone')){
+            $account->alternatephone=$request->get('alternatephone');
+        }
+        if($request->get('address')){
+            $account->address=$request->get('address');
+        }
+        if($request->get('ownership')){
+            $account->ownership=$request->get('ownership');
+        }
+        if($request->get('email')){
+            $account->email=$request->get('email');
+        }
+        if($request->get('manager')){
+            $account->manager=$request->get('manager');
         }
 
-        if($request->get('desc')){
-            $contact->desc=$request->get('desc');
-        }
+        $account->save();
 
-        $contact->save();
-
-        return suc('success');
+        return suc();
 
     }
     public function read()
@@ -57,10 +80,10 @@ class AccountController extends Controller
         {
             return err('请先登录');
         }
-        $contact=contact()
+        $account=account()
             ->orderBy('created_at')
-            ->get(['id','title','desc','created_at','updated_at'])
+            ->get(['id','name','created_at','updated_at'])
             ->keyBy('id');
-        return ['status' => 1, 'data' => $contact];
+        return suc($account);
     }
 }

@@ -1,6 +1,7 @@
 <?php
 use App\User;
 use App\Contact;
+use App\Account;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,6 +20,11 @@ function user()
 function contact()
 {
     return new Contact;
+}
+
+function account()
+{
+    return new Account;
 }
 
 function is_logged()
@@ -48,4 +54,8 @@ Route::group(['middleware' => 'web'], function () {
     Route::any('/contacts/updt','ContactController@updt');
     Route::any('/contacts/read','ContactController@read');
     Route::any('/contacts/del','ContactController@del');
+    Route::any('/accounts/add','AccountController@add');
+    Route::any('/accounts/updt','AccountController@updt');
+    Route::any('/accounts/read','AccountController@read');
+    Route::any('/accounts/del','AccountController@del');
 });

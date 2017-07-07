@@ -21,7 +21,6 @@ class AccountsTable extends Migration
             $table->string('alternatephone')->nullable();
             $table->text('address')->nullable();
             $table->string('ownership')->nullable();
-            $table->string('employees')->nullable();
             $table->string('email')->nullable();
             $table->string('manager');
             $table->timestamps();
