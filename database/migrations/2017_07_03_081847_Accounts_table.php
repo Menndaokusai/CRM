@@ -16,15 +16,14 @@ class AccountsTable extends Migration
         Schema::create('Accounts',function (Blueprint $table){
             $table->increments('id');
             $table->string('name');
-            $table->string('account_type');
-            $table->string('officephone',22);
-            $table->string('alternatephone',22);
-            $table->text('address',22);
-            $table->string('ownership');
-            $table->string('employees');
-            $table->string('email');
-            $table->string('created_by');
-            $table->string('modified_by');
+            $table->string('account_type')->nullable();
+            $table->string('officephone');
+            $table->string('alternatephone')->nullable();
+            $table->text('address')->nullable();
+            $table->string('ownership')->nullable();
+            $table->string('employees')->nullable();
+            $table->string('email')->nullable();
+            $table->string('manager');
             $table->timestamps();
         });
     }
