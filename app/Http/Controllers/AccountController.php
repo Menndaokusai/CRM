@@ -14,7 +14,17 @@ class AccountController extends Controller
         {
             return err('请先登录');
         }
+
+        $arr1=[name,account_type,officephone,alternatephone,address,ownership,email,manager];
+        $arr2=['name','account_type','officephone','alternatephone','address','ownership','email','manager'];
+
         $account=account();
+
+        for($i=0;$i<count($arr1);$i++){
+            $account->$arr1[$i]=$request->get($arr2[$i]);
+        }
+
+        /*
         $account->name=$request->get('name');
         $account->account_type=$request->get('account_type');
         $account->officephone=$request->get('officephone');
@@ -23,7 +33,7 @@ class AccountController extends Controller
         $account->ownership=$request->get('ownership');
         $account->email=$request->get('email');
         $account->manager=$request->get('manager');
-
+*/
         $account->save();
 
         return suc();
@@ -37,13 +47,27 @@ class AccountController extends Controller
         $account=account()->find($request->get('id'));
         return $account->delete()?['status'=>1,'msg'=>'删除成功']:['status'=>0,'msg'=>'删除失败'];
     }
+
     public function updt(Request $request)
     {
         if(!is_logged())
         {
             return err('请先登录');
         }
+
+        $arr1=[name,account_type,officephone,alternatephone,address,ownership,email,manager];
+        $arr2=['name','account_type','officephone','alternatephone','address','ownership','email','manager'];
+
         $account=account()->find($request->get('id'));
+
+        for($i=0;count($arr1);$i++){
+            if($request->get($arr2[$i])){
+                $account->$arr1[$i]=$request->get($arr2[$i]);
+            }
+        }
+
+        /*
+
         if($request->get('name')){
             $account->name=$request->get('name');
         }
@@ -68,7 +92,7 @@ class AccountController extends Controller
         if($request->get('manager')){
             $account->manager=$request->get('manager');
         }
-
+*/
         $account->save();
 
         return suc();
