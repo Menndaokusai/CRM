@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AccountsTable extends Migration
+class LeadsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,14 @@ class AccountsTable extends Migration
      */
     public function up()
     {
-        Schema::create('Accounts',function (Blueprint $table){
+        Schema::create('Leads',function (Blueprint $table){
             $table->increments('id');
             $table->string('name');
-            $table->string('account_type')->nullable();
+            $table->string('Designation')->nullable();
             $table->string('PrimaryPhone');
-            $table->string('AlternatePhone')->nullable();
+            $table->string('MobilePhone')->nullable();
             $table->text('address')->nullable();
-            $table->string('ownership')->nullable();
+            $table->string('Company')->nullable();
             $table->string('email')->nullable();
             $table->string('manager');
             $table->timestamps();
@@ -34,6 +34,6 @@ class AccountsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('Accounts');
+        Schema::drop('Leads');
     }
 }

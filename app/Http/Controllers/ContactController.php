@@ -15,10 +15,10 @@ class ContactController extends Controller
             return err('请先登录');
         }
 
-        $arr1=['name','privatephone','homephone','workphone','home_address','work_address','asst_phone'
-            ,'asst_name','sex','department','job','email','company','manager'];
-        $arr2=[name,privatephone,homephone,workphone,home_address,work_address,asst_phone
-            ,asst_name,sex,department,job,email,company,manager];
+        $arr1=['name','MobilePhone','HomePhone','OfficePhone','home_address','work_address','asst_phone'
+            ,'asst_name','sex','department','Designation','email','company','manager','birth'];
+        $arr2=[name,MobilePhone,HomePhone,OfficePhone,home_address,work_address,asst_phone
+            ,asst_name,sex,department,Designation,email,company,manager,birth];
 
         $contact=contact();
 
@@ -64,10 +64,10 @@ class ContactController extends Controller
         }
         $contact=Contact()->find($request->get('id'));
 
-        $arr1=['name','privatephone','homephone','workphone','home_address','work_address','asst_phone'
-        ,'asst_name','sex','department','job','email','company','manager'];
-        $arr2=[name,privatephone,homephone,workphone,home_address,work_address,asst_phone
-        ,asst_name,sex,department,job,email,company,manager];
+        $arr1=['name','MobilePhone','HomePhone','OfficePhone','home_address','work_address','asst_phone'
+            ,'asst_name','sex','department','Designation','email','company','manager','birth'];
+        $arr2=[name,MobilePhone,HomePhone,OfficePhone,home_address,work_address,asst_phone
+            ,asst_name,sex,department,Designation,email,company,manager,birth];
 
         for($i=0;$i<count($arr1);$i++){
             if($request->get($arr1[$i])){

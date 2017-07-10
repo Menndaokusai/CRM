@@ -15,8 +15,8 @@ class AccountController extends Controller
             return err('请先登录');
         }
 
-        $arr1=[name,account_type,officephone,alternatephone,address,ownership,email,manager];
-        $arr2=['name','account_type','officephone','alternatephone','address','ownership','email','manager'];
+        $arr1=[name,account_type,PrimaryPhone,AlternatePhone,address,ownership,email,manager];
+        $arr2=['name','account_type','PrimaryPhone','AlternatePhone','address','ownership','email','manager'];
 
         $account=account();
 
@@ -55,8 +55,8 @@ class AccountController extends Controller
             return err('请先登录');
         }
 
-        $arr1=[name,account_type,officephone,alternatephone,address,ownership,email,manager];
-        $arr2=['name','account_type','officephone','alternatephone','address','ownership','email','manager'];
+        $arr1=[name,account_type,PrimaryPhone,AlternatePhone,address,ownership,email,manager];
+        $arr2=['name','account_type','PrimaryPhone','AlternatePhone','address','ownership','email','manager'];
 
         $account=account()->find($request->get('id'));
 
