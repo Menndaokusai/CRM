@@ -106,7 +106,7 @@ class AccountController extends Controller
         }
         $account=account()
             ->orderBy('created_at')
-            ->get(['id','name','created_at','updated_at'])
+            ->get(['id','name','PrimaryPhone','manager','created_at','updated_at'])
             ->keyBy('id');
         return suc($account);
     }

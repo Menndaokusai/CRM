@@ -26,7 +26,7 @@ class ContactsTable extends Migration
             $table->string('department')->nullable();
             $table->string('Designation')->nullable();
             $table->string('email')->nullable();
-            $table->string('company')->nullable();
+            $table->string('Company')->nullable();
             $table->string('manager');
             $table->string('birth')->nullable();
             $table->timestamps();

@@ -69,7 +69,7 @@ class LeadController extends Controller
         }
         $lead=lead()
             ->orderBy('created_at')
-            ->get(['id','name','created_at','updated_at'])
+            ->get(['id','name','Company','PrimaryPhone','manager','created_at','updated_at'])
             ->keyBy('id');
         return suc($lead);
     }
