@@ -19,7 +19,6 @@ class ContactController extends Controller
         $contact->desc=$request->get('desc');
 
         $contact->save();
-
         return '添加成功！';
     }
     public function del(Request $request)
