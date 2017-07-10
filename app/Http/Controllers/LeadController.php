@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
-class AccountController extends Controller
+class LeadController extends Controller
 {
     //
     public function add(Request $request)
