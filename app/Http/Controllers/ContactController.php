@@ -44,7 +44,6 @@ class ContactController extends Controller
         $contact->birth=$request->get('birth');
 */
         $contact->save();
-
         return '添加成功！';
     }
     public function del(Request $request)

@@ -9,6 +9,13 @@ class UserController extends Controller
 {
 
     public function signup(Request $request){
+//        //错误提示
+//        $this->validate($request, [
+//            'username' => 'required|max:10|min:6',
+//            'password' => 'required|min:6',
+//        ]);
+//        //重点向
+//        return redirect('/posts');
         $username=$request->get('username');
         $password=$request->get('password');
         if(!($username && $password)) {
