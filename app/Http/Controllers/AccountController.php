@@ -15,8 +15,8 @@ class AccountController extends Controller
             return err('请先登录');
         }
 
-        $arr1=[name,account_type,PrimaryPhone,AlternatePhone,address,ownership,email,manager];
-        $arr2=['name','account_type','PrimaryPhone','AlternatePhone','address','ownership','email','manager'];
+        $arr1=[Account_Name,Account_Type,Primary_Phone,Alternate_Phone,Address,Ownership,Email,Manager];
+        $arr2=['Account_Name','Account_Type','Primary_Phone','Alternate_Phone','Address','Ownership','Email','Manager'];
 
         $account=account();
 
@@ -55,8 +55,8 @@ class AccountController extends Controller
             return err('请先登录');
         }
 
-        $arr1=[name,account_type,PrimaryPhone,AlternatePhone,address,ownership,email,manager];
-        $arr2=['name','account_type','PrimaryPhone','AlternatePhone','address','ownership','email','manager'];
+        $arr1=[Account_Name,Account_Type,Primary_Phone,Alternate_Phone,Address,Ownership,Email,Manager];
+        $arr2=['Account_Name','Account_Type','Primary_Phone','Alternate_Phone','Address','Ownership','Email','Manager'];
 
         $account=account()->find($request->get('id'));
 
@@ -106,7 +106,7 @@ class AccountController extends Controller
         }
         $account=account()
             ->orderBy('created_at')
-            ->get(['id','name','PrimaryPhone','manager','created_at','updated_at'])
+            ->get(['id','Account_Name','Primary_Phone','Email','Manager','created_at','updated_at'])
             ->keyBy('id');
         return suc($account);
     }

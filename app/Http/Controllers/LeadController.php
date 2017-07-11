@@ -15,8 +15,8 @@ class LeadController extends Controller
             return err('请先登录');
         }
 
-        $arr1=[name,Designation,PrimaryPhone,MobilePhone,address,Company,email,manager];
-        $arr2=['name','Designation','PrimaryPhone','MobilePhone','address','Company','email','manager'];
+        $arr1=[Lead_Name,Designation,Primary_Phone,Mobile_Phone,Address,Company,Email,Manager];
+        $arr2=['Lead_Name','Designation','Primary_Phone','Mobile_Phone','Address','Company','Email','Manager'];
 
         $lead=lead();
 
@@ -45,8 +45,8 @@ class LeadController extends Controller
             return err('请先登录');
         }
 
-        $arr1=[name,Designation,PrimaryPhone,MobilePhone,address,Company,email,manager];
-        $arr2=['name','Designation','PrimaryPhone','MobilePhone','address','Company','email','manager'];
+        $arr1=[Lead_Name,Designation,Primary_Phone,Mobile_Phone,Address,Company,Email,Manager];
+        $arr2=['Lead_Name','Designation','Primary_Phone','Mobile_Phone','Address','Company','Email','Manager'];
 
         $lead=lead()->find($request->get('id'));
 
@@ -69,7 +69,7 @@ class LeadController extends Controller
         }
         $lead=lead()
             ->orderBy('created_at')
-            ->get(['id','name','Company','PrimaryPhone','manager','created_at','updated_at'])
+            ->get(['id','Lead_Name','Company','Primary_Phone','Manager','created_at','updated_at'])
             ->keyBy('id');
         return suc($lead);
     }

@@ -15,14 +15,14 @@ class LeadsTable extends Migration
     {
         Schema::create('Leads',function (Blueprint $table){
             $table->increments('id');
-            $table->string('name');
+            $table->string('Lead_Name');
             $table->string('Designation')->nullable();
-            $table->string('PrimaryPhone');
-            $table->string('MobilePhone')->nullable();
-            $table->text('address')->nullable();
+            $table->string('Primary_Phone');
+            $table->string('Mobile_Phone')->nullable();
+            $table->text('Address')->nullable();
             $table->string('Company')->nullable();
-            $table->string('email')->nullable();
-            $table->string('manager');
+            $table->string('Email')->nullable();
+            $table->string('Manager');
             $table->timestamps();
         });
     }
