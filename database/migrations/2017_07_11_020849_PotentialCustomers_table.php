@@ -16,7 +16,7 @@ class PotentialCustomersTable extends Migration
         Schema::create('PotentialCustomers',function (Blueprint $table){
             $table->increments('id');
             $table->string('PC_Name');
-            $table->string('Designation')->nullable();
+            $table->string('Industry');
             $table->string('Primary_Phone');
             $table->string('Mobile_Phone')->nullable();
             $table->text('Address')->nullable();

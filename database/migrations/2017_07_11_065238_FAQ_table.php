@@ -17,6 +17,7 @@ class FAQTable extends Migration
             $table->increments('id');
             $table->string('Status');
             $table->string('Type')->nullable();
+//            $table->string('Product_Name')->nullable();
             $table->string('Question');
             $table->string('Answer');
             $table->timestamps();

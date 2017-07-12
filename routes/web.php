@@ -28,6 +28,34 @@ function lead(){
     return new Lead;
 }
 
+function campaign(){
+    return new Campaign;
+}
+
+function faq(){
+    return new \App\FAQ();
+}
+
+function opp(){
+    return new Opportunity;
+}
+
+function pc(){
+    return new \App\PotentialCustomer();
+}
+
+function project(){
+    return new Project;
+}
+
+function sc(){
+    return new \App\ServiceContract;
+}
+
+function ticket(){
+    return new \App\Ticket;
+}
+
 function is_logged()
 {
     return session('user_id') ?: false;
@@ -63,4 +91,32 @@ Route::group(['middleware' => 'web'], function () {
     Route::any('/leads/updt','LeadController@updt');
     Route::any('/leads/read','LeadController@read');
     Route::any('/leads/del','LeadController@del');
+    Route::any('/campaigns/add','CampaignController@add');
+    Route::any('/campaigns/updt','CampaignController@updt');
+    Route::any('/campaigns/read','CampaignController@read');
+    Route::any('/campaigns/del','CampaignController@del');
+    Route::any('/faq/add','FAQController@add');
+    Route::any('/faq/updt','FAQController@updt');
+    Route::any('/faq/read','FAQController@read');
+    Route::any('/faq/del','FAQController@del');
+    Route::any('/opp/add','OpportunityController@add');
+    Route::any('/opp/updt','OpportunityController@updt');
+    Route::any('/opp/read','OpportunityController@read');
+    Route::any('/opp/del','OpportunityController@del');
+    Route::any('/pc/add','PotentialCustomerController@add');
+    Route::any('/pc/updt','PotentialCustomerController@updt');
+    Route::any('/pc/read','PotentialCustomerController@read');
+    Route::any('/pc/del','PotentialCustomerController@del');
+    Route::any('/projects/add','ProjectController@add');
+    Route::any('/projects/updt','ProjectController@updt');
+    Route::any('/projects/read','ProjectController@read');
+    Route::any('/projects/del','ProjectController@del');
+    Route::any('/sc/add','ServiceContractController@add');
+    Route::any('/sc/updt','ServiceContractController@updt');
+    Route::any('/sc/read','ServiceContractController@read');
+    Route::any('/sc/del','ServiceContractController@del');
+    Route::any('/tickets/add','TicketController@add');
+    Route::any('/tickets/updt','TicketController@updt');
+    Route::any('/tickets/read','TicketController@read');
+    Route::any('/tickets/del','TicketController@del');
 });
