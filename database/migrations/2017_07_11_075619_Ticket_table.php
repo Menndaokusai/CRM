@@ -17,7 +17,7 @@ class TicketTable extends Migration
             $table->increments('id');
             $table->string('Title');
             $table->string('Account_Name')->nullable();
-            $table->string('Contact_Name')->nullable();
+            $table->integer('Contact_ID')->nullable();
 //            $table->string('Product_Name')->nullable();
             $table->string('Status');
             $table->string('Severity')->nullable();
@@ -29,6 +29,8 @@ class TicketTable extends Migration
             $table->string('Solution')->nullable();
             $table->string('Maneger');
             $table->timestamps();
+
+            $table->foreign('Contact_ID')->references('id')->on('Contacts');
         });
     }
 

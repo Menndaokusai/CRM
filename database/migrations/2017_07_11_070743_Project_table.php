@@ -17,6 +17,7 @@ class ProjectTable extends Migration
             $table->increments('id');
             $table->string('Project_Name');
             $table->string('Type')->nullable();
+            $table->string('Status')->nullable();
             $table->timestamp('Start_Date')->nullable();
             $table->timestamp('Target_End_Date')->nullable();
             $table->timestamp('Actual_End_Date ')->nullable();
