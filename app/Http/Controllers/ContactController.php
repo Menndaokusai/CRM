@@ -8,6 +8,33 @@ use Illuminate\Support\Facades\Hash;
 class ContactController extends Controller
 {
     //
+    public function arr($num){
+        $arr1=[
+            'Contact_Name','Mobile_Phone','Home_Phone','Office_Phone','Home_Address',
+            'Work_Address','Asst_Phone','Asst_Name','Sex','Department',
+            'Designation','Email','Company','Manager','Birth'
+        ];
+        $arr2=[
+            Contact_Name,Mobile_Phone,Home_Phone,Office_Phone,
+            Home_Address,Work_Address,Asst_Phone,Asst_Name,Sex,
+            Department,Designation,Email,Company,Manager,Birth
+        ];
+        $arr3=[
+            'id','Contact_Name','Designation','Email','Office_Phone',
+            'Manager','created_at','updated_at'
+        ];
+
+        if($num==1){
+            return $arr1;
+        }
+        if($num==2){
+            return $arr2;
+        }
+        if($num==3){
+            return $arr3;
+        }
+    }
+
     public function add(Request $request)
     {
         if(!is_logged())
@@ -15,12 +42,10 @@ class ContactController extends Controller
             return err('请先登录');
         }
 
-        $arr1=['Contact_Name','Mobile_Phone','Home_Phone','Office_Phone','Home_Address','Work_Address','Asst_Phone'
-            ,'Asst_Name','Sex','Department','Designation','Email','Company','Manager','Birth'];
-        $arr2=[Contact_Name,Mobile_Phone,Home_Phone,Office_Phone,Home_Address,Work_Address,Asst_Phone
-            ,Asst_Name,Sex,Department,Designation,Email,Company,Manager,Birth];
-
         $contact=contact();
+
+        $arr1=$this->arr(1);
+        $arr2=$this->arr(2);
 
         for($i=0;$i<count($arr1);$i++){
             $contact->$arr2[$i]=$request->get($arr1[$i]);
@@ -62,61 +87,14 @@ class ContactController extends Controller
             return err('请先登录');
         }
         $contact=Contact()->find($request->get('id'));
-
-        $arr1=['Contact_Name','Mobile_Phone','Home_Phone','Office_Phone','Home_Address','Work_Address','Asst_Phone'
-            ,'Asst_Name','Sex','Department','Designation','Email','Company','Manager','Birth'];
-        $arr2=[Contact_Name,Mobile_Phone,Home_Phone,Office_Phone,Home_Address,Work_Address,Asst_Phone
-            ,Asst_Name,Sex,Department,Designation,Email,Company,Manager,Birth];
+        $arr1=$this->arr(1);
+        $arr2=$this->arr(2);
 
         for($i=0;$i<count($arr1);$i++){
             if($request->get($arr1[$i])){
                 $contact->$arr2[$i]=$request->get($arr1[$i]);
             }
         }
-/*
-        if($request->get('name')){
-            $contact->name=$request->get('name');
-        }
-        if($request->get('privatephone')){
-            $contact->privatephone=$request->get('privatephone');
-        }
-        if($request->get('homephone')){
-            $contact->homephone=$request->get('homephone');
-        }
-        if($request->get('workphone')){
-            $contact->workphone=$request->get('workphone');
-        }
-        if($request->get('home_address')){
-            $contact->home_address=$request->get('home_address');
-        }
-        if($request->get('work_address')){
-            $contact->work_address=$request->get('work_address');
-        }
-        if($request->get('asst_phone')){
-            $contact->asst_phone=$request->get('asst_phone');
-        }
-        if($request->get('asst_name')){
-            $contact->asst_name=$request->get('asst_name');
-        }
-        if($request->get('sex')){
-            $contact->sex=$request->get('sex');
-        }
-        if($request->get('department')){
-            $contact->department=$request->get('department');
-        }
-        if($request->get('job')){
-            $contact->job=$request->get('job');
-        }
-        if($request->get('email')){
-            $contact->email=$request->get('email');
-        }
-        if($request->get('company')){
-            $contact->company=$request->get('company');
-        }
-        if($request->get('manager')){
-            $contact->manager=$request->get('manager');
-        }
-*/
 
         $contact->save();
 
@@ -131,7 +109,7 @@ class ContactController extends Controller
         }
         $contact=contact()
             ->orderBy('created_at')
-            ->get(['id','Contact_Name','Designation','Email','Office_Phone','Manager','created_at','updated_at'])
+            ->get($this->arr(3))
             ->keyBy('id');
         return ['status' => 1, 'data' => $contact];
     }

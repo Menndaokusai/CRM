@@ -8,6 +8,31 @@ use Illuminate\Support\Facades\Hash;
 class LeadController extends Controller
 {
     //
+    public function arr($num){
+        $arr1=[
+            Lead_Name,Designation,Primary_Phone,Mobile_Phone,Address,
+            Company,Email,Manager
+        ];
+        $arr2=[
+            'Lead_Name','Designation','Primary_Phone','Mobile_Phone','Address',
+            'Company','Email','Manager'
+        ];
+        $arr3=[
+            'id','Lead_Name','Company','Primary_Phone','Manager',
+            'created_at','updated_at'
+        ];
+
+        if($num==1){
+            return $arr1;
+        }
+        if($num==2){
+            return $arr2;
+        }
+        if($num==3){
+            return $arr3;
+        }
+    }
+
     public function add(Request $request)
     {
         if(!is_logged())
@@ -15,10 +40,10 @@ class LeadController extends Controller
             return err('请先登录');
         }
 
-        $arr1=[Lead_Name,Designation,Primary_Phone,Mobile_Phone,Address,Company,Email,Manager];
-        $arr2=['Lead_Name','Designation','Primary_Phone','Mobile_Phone','Address','Company','Email','Manager'];
-
         $lead=lead();
+
+        $arr1=$this->arr(1);
+        $arr2=$this->arr(2);
 
         for($i=0;$i<count($arr1);$i++){
             $lead->$arr1[$i]=$request->get($arr2[$i]);
@@ -45,10 +70,9 @@ class LeadController extends Controller
             return err('请先登录');
         }
 
-        $arr1=[Lead_Name,Designation,Primary_Phone,Mobile_Phone,Address,Company,Email,Manager];
-        $arr2=['Lead_Name','Designation','Primary_Phone','Mobile_Phone','Address','Company','Email','Manager'];
-
         $lead=lead()->find($request->get('id'));
+        $arr1=$this->arr(1);
+        $arr2=$this->arr(2);
 
         for($i=0;count($arr1);$i++){
             if($request->get($arr2[$i])){
@@ -69,7 +93,7 @@ class LeadController extends Controller
         }
         $lead=lead()
             ->orderBy('created_at')
-            ->get(['id','Lead_Name','Company','Primary_Phone','Manager','created_at','updated_at'])
+            ->get($this->arr(3))
             ->keyBy('id');
         return suc($lead);
     }
