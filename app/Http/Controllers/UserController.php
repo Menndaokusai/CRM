@@ -3,10 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
-
+use DB;
 class UserController extends Controller
 {
+
+    /*
+     * 用户列表
+     */
+//     public function index()
+//     {
+//         $users = \App\User::paginate(10);
+//         return view('/admin/user/index', compact('users'));
+//     }
 
     public function signup(Request $request){
         $username=$request->get('username');
@@ -30,36 +38,43 @@ class UserController extends Controller
         else{
             return err('DB insert failed');
         }
+
     }
 
-    public function login(Request $request){
-        $username=$request->get('username');
-        $password=$request->get('password');
-        if(!$username || !$password) {
-            return err( '用户名和密码皆不可为空');
-        }
-
-        $user = User()->where('name',$username)->first();
-        if(!$user){
-            return err('用户名或密码有误');
-        }
-
-        $hash_password = $user->password;
-
-        if(!Hash::check($password,$hash_password)){
-            return err('用户名或密码有误');
-        }
-        session()->put('username',$user->name);
-        session()->put('user_id',$user->id);
-
-        return suc(['id'=>$user->id,'msg' => '登陆成功']);
-}
-
-    public function logout(){
-        session()->forget('username');
-        session()->forget('user_id');
-
-        return suc(['msg' => '登出成功']);
+    /*
+     * 创建用户
+     */
+    public function create()
+    {
+        return view('/admin/user/add');
     }
 
+    /*
+     * 创建用户
+     */
+    public function store(Request $request)
+    {
+        $this->validate(request(), [
+            'name' => 'required|min:3',
+            'password' => 'required'
+        ]);
+
+        $name = request('name');
+        $password = bcrypt(request('password'));
+
+        \App\User::create(compact('name', 'password'));
+
+        return redirect('/admin/users');
+    }
+    public function del($id)
+    {
+        $a=\Auth::guard("web")->user()->id;
+        if($a==$id)
+        {
+            return "<script language=\"JavaScript\">alert(\"不可删除自己\");</script>".\Redirect::back();
+
+        }
+        $contact=contact()->find($id);
+        return $contact->delete()?redirect('/admin/users'):back();
+    }
 }
