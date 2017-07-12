@@ -11,7 +11,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = \App\AdminUser::paginate(10);
+        $users = \App\User::paginate(10);
         return view('/admin/user/index', compact('users'));
     }
 
@@ -36,7 +36,7 @@ class UserController extends Controller
         $name = request('name');
         $password = bcrypt(request('password'));
 
-        \App\AdminUser::create(compact('name', 'password'));
+        \App\User::create(compact('name', 'password'));
 
         return redirect('/admin/users');
     }
