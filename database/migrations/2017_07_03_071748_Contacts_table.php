@@ -14,23 +14,21 @@ class ContactsTable extends Migration
     {
         Schema::create('Contacts',function (Blueprint $table){
             $table->increments('id');
-            $table->string('name');
-            $table->string('privatephone',22);
-            $table->string('homephone',22);
-            $table->string('workphone',22);
-            $table->text('home_address',22);
-            $table->text('work_address',22);
-            $table->string('asst_phone',22);
-            $table->string('asst_name',22);
-            $table->string('sex',4);
-            $table->text('source');
-            $table->string('department');
-            $table->string('job');
-            $table->string('email');
-            $table->string('company');
-            $table->string('created_by');
-            $table->string('modified_by');
-            $table->timestamp('birth');
+            $table->string('Contact_Name');
+            $table->string('Mobile_Phone');
+            $table->string('Home_Phone')->nullable();
+            $table->string('Office_Phone')->nullable();
+            $table->text('Home_Address')->nullable();
+            $table->text('Work_Address')->nullable();
+            $table->string('Asst_Phone')->nullable();
+            $table->string('Asst_Name')->nullable();
+            $table->string('Sex')->nullable();
+            $table->string('Department')->nullable();
+            $table->string('Designation')->nullable();
+            $table->string('Email')->nullable();
+            $table->string('Company')->nullable();
+            $table->string('Manager');
+            $table->timestamp('Birth')->nullable();
             $table->timestamps();
         });
     }

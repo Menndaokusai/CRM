@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AccountsTable extends Migration
+class PotentialCustomersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,14 @@ class AccountsTable extends Migration
      */
     public function up()
     {
-        Schema::create('Accounts',function (Blueprint $table){
+        Schema::create('PotentialCustomers',function (Blueprint $table){
             $table->increments('id');
-            $table->string('Account_Name');
-            $table->string('Account_Type')->nullable();
+            $table->string('PC_Name');
+            $table->string('Industry');
             $table->string('Primary_Phone');
-            $table->string('Alternate_Phone')->nullable();
+            $table->string('Mobile_Phone')->nullable();
             $table->text('Address')->nullable();
-            $table->string('Ownership')->nullable();
+            $table->string('Company')->nullable();
             $table->string('Email')->nullable();
             $table->string('Manager');
             $table->timestamps();
@@ -34,6 +34,6 @@ class AccountsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('Accounts');
+        Schema::drop('PotentialCustomers');
     }
 }
