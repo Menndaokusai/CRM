@@ -49,3 +49,5 @@ Route::group(['middleware' => 'web'], function () {
     Route::any('/contacts/read','ContactController@read');
     Route::any('/contacts/del','ContactController@del');
 });
+
+include_once("admin.php");
