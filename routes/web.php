@@ -39,15 +39,21 @@ function suc($data_to_add = [])
     return $data;
 }
 
-Route::group(['middleware' => 'web'], function () {
+Route::group(['prefix' => 'admin'], function() {
 
-    Route::any('/signup', 'UserController@signup');
-    Route::any('/login', 'UserController@login');
-    Route::any('/logout', 'UserController@logout');
-    Route::any('/contacts/add','ContactController@add');
-    Route::any('/contacts/updt','ContactController@updt');
-    Route::any('/contacts/read','ContactController@read');
-    Route::any('/contacts/del','ContactController@del');
+    Route::get('/login', 'LoginController@index');
+    Route::post('/login', 'LoginController@login');
+    Route::get('/logout', 'LoginController@logout');
+
+    // 需要登陆的
+    Route::group(['middleware' => 'auth:web'], function(){
+        Route::get('/home', 'HomeController@index');
+
+        // 用户管理
+        Route::get('/users', 'UserController@index');
+        Route::get('/users/create', 'UserController@create');
+        Route::post('/users/store', 'UserController@store');
+        Route::any('/users/del/{id}', 'UserController@del');
+    });
 });
 
-include_once("admin.php");

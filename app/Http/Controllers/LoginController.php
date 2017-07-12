@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Admin\Controllers;
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
@@ -22,7 +22,7 @@ class LoginController extends Controller
         ]);
 
         $user = request(['name', 'password']);
-        if (true == \Auth::guard('admin')->attempt($user)) {
+        if (true == \Auth::guard('web')->attempt($user)) {
             return redirect('/admin/home');
         }
 
@@ -34,7 +34,7 @@ class LoginController extends Controller
      */
     public function logout()
     {
-        \Auth::guard('admin')->logout();
+        \Auth::guard('web')->logout();
         return redirect('/admin/login');
     }
 
