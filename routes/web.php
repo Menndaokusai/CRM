@@ -11,13 +11,10 @@ use App\Contact;
 | contains the "web" middleware group. Now create something great!
 |
 */
-function user()
-{
-    return new User;
-}
-function contact()
-{
-    return new Contact;
-}
+
+Route::any('/c', function () {
+    return view('Contacts');
+});
+
 
 Route::get('/login', 'LoginController@login');
