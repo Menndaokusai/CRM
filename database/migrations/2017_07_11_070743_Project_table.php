@@ -20,7 +20,7 @@ class ProjectTable extends Migration
             $table->string('Status')->nullable();
             $table->timestamp('Start_Date')->nullable();
             $table->timestamp('Target_End_Date')->nullable();
-            $table->timestamp('Actual_End_Date ')->nullable();
+            $table->timestamp('Actual_End_Date')->nullable();
             $table->string('Target_Budget')->nullable();
             $table->string('Project_Url')->nullable();
             $table->string('Priority')->nullable();

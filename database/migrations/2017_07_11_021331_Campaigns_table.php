@@ -25,14 +25,14 @@ class CampaignsTable extends Migration
             $table->string('Num_Sent')->nullable();
             $table->string('Budget_Cost')->nullable();
             $table->string('Actual_Cost')->nullable();
-            $table->string('Expected_Response ')->nullable();
+            $table->string('Expected_Response')->nullable();
             $table->string('Expected_Revenue')->nullable();
             $table->string('Expected_Sales_Count')->nullable();
             $table->string('Actual_Sales_Count')->nullable();
             $table->string('Expected_Response_Count')->nullable();
-            $table->string('Actual_Response_Count ')->nullable();
-            $table->string('Expected_ROI ')->nullable();
-            $table->string('Actual_ROI ')->nullable();
+            $table->string('Actual_Response_Count')->nullable();
+            $table->string('Expected_ROI')->nullable();
+            $table->string('Actual_ROI')->nullable();
             $table->string('Manager');
             $table->timestamps();
         });

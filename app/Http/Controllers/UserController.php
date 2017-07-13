@@ -10,11 +10,11 @@ class UserController extends Controller
     /*
      * 用户列表
      */
-//     public function index()
-//     {
-//         $users = \App\User::paginate(10);
-//         return view('/admin/user/index', compact('users'));
-//     }
+     public function index()
+     {
+         $users = \App\User::paginate(10);
+         return view('/admin/user/index', compact('users'));
+     }
 
     public function signup(Request $request){
         $username=$request->get('username');
@@ -71,10 +71,9 @@ class UserController extends Controller
         $a=\Auth::guard("web")->user()->id;
         if($a==$id)
         {
-            return "<script language=\"JavaScript\">alert(\"不可删除自己\");</script>".\Redirect::back();
-
+            return "<script language=\"JavaScript\">alert(\"不可删除自己\");</script>";
         }
-        $contact=contact()->find($id);
-        return $contact->delete()?redirect('/admin/users'):back();
+        $user=user()->find($id);
+        return $user->delete()?redirect('/admin/users'):back();
     }
 }
