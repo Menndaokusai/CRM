@@ -9,9 +9,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-function user()
-{
-    return new User;
+function user(){
+    return new \App\User();
 }
 
 function contact()
@@ -78,17 +77,17 @@ function suc($data_to_add = [])
 
 
 Route::group(['middleware' => 'web'], function () {
-    Route::group(['prefix' => 'admin'], function() {
-        Route::get('/login', 'LoginController@index');
-        Route::post('/login', 'LoginController@login');
+        Route::get('/', 'LoginController@index');
+        Route::any('/login', 'LoginController@login');
         Route::get('/logout', 'LoginController@logout');
-        // 需要登陆的
-        Route::group(['middleware' => 'auth:web'], function () {
+        // 需要登陆的//
+    Route::group(['prefix' => 'admin'], function() {
+    Route::group(['middleware' => 'auth:web'], function () {
             Route::get('/home', 'HomeController@index');
             // 用户管理
             Route::get('/users', 'UserController@index');
             Route::get('/users/create', 'UserController@create');
-            Route::post('/users/store', 'UserController@store');
+            Route::any('/users/store', 'UserController@store');
             Route::any('/users/del/{id}', 'UserController@del');
         });
     });
