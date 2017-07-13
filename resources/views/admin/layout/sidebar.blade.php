@@ -20,7 +20,7 @@
                     <span class="pull-right-container"></span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="/admin/users"><i class="fa fa-circle-o"></i> 营销活动</a></li>
+                    <li><a href="/admin/contact"><i class="fa fa-circle-o"></i> 营销活动</a></li>
                     <li><a href="/admin/users"><i class="fa fa-circle-o"></i> 潜在客户</a></li>
                 </ul>
             </li>
