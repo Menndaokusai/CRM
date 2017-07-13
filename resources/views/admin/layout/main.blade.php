@@ -35,7 +35,7 @@
     <link rel="stylesheet" href="/adminlte/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
     <!-- jqgrid-->
     <link href="/css/jqgrid/ui.jqgrid.css" rel="stylesheet" type="text/css">
-    <!--tcs框架-->`
+    <!--tcs框架-->
     <link href="/css/animate.css" rel="stylesheet" type="text/css">
     <link href="/css/style.css" rel="stylesheet" type="text/css">
 
