@@ -8,7 +8,7 @@
     <div class="row">
         <div class="col-lg-3 col-xs-6">
             <!-- small box -->
-            欢迎
+            1111111111
         </div>
     </div>
 </section>
