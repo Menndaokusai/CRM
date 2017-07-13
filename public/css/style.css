@@ -3340,13 +3340,6 @@ a.forum-item-title:hover {
     border-bottom: 1px solid #e7eaec;
 }
 
-body {
-    font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 13px;
-    color: #676a6c;
-    overflow-x: hidden;
-}
-
 html,
 body {
     height: 100%;
@@ -3515,7 +3508,7 @@ video {
 }
 
 .wrapper {
-    padding: 0 20px;
+    padding: 0 0px;
 }
 
 .wrapper-content {
