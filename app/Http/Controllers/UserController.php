@@ -2,22 +2,30 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
 use Illuminate\Http\Request;
-
+use DB;
 class UserController extends Controller
 {
 
-    public function signup(){
-        $username=Request::get('username');
-        $password=Request::get('password');
+    /*
+     * 用户列表
+     */
+     public function index()
+     {
+         $users = \App\User::paginate(10);
+         return view('/admin/user/index', compact('users'));
+     }
+
+    public function signup(Request $request){
+        $username=$request->get('username');
+        $password=$request->get('password');
         if(!($username && $password)) {
-            return ['status' => 0, 'msg' => '用户名和密码皆不可为空'];
+            return err('用户名和密码皆不可为空');
         }
 
         $user_exists = User()->where('name',$username)->exists();
         if($user_exists){
-            return ['status' => 0, 'msg' => '用户名已存在'];
+            return err('用户名已存在');
         }
 
         $hashed_password = Hash::make($password);
@@ -25,38 +33,47 @@ class UserController extends Controller
         $user->password = $hashed_password;
         $user->name = $username;
         if($user->save()){
-            return ['status'=>1,'id'=>$user->id];
+            return suc(['id'=>$user->id]);
         }
         else{
-            return ['status'=>0,'msg'=>'DB insert failed'];
+            return err('DB insert failed');
         }
-    }
-
-    public function login(){
-        $username=Request::get('username');
-        $password=Request::get('password');
-        if(!$username || !$password) {
-            return ['status' => 0, 'msg' => '用户名和密码皆不可为空'];
-        }
-
-        $user = User()->where('name',$username)->first();
-        if(!$user){
-            return ['status' => 0, 'msg' => '用户名或密码有误'];
-        }
-
-        $hash_password = $user->password;
-
-        if(!Hash::check($password,$hash_password)){
-            return ['status' => 0, 'msg' => '用户名或密码有误'];
-        }
-        session()->put('username',$user->name);
-        session()->put('user_id',$user->id);
-
-        return ['status' => 1, 'id'=>$user->id,'msg' => '登陆成功'];
-    }
-
-    public function loginout(Request $request){
 
     }
 
+    /*
+     * 创建用户
+     */
+    public function create()
+    {
+        return view('/admin/user/add');
+    }
+
+    /*
+     * 创建用户
+     */
+    public function store(Request $request)
+    {
+        $this->validate(request(), [
+            'name' => 'required|min:3',
+            'password' => 'required'
+        ]);
+
+        $name = request('name');
+        $password = bcrypt(request('password'));
+
+        \App\User::create(compact('name', 'password'));
+
+        return redirect('/admin/users');
+    }
+    public function del($id)
+    {
+        $a=\Auth::guard("web")->user()->id;
+        if($a==$id)
+        {
+            return "<script language=\"JavaScript\">alert(\"不可删除自己\");</script>";
+        }
+        $user=user()->find($id);
+        return $user->delete()?redirect('/admin/users'):back();
+    }
 }
