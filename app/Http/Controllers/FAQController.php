@@ -95,4 +95,8 @@ class FAQController extends Controller
 
         return suc($faq);
     }
+    public function index()
+    {
+        return view("/admin/faq/index");
+    }
 }

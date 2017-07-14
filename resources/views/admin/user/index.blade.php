@@ -17,31 +17,30 @@
                     </button>
                     <form role="form" action="/admin/users/store" method="POST">
                         {{ csrf_field() }}
-                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                                                    aria-hidden="true">×</span></button>
-                                        <h4 class="modal-title" id="exampleModalLabel">New Admin</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <form>
-                                            <div class="form-group">
-                                                <label for="recipient-name" class="control-label" >用户名:</label>
-                                                <input type="text" class="form-control" id="recipient-name" name="name">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="message-text" class="control-label" >密码:</label>
-                                                <input type="password" class="form-control" id="message-text" name="password">
-                                            </div>
-                                        </form>
-                                    </div>
-
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                                        <button type="submit" class="btn btn-primary">添加</button>
-                                    </div>
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                                aria-hidden="true">×</span></button>
+                                    <h4 class="modal-title" id="exampleModalLabel">New Admin</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+                                        <div class="form-group">
+                                            <label for="recipient-name" class="control-label" >用户名:</label>
+                                            <input type="text" class="form-control" id="recipient-name" name="name">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="message-text" class="control-label" >密码:</label>
+                                            <input type="password" class="form-control" id="message-text" name="password">
+                                        </div>
+                                    </form>
+                                </div>
+                                @include("admin.layout.error")
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                                    <button type="submit" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">添加</button>
                                 </div>
                             </div>
                         </div>
@@ -58,7 +57,7 @@
                                 <tr>
                                     <td>{{$user->id}}.</td>
                                     <td>{{$user->name}}</td>
-                                    @if($user->count()==1)
+                                    @if($user->id==$id)
                                     <td>
                                         无法删除
                                     </td>

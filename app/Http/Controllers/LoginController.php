@@ -23,6 +23,7 @@ class LoginController extends Controller
 
         $user = request(['name', 'password']);
         if (true == \Auth::guard('web')->attempt($user)) {
+//            dd(\Auth::guard('web')->attempt($user));
             return redirect('/admin/home');
         }
 

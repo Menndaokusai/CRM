@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
+use App\User;
 class UserController extends Controller
 {
     /*
@@ -10,34 +12,11 @@ class UserController extends Controller
      */
      public function index()
      {
-         $users = \App\User::paginate(10);
-         return view('/admin/user/index', compact('users'));
-     }
+         $users = \App\User::orderBy('created_at')->paginate(6);;
+         $idd=\Auth::guard("web")->user()->id;
 
-//    public function signup(Request $request){
-//        $username=$request->get('username');
-//        $password=$request->get('password');
-//        if(!($username && $password)) {
-//            return err('用户名和密码皆不可为空');
-//        }
-//
-//        $user_exists = User()->where('name',$username)->exists();
-//        if($user_exists){
-//            return err('用户名已存在');
-//        }
-//
-//        $hashed_password = Hash::make($password);
-//        $user = User();
-//        $user->password = $hashed_password;
-//        $user->name = $username;
-//        if($user->save()){
-//            return suc(['id'=>$user->id]);
-//        }
-//        else{
-//            return err('DB insert failed');
-//        }
-//
-//    }
+         return view('/admin/user/index', compact('users'))->with('id', $idd);
+     }
     /*
      * 创建用户
      */
@@ -48,22 +27,26 @@ class UserController extends Controller
     /*
      * 创建用户
      */
-    public function store(Request $request)
+    public function store(Request $request,User $user)
     {
-//        $validator=validator($request->all(), [
-//            'name' => 'required|min:4',
-//            'password' => 'required|min:6'
-//        ]);
-
-        $name = $request->name;
-        $password = bcrypt($request->password);
+        $this->validate($request, [
+            'name' => 'required|min:2',
+            'password' => 'required|min:6|max:30',
+        ]);
+        $name = request('name');
+        $password = bcrypt(request('password'));
+        if ($name != $user->name) {
+            if(\App\User::where('name', $name)->count() > 0) {
+                return "<script >alert('用户名存在')</script>".back();
+            }
+        }
 
         \App\User::create(compact('name', 'password'));
-
-        return redirect('/admin/users');
+        return back();
     }
     public function del($id)
     {
+
         $a=\Auth::guard("web")->user()->id;
         if($a==$id)
         {

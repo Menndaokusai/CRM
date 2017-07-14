@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Contact extends Model
 {
 
-//     protected $table="admin_users";
+     protected $table="contacts";
 
 }
