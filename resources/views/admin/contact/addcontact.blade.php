@@ -4,8 +4,10 @@
 @section("content")
     <!-- Main content -->
     <section class="content">
-        {{--用户信息添加 todo--}}
-        {{--<body class="gray-bg">--}}
+用户信息添加 todo
+
+<body class="gray-bg">
+
         <div class="wrapper wrapper-content animated fadeInRight">
             <div class="row">
                 <div class="col-sm-6">
@@ -87,6 +89,7 @@
             </div>
         </div>
 
-        {{--</body>--}}
+</body>
+
     </section>
 @endsection

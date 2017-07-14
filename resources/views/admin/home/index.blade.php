@@ -4,12 +4,10 @@
 <!-- Main content -->
 <section class="content">
     <!-- Small boxes (Stat box) -->
-    @include("admin.layout.sidebar")
-    <div class="row">
-        <div class="col-lg-3 col-xs-6">
-            <!-- small box -->
-            1111111111
-        </div>
+
+    <div class="home_image" >
+        <div class="home_image1"></div>
+      <p class="home_font"  >欢迎使用TCS管理平台</p>
     </div>
 </section>
 @endsection

@@ -44,8 +44,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                        </form>
+                    </form>
                     <!-- /.box-header -->
                     <div class="box-body">
                         <table class="table table-bordered">

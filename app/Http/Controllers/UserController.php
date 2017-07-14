@@ -40,11 +40,19 @@ class UserController extends Controller
                 return "<script >alert('用户名存在')</script>".back();
             }
         }
+
         \App\User::create(compact('name', 'password'));
         return back();
     }
     public function del($id)
     {
+
+        $a=\Auth::guard("web")->user()->id;
+        if($a==$id)
+        {
+            echo "<script type='text/javascript'>alert('不可删除自己');</script>";
+            return redirect('/admin/users');
+        }
         $user=user()->find($id);
         return $user->delete()?redirect('/admin/users'):back();
     }

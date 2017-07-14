@@ -3,7 +3,6 @@
     <section class="sidebar">
         <!-- /.search form -->
         <!-- sidebar menu: : style can be found in sidebar.less -->
-
         <ul class="sidebar-menu">
             <li class="treeview active">
                 <a href="#">
@@ -44,7 +43,6 @@
                     <li><a href="/admin/contact"><i class="fa fa-circle-o"></i> 问题单</a></li>
                     <li><a href="/admin/faq"><i class="fa fa-circle-o"></i> 常见问答</a></li>
                     <li><a href="/admin/contact"><i class="fa fa-circle-o"></i> 服务合同</a></li>
-                    <li><a href="/admin/contact"><i class="fa fa-circle-o"></i> 项目里程碑</a></li>
                     <li><a href="/admin/contact"><i class="fa fa-circle-o"></i> 项目任务</a></li>
                 </ul>
             </li>
