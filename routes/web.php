@@ -84,8 +84,9 @@ function suc($data_to_add = [])
 
 Route::group(['middleware' => 'web'], function () {
 
-        Route::get('/', 'LoginController@index');
-        Route::any('/login', 'LoginController@login');
+        Route::any('/', 'LoginController@index');
+        Route::any('/login', 'LoginController@index');
+        Route::any('/admin/login', 'LoginController@login');
         Route::get('/logout', 'LoginController@logout');
         // 需要登陆的//
     Route::group(['prefix' => 'admin'], function() {
