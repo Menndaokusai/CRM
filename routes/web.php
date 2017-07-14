@@ -57,7 +57,14 @@ function ticket(){
 
 function is_logged()
 {
-    return session('user_id') ?: false;
+    if(\Auth::guard("web")->user()->id)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }
 
 function err($msg = null)
@@ -78,7 +85,8 @@ function suc($data_to_add = [])
 
 Route::group(['middleware' => 'web'], function () {
         Route::get('/', 'LoginController@index');
-        Route::any('/login', 'LoginController@login');
+        Route::get('/login', 'LoginController@index');
+        Route::any('/admin/login', 'LoginController@login');
         Route::get('/logout', 'LoginController@logout');
         // 需要登陆的//
     Route::group(['prefix' => 'admin'], function() {
@@ -89,7 +97,8 @@ Route::group(['middleware' => 'web'], function () {
             Route::get('/users/create', 'UserController@create');
             Route::any('/users/store', 'UserController@store');
             Route::any('/users/del/{id}', 'UserController@del');
-            Route::get('/contact', 'ContactController@index');
+            Route::get('/contact', 'contactController@index');
+            Route::get('/faq', 'FAQController@index');
         });
     });
 
@@ -135,4 +144,15 @@ Route::group(['middleware' => 'web'], function () {
     Route::any('/tickets/del','TicketController@del');
 
 });
-
+//ojectController@del');
+//    Route::any('/sc/add', 'ServiceContractController@add');
+//    Route::any('/sc/updt', 'ServiceContractController@updt');
+//    Route::any('/sc/read', 'ServiceContractController@read');
+//    Route::any('/sc/del', 'ServiceContractController@del');
+//    Route::any('/tickets/add', 'TicketController@add');
+//    Route::any('/tickets/updt', 'TicketController@updt');
+//    Route::any('/tickets/read', 'TicketController@read');
+//    Route::any('/tickets/del', 'TicketController@del');
+//
+//});
+//

@@ -21,7 +21,7 @@
                 </a>
                 <ul class="treeview-menu">
                     <li><a href="/admin/contact"><i class="fa fa-circle-o"></i> 营销活动</a></li>
-                    <li><a href="/admin/users"><i class="fa fa-circle-o"></i> 潜在客户</a></li>
+                    <li><a href="/admin/contact"><i class="fa fa-circle-o"></i> 潜在客户</a></li>
                 </ul>
             </li>
             <li class="active treeview">
@@ -31,8 +31,8 @@
                 </a>
                 <ul class="treeview-menu">
                     <li><a href="/admin/contact"><i class="fa fa-circle-o"></i> 客户</a></li>
-                    <li><a href="/admin/users"><i class="fa fa-circle-o"></i> 联系人</a></li>
-                    <li><a href="/admin/users"><i class="fa fa-circle-o"></i> 销售机会</a></li>
+                    <li><a href="/admin/contact"><i class="fa fa-circle-o"></i> 联系人</a></li>
+                    <li><a href="/admin/contact"><i class="fa fa-circle-o"></i> 销售机会</a></li>
                 </ul>
             </li>
             <li class="active treeview">
@@ -41,11 +41,11 @@
                     <span class="pull-right-container"></span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="/admin/users"><i class="fa fa-circle-o"></i> 问题单</a></li>
-                    <li><a href="/admin/users"><i class="fa fa-circle-o"></i> 常见问答</a></li>
-                    <li><a href="/admin/users"><i class="fa fa-circle-o"></i> 服务合同</a></li>
-                    <li><a href="/admin/users"><i class="fa fa-circle-o"></i> 项目里程碑</a></li>
-                    <li><a href="/admin/users"><i class="fa fa-circle-o"></i> 项目任务</a></li>
+                    <li><a href="/admin/contact"><i class="fa fa-circle-o"></i> 问题单</a></li>
+                    <li><a href="/admin/faq"><i class="fa fa-circle-o"></i> 常见问答</a></li>
+                    <li><a href="/admin/contact"><i class="fa fa-circle-o"></i> 服务合同</a></li>
+                    <li><a href="/admin/contact"><i class="fa fa-circle-o"></i> 项目里程碑</a></li>
+                    <li><a href="/admin/contact"><i class="fa fa-circle-o"></i> 项目任务</a></li>
                 </ul>
             </li>
             <li class="treeview active">
@@ -54,7 +54,7 @@
                     <span class="pull-right-container"></span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="/admin/users"><i class="fa fa-circle-o"></i> 报表</a></li>
+                    <li><a href="/admin/contact"><i class="fa fa-circle-o"></i> 报表</a></li>
                 </ul>
             </li>
         </ul>
