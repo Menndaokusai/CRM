@@ -57,7 +57,16 @@
     <script src="/js/plugins/jqgrid/i18n/grid.locale-cn.js?0820"></script>
     <script src="/js/jqgrid/jquery.jqGrid.min.js"></script>
 
-    <script src="/js/contact/jqgridListShow.js"></script>
+    {{--各页面jqgrid列表js--}}
+    <script src="/js/jqgrid/list_js/account_jqgrid_list.js"></script>
+    <script src="/js/jqgrid/list_js/contact_jqgrid_list.js"></script>
+    <script src="/js/jqgrid/list_js/campaign_jqgrid_list.js"></script>
+    <script src="/js/jqgrid/list_js/potentialcustomer_jqgrid_list.js"></script>
+    <script src="/js/jqgrid/list_js/opportunitie_jqgrid_list.js"></script>
+    <script src="/js/jqgrid/list_js/ticket_jqgrid_list.js"></script>
+    <script src="/js/jqgrid/list_js/servicecontract_jqgrid_list.js"></script>
+    <script src="/js/jqgrid/list_js/project_jqgrid_list.js"></script>
+
 
 
 </head>

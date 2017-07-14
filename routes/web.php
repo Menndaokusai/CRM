@@ -9,7 +9,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-function user(){
+function user()
+{
     return new \App\User();
 }
 
@@ -84,22 +85,46 @@ function suc($data_to_add = [])
 
 Route::group(['middleware' => 'web'], function () {
 
-        Route::any('/', 'LoginController@index');
-        Route::any('/login', 'LoginController@index');
-        Route::any('/admin/login', 'LoginController@login');
-        Route::get('/logout', 'LoginController@logout');
-        // 需要登陆的//
-    Route::group(['prefix' => 'admin'], function() {
-    Route::group(['middleware' => 'auth:web'], function () {
+    Route::any('/', 'LoginController@index');
+    Route::any('/login', 'LoginController@index');
+    Route::any('/admin/login', 'LoginController@login');
+    Route::get('/logout', 'LoginController@logout');
+    // 需要登陆的//
+    Route::group(['prefix' => 'admin'], function () {
+        Route::group(['middleware' => 'auth:web'], function () {
             Route::get('/home', 'HomeController@index');
             // 用户管理
             Route::get('/users', 'UserController@index');
             Route::get('/users/create', 'UserController@create');
             Route::any('/users/store', 'UserController@store');
             Route::any('/users/del/{id}', 'UserController@del');
-            Route::get('/contact', function (){
+            Route::get('/contact', function () {
                 return view('/admin/contact/index');
             });
+            Route::get('/account', function () {
+                return view('/admin/account/index');
+            });
+            Route::get('/campaign', function () {
+                return view('/admin/campaign/index');
+            });
+            Route::get('/potentialcustomer', function () {
+                return view('/admin/potentialcustomer/index');
+            });
+            Route::get('/opportunitie', function () {
+                return view('/admin/opportunitie/index');
+            });
+            Route::get('/ticket', function () {
+                return view('/admin/ticket/index');
+            });
+            Route::get('/servicecontract', function () {
+                return view('/admin/servicecontract/index');
+            });
+            Route::get('/project', function () {
+                return view('/admin/project/index');
+            });
+
+
+
         });
     });
 
@@ -115,10 +140,6 @@ Route::group(['middleware' => 'web'], function () {
 //    Route::any(function () {
 //        return view("xxxx3.blade.php");
 //    });
-
-
-
-
 
 
     Route::any('/contacts/add', 'ContactController@add');

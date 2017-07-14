@@ -1,17 +1,13 @@
-/**
- * Created by asus on 2017/7/13.
- */
-
-//用户显示列表js
 $(document).ready(function () {
 
+    //客户显示列表js
     $.jgrid.defaults.styleUI = 'Bootstrap';
-    // Examle data for jqGrid
+// Examle data for jqGrid
     var mydata = [
         {
             id: "1",
             invdate: "2010-05-24",
-            name: "test",
+            name: "ticket",
             note: "note",
             tax: "10.00",
             total: "2111.00"
@@ -246,23 +242,23 @@ $(document).ready(function () {
         }
     ];
 
-    // Configuration for jqGrid Example 2
-    $("#table_list_1").jqGrid({
+// Configuration for jqGrid Example 2
+    $("#table_list_ticket").jqGrid({
         url: "",
         data: mydata,
         datatype: "local",
-        height: 460,
+        height: 468,
         autowidth: true,
         shrinkToFit: true,
         rowNum: 13,
         rowList: [10, 20, 30],
-        colNames: ['序号', '日期', '客户', '金额', '运费', '总额', '备注'],
+        colNames: ['编号', '标题', '客户名称', '状态', '优先级', '联系人编号', '负责人'],
         colModel: [
             {
                 name: 'id',
                 index: 'id',
                 editable: true,
-                width: 60,
+                width: 20,
                 sorttype: "int",
                 search: true
             },
@@ -270,7 +266,7 @@ $(document).ready(function () {
                 name: 'invdate',
                 index: 'invdate',
                 editable: true,
-                width: 90,
+                width: 50,
                 sorttype: "date",
                 formatter: "date"
             },
@@ -278,13 +274,13 @@ $(document).ready(function () {
                 name: 'name',
                 index: 'name',
                 editable: true,
-                width: 100
+                width: 50
             },
             {
                 name: 'amount',
                 index: 'amount',
                 editable: true,
-                width: 80,
+                width: 50,
                 align: "right",
                 sorttype: "float",
                 formatter: "number"
@@ -293,27 +289,28 @@ $(document).ready(function () {
                 name: 'tax',
                 index: 'tax',
                 editable: true,
-                width: 80,
+                width: 50,
                 align: "right",
                 sorttype: "float"
             },
             {
-                name: 'total',
-                index: 'total',
+                name: 'tax',
+                index: 'tax',
                 editable: true,
-                width: 80,
+                width: 50,
                 align: "right",
                 sorttype: "float"
             },
             {
-                name: 'note',
-                index: 'note',
+                name: 'tax',
+                index: 'tax',
                 editable: true,
-                width: 100,
-                sortable: false
+                width: 50,
+                align: "right",
+                sorttype: "float"
             }
         ],
-        pager: "#pager_list_1",
+        pager: "#pager_list_ticket",
         viewrecords: true,
         add: true,
         edit: true,
@@ -323,10 +320,11 @@ $(document).ready(function () {
     });
 
 
-    // Add responsive to jqGrid
+// Add responsive to jqGrid
     $(window).bind('resize', function () {
         var width = $('.jqGrid_wrapper').width();
-        $('#table_list_1').setGridWidth(width);
-        $('#table_list_1').setGridWidth(width);
+        $('#table_list_ticket').setGridWidth(width);
+        $('#table_list_ticket').setGridWidth(width);
     });
+
 });

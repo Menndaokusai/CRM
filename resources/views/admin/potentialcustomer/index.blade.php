@@ -1,13 +1,14 @@
 @extends("admin.layout.main")
 
 @section("content")
+
     <section class="content">
         <div class="wrapper-content  animated fadeInRight">
             <div class="row">
                 <div class="col-sm-12">
                     <div class="ibox">
                         <div class="ibox-title">
-                            <h2 class="m-t">联系人资料管理</h2>
+                            <h2 class="m-t">潜在客户管理</h2>
                         </div>
                         <div class="col-sm-12 buttongroup">
                             <button class="btn btn-primary" type="button"><i class="fa fa-check"></i>&nbsp;添加
@@ -22,8 +23,8 @@
                         <div class="ibox-content">
 
                             <div class="jqGrid_wrapper">
-                                <table id="table_list_contact"></table>
-                                <div id="pager_list_contact"></div>
+                                <table id="table_list_potentialcustomer"></table>
+                                <div id="pager_list_potentialcustomer"></div>
                             </div>
                         </div>
                     </div>
