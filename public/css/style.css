@@ -4074,6 +4074,9 @@ table.table-mail tr td {
 
 .ibox-content {
     clear: both;
+    overflow-y:scroll;
+    height: 500px;
+
 }
 
 .ibox-heading {

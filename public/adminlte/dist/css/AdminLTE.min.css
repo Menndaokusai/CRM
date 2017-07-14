@@ -3189,7 +3189,8 @@ table.text-center, table.text-center td, table.text-center th {
 }
 
 .modal-header {
-    border-bottom-color: #f4f4f4
+    border-bottom-color: #f4f4f4;
+    background-color: #1f90d8;
 }
 
 .modal-footer {
