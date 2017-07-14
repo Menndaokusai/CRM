@@ -67,7 +67,8 @@ class UserController extends Controller
         $a=\Auth::guard("web")->user()->id;
         if($a==$id)
         {
-            return "<script language=\"JavaScript\">alert(\"不可删除自己\");</script>".\Redirect::back();
+            echo "<script type='text/javascript'>alert('不可删除自己');</script>";
+            return redirect('/admin/users');
         }
         $user=user()->find($id);
         return $user->delete()?redirect('/admin/users'):back();
