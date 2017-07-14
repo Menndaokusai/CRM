@@ -85,7 +85,7 @@ body {
 }
 
 .content-wrapper, .right-side {
-    min-height: 100%;
+
     background-color: #ecf0f5;
     z-index: 800
 }
@@ -5211,17 +5211,28 @@ table.text-center, table.text-center td, table.text-center th {
         white-space: normal !important
     }
 }
+.home_image
+{
+    width: 100%;
+    height: 930px;
+}
 .home_image1
 {
-    margin-top: 9%;
+    margin-top: 10%;
     background: url('../img/beij.jpg');
-    width: 100%;
-    height: 600px;
+    background-repeat:no-repeat;
 
+    background-attachment:fixed;
+
+    background-position:top;
+    width: 100%;
+    height: 100%;
+    background-size: 100% auto;
 }
 .home_font{
-    font-size: 60px;
+    font-size: 7rem;
     position:absolute;
-    top:46%;
+    top:38%;
     left:39%;
 }
+

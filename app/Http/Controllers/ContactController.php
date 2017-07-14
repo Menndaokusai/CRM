@@ -113,4 +113,10 @@ class ContactController extends Controller
             ->keyBy('id');
         return ['status' => 1, 'data' => $contact];
     }
+    public function index()
+    {
+        $contacts = \App\Contact::paginate(10);
+        return view('/admin/contact/index',compact('contacts'));
+
+    }
 }

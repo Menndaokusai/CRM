@@ -17,12 +17,13 @@ class LoginController extends Controller
     public function login(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required|min:2',
+            'name' => 'required|min:4',
             'password' => 'required|min:6|max:30',
         ]);
 
         $user = request(['name', 'password']);
         if (true == \Auth::guard('web')->attempt($user)) {
+//            dd(\Auth::guard('web')->attempt($user));
             return redirect('/admin/home');
         }
 
