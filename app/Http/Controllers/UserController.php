@@ -14,30 +14,30 @@ class UserController extends Controller
          return view('/admin/user/index', compact('users'));
      }
 
-    public function signup(Request $request){
-        $username=$request->get('username');
-        $password=$request->get('password');
-        if(!($username && $password)) {
-            return err('用户名和密码皆不可为空');
-        }
-
-        $user_exists = User()->where('name',$username)->exists();
-        if($user_exists){
-            return err('用户名已存在');
-        }
-
-        $hashed_password = Hash::make($password);
-        $user = User();
-        $user->password = $hashed_password;
-        $user->name = $username;
-        if($user->save()){
-            return suc(['id'=>$user->id]);
-        }
-        else{
-            return err('DB insert failed');
-        }
-
-    }
+//    public function signup(Request $request){
+//        $username=$request->get('username');
+//        $password=$request->get('password');
+//        if(!($username && $password)) {
+//            return err('用户名和密码皆不可为空');
+//        }
+//
+//        $user_exists = User()->where('name',$username)->exists();
+//        if($user_exists){
+//            return err('用户名已存在');
+//        }
+//
+//        $hashed_password = Hash::make($password);
+//        $user = User();
+//        $user->password = $hashed_password;
+//        $user->name = $username;
+//        if($user->save()){
+//            return suc(['id'=>$user->id]);
+//        }
+//        else{
+//            return err('DB insert failed');
+//        }
+//
+//    }
     /*
      * 创建用户
      */
@@ -50,13 +50,13 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate(request(), [
-            'name' => 'required|min:3',
-            'password' => 'required'
-        ]);
+//        $validator=validator($request->all(), [
+//            'name' => 'required|min:4',
+//            'password' => 'required|min:6'
+//        ]);
 
-        $name = request('name');
-        $password = bcrypt(request('password'));
+        $name = $request->name;
+        $password = bcrypt($request->password);
 
         \App\User::create(compact('name', 'password'));
 
