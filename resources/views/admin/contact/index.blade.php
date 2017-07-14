@@ -9,8 +9,11 @@
                         <div class="ibox-title">
                             <h2 class="m-t">客户资料管理</h2>
                         </div>
+
+
+
                         <div class="col-sm-12 buttongroup">
-                            <button class="btn btn-primary" type="button"><i class="fa fa-check"></i>&nbsp;添加
+                            <button class="btn btn-primary" data-toggle="modal" data-target="#myModal" type="button"><i class="fa fa-check"></i>&nbsp;添加
                             </button>
                             <button class="btn btn-warning" type="button"><i class="fa fa-pencil"></i>&nbsp;修改
                             </button>
@@ -30,5 +33,20 @@
                 </div>
             </div>
         </div>
+        <form role="form" action="/admin/users/store" method="POST">
+            {{ csrf_field() }}
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                        aria-hidden="true">×</span></button>
+                            <h4 class="modal-title" id="exampleModalLabel">New Admin</h4>
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
     </section>
 @endsection
