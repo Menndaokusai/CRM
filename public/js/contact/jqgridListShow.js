@@ -5,13 +5,14 @@
 //用户显示列表js
 $(document).ready(function () {
 
+
     $.jgrid.defaults.styleUI = 'Bootstrap';
     // Examle data for jqGrid
     var mydata = [
         {
             id: "1",
             invdate: "2010-05-24",
-            name: "test",
+            name: "tes2161",
             note: "note",
             tax: "10.00",
             total: "2111.00"
@@ -256,13 +257,14 @@ $(document).ready(function () {
         shrinkToFit: true,
         rowNum: 13,
         rowList: [10, 20, 30],
-        colNames: ['序号', '日期', '客户', '金额', '运费', '总额', '备注'],
+        colNames: ['编号', '联系人姓名', '职务', '邮箱', '工作电话',  '负责人'],
         colModel: [
             {
                 name: 'id',
                 index: 'id',
                 editable: true,
-                width: 60,
+                width: 20,
+                align:"center",
                 sorttype: "int",
                 search: true
             },
@@ -270,6 +272,7 @@ $(document).ready(function () {
                 name: 'invdate',
                 index: 'invdate',
                 editable: true,
+                align:"center",
                 width: 90,
                 sorttype: "date",
                 formatter: "date"
@@ -277,15 +280,16 @@ $(document).ready(function () {
             {
                 name: 'name',
                 index: 'name',
+                align:"center",
                 editable: true,
                 width: 100
             },
             {
                 name: 'amount',
                 index: 'amount',
+                align:"center",
                 editable: true,
                 width: 80,
-                align: "right",
                 sorttype: "float",
                 formatter: "number"
             },
@@ -293,24 +297,17 @@ $(document).ready(function () {
                 name: 'tax',
                 index: 'tax',
                 editable: true,
+                align:"center",
                 width: 80,
-                align: "right",
                 sorttype: "float"
             },
             {
                 name: 'total',
                 index: 'total',
                 editable: true,
+                align:"center",
                 width: 80,
-                align: "right",
                 sorttype: "float"
-            },
-            {
-                name: 'note',
-                index: 'note',
-                editable: true,
-                width: 100,
-                sortable: false
             }
         ],
         pager: "#pager_list_1",
@@ -329,4 +326,11 @@ $(document).ready(function () {
         $('#table_list_1').setGridWidth(width);
         $('#table_list_1').setGridWidth(width);
     });
+
+    //todo 数据刷新
+    // $("#constact_refresh").click(function () {
+    //     jQuery("#table_list_1").trigger("reloadGrid");
+    // });
+
 });
+
