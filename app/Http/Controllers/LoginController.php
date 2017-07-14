@@ -26,7 +26,7 @@ class LoginController extends Controller
             return redirect('/admin/home');
         }
 
-        return \Redirect::back()->withErrors("用户名密码错误");
+        return 123;
     }
 
     /*
