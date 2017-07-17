@@ -30,7 +30,10 @@ class TicketController extends Controller
             return $arr3;
         }
     }
-
+    public function index()
+    {
+        return view('/admin/ticket/index');
+    }
     public function add(Request $request)
     {
         if(!is_logged())

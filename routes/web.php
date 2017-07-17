@@ -99,6 +99,13 @@ Route::group(['middleware' => 'web'], function () {
             Route::any('/users/del/{id}', 'UserController@del');
             Route::get('/contact', 'contactController@index');
             Route::get('/faq', 'FAQController@index');
+            Route::get('/account','AccountController@index');
+            Route::get('/campaign','CampaignController@index');
+            Route::get('/potentialcustomer','PotentialCustomerController@index');
+            Route::get('/opportunitie','OpportunityController@index');
+            Route::get('/ticket','TicketController@index');
+            Route::get('/servicecontract','ServiceContractController@index');
+            Route::get('/project','ProjectController@index');
         });
     });
 

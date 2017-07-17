@@ -115,7 +115,7 @@ class ContactController extends Controller
     }
     public function index()
     {
-        $contacts = \App\Contact::paginate(10);
+        $contacts = \App\Contact::paginate(15);
         return view('/admin/contact/index',compact('contacts'));
 
     }

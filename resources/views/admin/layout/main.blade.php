@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-<>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -11,7 +10,6 @@
 <!-- Bootstrap 3.3.6 -->
 
 <link rel="stylesheet" href="/adminlte/bootstrap/css/bootstrap.min.css">
-<link href="/css/font-awesome.css" rel="stylesheet">
 <!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
 <!-- Ionicons -->
@@ -33,14 +31,9 @@
 <link rel="stylesheet" href="/adminlte/plugins/daterangepicker/daterangepicker.css">
 <!-- bootstrap wysihtml5 - text editor -->
 <link rel="stylesheet" href="/adminlte/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
-<!-- jqgrid-->
-<link href="/css/jqgrid/ui.jqgrid.css" rel="stylesheet" type="text/css">
-<!--tcs框架-->
-<link href="/css/animate.css" rel="stylesheet" type="text/css">
-<link href="/css/demo/style.css" rel="stylesheet" type="text/css">
 <link href="/css/demo/adminia.css" rel="stylesheet" type="text/css">
 <!--自定义样式-->
-<link href="/css/contacts/contacts.css" rel="stylesheet" type="text/css">
+
 <link href="/css/demo/faq.css" rel="stylesheet" type="text/css">
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -54,10 +47,9 @@
 <script src="/adminlte/plugins/jQuery/jquery-2.2.3.min.js"></script>
 
 {{--jqgrid--}}
-<script src="/js/plugins/jqgrid/i18n/grid.locale-cn.js?0820"></script>
-<script src="/js/jqgrid/jquery.jqGrid.min.js"></script>
 
-<script src="/js/contact/jqgridListShow.js"></script>
+
+
 <script src="/js/demo/faq.js"></script>
 
 </head>
@@ -81,21 +73,7 @@
     <div class="control-sidebar-bg"></div>
 </div>
 
-<!-- ./wrapper -->
 
-{{--tcs框架--}}
-<script src="/js/content.js"></script>
-<script src="/js/demo/form-validate-demo.js"></script>
-
-
-<!-- jQuery Validation plugin javascript-->
-<script src="/js/plugins/validate/jquery.validate.min.js"></script>
-<script src="/js/plugins/validate/messages_zh.min.js"></script>
-
-<!-- jQuery UI 1.11.4 -->
-<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<script>$.widget.bridge('uibutton', $.ui.button);</script>
 <!-- Bootstrap 3.3.6 -->
 <script src="/adminlte/bootstrap/js/bootstrap.min.js"></script>
 <!-- Morris.js charts -->

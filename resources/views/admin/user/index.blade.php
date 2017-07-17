@@ -17,7 +17,7 @@
                     </button>
                     <form role="form" action="/admin/users/store" method="POST">
                         {{ csrf_field() }}
-                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="height: 370px;">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
