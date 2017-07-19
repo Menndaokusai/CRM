@@ -5,7 +5,7 @@
             <div class="col-xs-12">
                 <div class="box">
                     <div class="box-header">
-                        <h1 class="box-title" ><B>servicecontract</B></h1>
+                        <h1 class="box-title" ><B>opportunitie</B></h1>
                         <a><span class="glyphicon glyphicon-plus" data-toggle="modal" data-target="#myModal" STYLE="margin-left: 10px; cursor:pointer"/></a>
                     </div>
                     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -18,16 +18,30 @@
                                 <div class="modal-body">
                                     <form class="form-horizontal"  id="editForm" action="<%=path%>/com/update" method="post">
                                         <div class="form-group">
-                                            <span class="col-sm-4 control-label">主题</span>
+                                            <span class="col-sm-4 control-label">销售机会名</span>
                                             <div class="col-sm-6">
-                                                <input id="Subject" name="Subject" class="form-control" type="text" placeholder="主题">
+                                                <input id="Opportunity_Name" name="Opportunity_Name" class="form-control" type="text" placeholder="销售机会名">
                                             </div>
                                         </div>
 
                                         <div class="form-group">
-                                            <span class="col-sm-4 control-label">状态</span>
+                                            <span class="col-sm-4 control-label">客户名</span>
                                             <div class="col-sm-6">
-                                                <input id="Status" name="Status" class="form-control" type="text" placeholder="状态">
+                                                <input id="Account_Name" name="Account_Name" class="form-control" type="text" placeholder="客户名">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <span class="col-sm-4 control-label">联系人</span>
+                                            <div class="col-sm-6">
+                                                <input id="Contact_Name" name="Contact_Name" class="form-control" type="text" placeholder="联系人">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <span class="col-sm-4 control-label">金额</span>
+                                            <div class="col-sm-6">
+                                                <input id="Amount" name="Amount" class="form-control" type="text" placeholder="金额">
                                             </div>
                                         </div>
 
@@ -39,52 +53,23 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <span class="col-sm-4 control-label">开始日期</span>
+                                            <span class="col-sm-4 control-label">预期结束日期</span>
                                             <div class="col-sm-6">
-                                                <input id="Start_Date" name="Start_Date" class="form-control" type="text" placeholder="开始日期">
+                                                <input id="Expected_Close_Date" name="Expected_Close_Date" class="form-control" type="text" placeholder="预期结束日期">
                                             </div>
                                         </div>
 
                                         <div class="form-group">
-                                            <span class="col-sm-4 control-label">结束日期</span>
+                                            <span class="col-sm-4 control-label">销售阶段</span>
                                             <div class="col-sm-6">
-                                                <input id="End_Date" name="End_Date" class="form-control" type="text" placeholder="结束日期">
-
+                                                <input id="Sales_Stage" name="Sales_Stage" class="form-control" type="text" placeholder="销售阶段">
                                             </div>
                                         </div>
 
                                         <div class="form-group">
-                                            <span class="col-sm-4 control-label">跟踪单位</span>
+                                            <span class="col-sm-4 control-label">预测金额</span>
                                             <div class="col-sm-6">
-                                                <input id="Tracking_Unit" name="Tracking_Unit" class="form-control" type="text" placeholder="跟踪单位">
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <span class="col-sm-4 control-label">单位总数</span>
-                                            <div class="col-sm-6">
-                                                <input id="Total_Units" name="Total_Units" class="form-control" type="text" placeholder="单位总数">
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <span class="col-sm-4 control-label">已使用单位</span>
-                                            <div class="col-sm-6">
-                                                <input id="Used_Units" name="Used_Units" class="form-control" type="text" placeholder="已使用单位">
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <span class="col-sm-4 control-label">相关方</span>
-                                            <div class="col-sm-6">
-                                                <input id="Related" name="Related" class="form-control" type="text" placeholder="相关方">
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <span class="col-sm-4 control-label">优先级</span>
-                                            <div class="col-sm-6">
-                                                <input id="Priority" name="Priority" class="form-control" type="text" placeholder="优先级">
+                                                <input id="Probability" name="Probability" class="form-control" type="text" placeholder="预测金额">
                                             </div>
                                         </div>
 
