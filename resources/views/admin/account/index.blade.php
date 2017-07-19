@@ -16,7 +16,7 @@
                                     <h4 class="modal-title" id="myModalLabel"><b>新增</b></h4>
                                 </div>
                                 <div class="modal-body">
-                                    <form class="form-horizontal"  id="editForm" action="%=path%/com/update" method="post">
+                                    <form class="form-horizontal"  id="editForm" action="/accounts/add" method="post">
                                         <div class="form-group">
                                             <span class="col-sm-4 control-label">客户名</span>
                                             <div class="col-sm-6">
