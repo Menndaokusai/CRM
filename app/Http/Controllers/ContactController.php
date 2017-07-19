@@ -51,23 +51,6 @@ class ContactController extends Controller
             $contact->$arr2[$i]=$request->get($arr1[$i]);
         }
 
-        /*
-        $contact->name=$request->get('name');
-        $contact->privatephone=$request->get('privatephone');
-        $contact->homephone=$request->get('homephone');
-        $contact->workphone=$request->get('workphone');
-        $contact->home_address=$request->get('home_address');
-        $contact->work_address=$request->get('work_address');
-        $contact->asst_phone=$request->get('asst_phone');
-        $contact->asst_name=$request->get('asst_name');
-        $contact->sex=$request->get('sex');
-        $contact->department=$request->get('department');
-        $contact->job=$request->get('job');
-        $contact->email=$request->get('email');
-        $contact->company=$request->get('company');
-        $contact->manager=$request->get('manager');
-        $contact->birth=$request->get('birth');
-*/
         $contact->save();
         return '添加成功！';
     }
@@ -117,6 +100,5 @@ class ContactController extends Controller
     {
         $contacts = \App\Contact::paginate(15);
         return view('/admin/contact/index',compact('contacts'));
-
     }
 }

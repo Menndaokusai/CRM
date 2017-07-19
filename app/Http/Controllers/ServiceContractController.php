@@ -32,7 +32,8 @@ class ServiceContractController extends Controller
     }
     public function index()
     {
-        return view('/admin/servicecontract/index');
+        $sc = \App\ServiceContract::paginate(15);
+        return view('/admin/ServiceContract/index',compact('sc'));
     }
     public function add(Request $request)
     {

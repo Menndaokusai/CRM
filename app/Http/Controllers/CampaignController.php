@@ -35,7 +35,8 @@ class CampaignController extends Controller
     }
     public function index()
     {
-        return view('/admin/campaign/index');
+        $campaigns = \App\Campaign::paginate(15);
+        return view('/admin/campaign/index',compact('campaigns'));
     }
     public function add(Request $request)
     {

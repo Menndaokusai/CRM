@@ -32,7 +32,8 @@ class PotentialCustomerController extends Controller
     }
     public function index()
     {
-        return view('/admin/potentialcustomer/index');
+        $pc = \App\PotentialCustomer::paginate(15);
+        return view('/admin/PotentialCustomer/index',compact('pc'));
     }
     public function add(Request $request)
     {

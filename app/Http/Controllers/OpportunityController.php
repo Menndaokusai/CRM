@@ -32,7 +32,8 @@ class OpportunityController extends Controller
     }
     public function index()
     {
-        return view('/admin/opportunity/index');
+        $opp = \App\Opportunity::paginate(15);
+        return view('/admin/opportunity/index',compact('opp'));
     }
     public function add(Request $request)
     {

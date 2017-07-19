@@ -32,7 +32,8 @@ class ProjectController extends Controller
     }
     public function index()
     {
-        return view('/admin/project/index');
+        $projects = \App\Project::paginate(15);
+        return view('/admin/project/index',compact('projects'));
     }
     public function add(Request $request)
     {

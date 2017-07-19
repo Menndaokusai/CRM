@@ -34,7 +34,8 @@ class AccountController extends Controller
     }
     public function index()
     {
-        return view('/admin/account/index');
+        $accounts = \App\Account::paginate(15);
+        return view('/admin/account/index',compact('accounts'));
     }
     public function add(Request $request)
     {
@@ -85,33 +86,6 @@ class AccountController extends Controller
             }
         }
 
-        /*
-
-        if($request->get('name')){
-            $account->name=$request->get('name');
-        }
-        if($request->get('account_type')){
-            $account->account_type=$request->get('account_type');
-        }
-        if($request->get('officephone')){
-            $account->officephone=$request->get('officephone');
-        }
-        if($request->get('alternatephone')){
-            $account->alternatephone=$request->get('alternatephone');
-        }
-        if($request->get('address')){
-            $account->address=$request->get('address');
-        }
-        if($request->get('ownership')){
-            $account->ownership=$request->get('ownership');
-        }
-        if($request->get('email')){
-            $account->email=$request->get('email');
-        }
-        if($request->get('manager')){
-            $account->manager=$request->get('manager');
-        }
-*/
         $account->save();
 
         return suc();
