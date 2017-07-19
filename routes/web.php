@@ -102,7 +102,7 @@ Route::group(['middleware' => 'web'], function () {
             Route::get('/account','AccountController@index');
             Route::get('/campaign','CampaignController@index');
             Route::get('/potentialcustomer','PotentialCustomerController@index');
-            Route::get('/opportunitie','OpportunityController@index');
+            Route::get('/opportunity','OpportunityController@index');
             Route::get('/ticket','TicketController@index');
             Route::get('/servicecontract','ServiceContractController@index');
             Route::get('/project','ProjectController@index');

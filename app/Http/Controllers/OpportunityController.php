@@ -32,7 +32,7 @@ class OpportunityController extends Controller
     }
     public function index()
     {
-        return view('/admin/opportunitie/index');
+        return view('/admin/opportunity/index');
     }
     public function add(Request $request)
     {

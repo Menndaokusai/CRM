@@ -5,7 +5,7 @@
             <div class="col-xs-12">
                 <div class="box">
                     <div class="box-header">
-                        <h1 class="box-title" ><B>Accounts</B></h1>
+                        <h1 class="box-title" ><B>PotentialCustomer</B></h1>
                         <a><span class="glyphicon glyphicon-plus" data-toggle="modal" data-target="#myModal" STYLE="margin-left: 10px; cursor:pointer"/></a>
                     </div>
                     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -18,16 +18,16 @@
                                 <div class="modal-body">
                                     <form class="form-horizontal"  id="editForm" action="<%=path%>/com/update" method="post">
                                         <div class="form-group">
-                                            <span class="col-sm-4 control-label">客户名</span>
+                                            <span class="col-sm-4 control-label">潜在客户名</span>
                                             <div class="col-sm-6">
-                                                <input id="Account_Name" name="Account_Name" class="form-control" type="text" placeholder="客户名">
+                                                <input id="PC_Name" name="PC_Name" class="form-control" type="text" placeholder="潜在客户名">
                                             </div>
                                         </div>
 
                                         <div class="form-group">
-                                            <span class="col-sm-4 control-label">客户类型</span>
+                                            <span class="col-sm-4 control-label">行业</span>
                                             <div class="col-sm-6">
-                                                <input id="Account_Type" name="Account_Type" class="form-control" type="text" placeholder="客户类型">
+                                                <input id="Industry" name="Industry" class="form-control" type="text" placeholder="行业">
                                             </div>
                                         </div>
 
@@ -39,24 +39,9 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <span class="col-sm-4 control-label">备用电话</span>
-                                            <div class="col-sm-6">
-                                                <input id="Alternate_Phone" name="Alternate_Phone" class="form-control" type="text" placeholder="备用电话">
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
                                             <span class="col-sm-4 control-label">地址</span>
                                             <div class="col-sm-6">
                                                 <input id="Address" name="Address" class="form-control" type="text" placeholder="地址">
-
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <span class="col-sm-4 control-label">所有人</span>
-                                            <div class="col-sm-6">
-                                                <input id="Ownership" name="Ownership" class="form-control" type="text" placeholder="所有人">
                                             </div>
                                         </div>
 
@@ -90,20 +75,20 @@
                         <table id="example2" class="table table-bordered table-hover">
                             <thead>
                             <tr>
-                                <th>客户名</th>
+                                <th>潜在客户名</th>
                                 <th>常用电话</th>
-                                <th>邮箱</th>
+                                <th>行业</th>
                                 <th>负责人</th>
                                 <th>操作选项</th>
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($accounts as $accounts)
+                            @foreach($pc as $pc)
                                 <tr>
-                                    <td>{{$accounts->Account_Name}}</td>
-                                    <td>{{$accounts->Primary_Phone}}</td>
-                                    <td>{{$accounts->Email}}</td>
-                                    <td>{{$accounts->Manager}}</td>
+                                    <td>{{$pc->PC_Name}}</td>
+                                    <td>{{$pc->Primary_Phone}}</td>
+                                    <td>{{$pc->Industry}}</td>
+                                    <td>{{$pc->Manager}}</td>
                                     <td>
                                         <a style="color: black;"><span class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#myModal" STYLE="margin-left: 10px; cursor:pointer"/></a>
                                         <a style="color: black;"><span class="glyphicon glyphicon-trash" data-toggle="modal" data-target="#myModal" STYLE="margin-left: 10px; cursor:pointer"/></a>
@@ -112,8 +97,9 @@
                             @endforeach
                             </tbody>
                         </table>
-                        {{$accounts->links()}}
+                        {{$pc->links()}}
                     </div>
+                    
                 </div>
             </div>
         </div>

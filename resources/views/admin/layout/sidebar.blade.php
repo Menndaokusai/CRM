@@ -41,7 +41,7 @@
                 <ul class="treeview-menu">
                     <li><a href="/admin/account"><i class="fa fa-circle-o"></i> 客户</a></li>
                     <li><a href="/admin/contact"><i class="fa fa-circle-o"></i> 联系人</a></li>
-                    <li><a href="/admin/opportunitie"><i class="fa fa-circle-o"></i> 销售机会</a></li>
+                    <li><a href="/admin/opportunity"><i class="fa fa-circle-o"></i> 销售机会</a></li>
                 </ul>
             </li>
             <li class="active treeview">
