@@ -58,11 +58,11 @@
             </li>
             <li class="treeview active">
                 <a href="#">
-                    <i class="fa fa-dashboard"></i> <span>统计报表</span>
+                    <i class="fa fa-dashboard"></i> <span>统计</span>
                     <span class="pull-right-container"></span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="/admin/contact"><i class="fa fa-circle-o"></i> 报表</a></li>
+                    <li><a href="/admin/contact"><i class="fa fa-circle-o"></i> 统计图</a></li>
                 </ul>
             </li>
         </ul>
