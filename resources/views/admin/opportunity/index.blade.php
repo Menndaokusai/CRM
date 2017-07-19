@@ -18,6 +18,13 @@
                                 <div class="modal-body">
                                     <form class="form-horizontal"  id="editForm" action="<%=path%>/com/update" method="post">
                                         <div class="form-group">
+                                            <span class="col-sm-4 control-label">销售机会名</span>
+                                            <div class="col-sm-6">
+                                                <input id="Opportunity_Name" name="Opportunity_Name" class="form-control" type="text" placeholder="销售机会名">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
                                             <span class="col-sm-4 control-label">客户名</span>
                                             <div class="col-sm-6">
                                                 <input id="Account_Name" name="Account_Name" class="form-control" type="text" placeholder="客户名">
@@ -25,45 +32,44 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <span class="col-sm-4 control-label">客户类型</span>
+                                            <span class="col-sm-4 control-label">联系人</span>
                                             <div class="col-sm-6">
-                                                <input id="Account_Type" name="Account_Type" class="form-control" type="text" placeholder="客户类型">
+                                                <input id="Contact_Name" name="Contact_Name" class="form-control" type="text" placeholder="联系人">
                                             </div>
                                         </div>
 
                                         <div class="form-group">
-                                            <span class="col-sm-4 control-label">常用电话</span>
+                                            <span class="col-sm-4 control-label">金额</span>
                                             <div class="col-sm-6">
-                                                <input id="Primary_Phone" name="Primary_Phone" class="form-control" type="text" placeholder="常用电话">
+                                                <input id="Amount" name="Amount" class="form-control" type="text" placeholder="金额">
                                             </div>
                                         </div>
 
                                         <div class="form-group">
-                                            <span class="col-sm-4 control-label">备用电话</span>
+                                            <span class="col-sm-4 control-label">类型</span>
                                             <div class="col-sm-6">
-                                                <input id="Alternate_Phone" name="Alternate_Phone" class="form-control" type="text" placeholder="备用电话">
+                                                <input id="Type" name="Type" class="form-control" type="text" placeholder="类型">
                                             </div>
                                         </div>
 
                                         <div class="form-group">
-                                            <span class="col-sm-4 control-label">地址</span>
+                                            <span class="col-sm-4 control-label">预期结束日期</span>
                                             <div class="col-sm-6">
-                                                <input id="Address" name="Address" class="form-control" type="text" placeholder="地址">
-
+                                                <input id="Expected_Close_Date" name="Expected_Close_Date" class="form-control" type="text" placeholder="预期结束日期">
                                             </div>
                                         </div>
 
                                         <div class="form-group">
-                                            <span class="col-sm-4 control-label">所有人</span>
+                                            <span class="col-sm-4 control-label">销售阶段</span>
                                             <div class="col-sm-6">
-                                                <input id="Ownership" name="Ownership" class="form-control" type="text" placeholder="所有人">
+                                                <input id="Sales_Stage" name="Sales_Stage" class="form-control" type="text" placeholder="销售阶段">
                                             </div>
                                         </div>
 
                                         <div class="form-group">
-                                            <span class="col-sm-4 control-label">邮箱</span>
+                                            <span class="col-sm-4 control-label">预测金额</span>
                                             <div class="col-sm-6">
-                                                <input id="Email" name="Email" class="form-control" type="text" placeholder="邮箱">
+                                                <input id="Probability" name="Probability" class="form-control" type="text" placeholder="预测金额">
                                             </div>
                                         </div>
 
@@ -90,20 +96,26 @@
                         <table id="example2" class="table table-bordered table-hover">
                             <thead>
                             <tr>
+                                <th>销售机会名</th>
                                 <th>客户名</th>
-                                <th>常用电话</th>
-                                <th>邮箱</th>
+                                <th>联系人名</th>
+                                <th>销售阶段</th>
+                                <th>预期结束日期</th>
+                                <th>金额</th>
                                 <th>负责人</th>
                                 <th>操作选项</th>
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($accounts as $accounts)
+                            @foreach($opp as $opp)
                                 <tr>
-                                    <td>{{$accounts->Account_Name}}</td>
-                                    <td>{{$accounts->Primary_Phone}}</td>
-                                    <td>{{$accounts->Email}}</td>
-                                    <td>{{$accounts->Manager}}</td>
+                                    <td>{{$opp->Opportunity_Name}}</td>
+                                    <td>{{$opp->Account_Name}}</td>
+                                    <td>{{$opp->Contact_Name}}</td>
+                                    <td>{{$opp->Sales_Stage}}</td>
+                                    <td>{{$opp->Expected_Close_Date}}</td>
+                                    <td>{{$opp->Amount}}</td>
+                                    <td>{{$opp->Manager}}</td>
                                     <td><button type="button" class="btn btn-default" aria-label="Left Align">
                                             <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                                         </button>
@@ -114,7 +126,7 @@
                             @endforeach
                             </tbody>
                         </table>
-                        {{$accounts->links()}}
+                        {{$opp->links()}}
                     </div>
                 </div>
             </div>
