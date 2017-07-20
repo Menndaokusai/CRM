@@ -16,7 +16,7 @@
                                     <h4 class="modal-title" id="myModalLabel"><b>新增</b></h4>
                                 </div>
                                 <div class="modal-body">
-                                    <form class="form-horizontal"  id="editForm" action="admin/opp/add" method="post">
+                                    <form class="form-horizontal"  id="editForm" action="/admin/opp/add" method="post">
                                         <div class="form-group">
                                             <span class="col-sm-4 control-label">销售机会名</span>
                                             <div class="col-sm-6">
