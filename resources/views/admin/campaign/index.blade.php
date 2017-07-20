@@ -56,7 +56,7 @@
                                         <div class="form-group">
                                             <span class="col-sm-4 control-label">预期结束日期</span>
                                             <div class="col-sm-6">
-                                                <input id="Expected_Close_Date" name="Expected_Close_Date" class="form-control" type="text" placeholder="预期结束日期">
+                                                <input id="Expected_Close_Date" name="Expected_Close_Date" class="form-control" type="date" placeholder="预期结束日期">
                                             </div>
                                         </div>
 

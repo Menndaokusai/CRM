@@ -46,21 +46,21 @@
                                         <div class="form-group">
                                             <span class="col-sm-4 control-label">开始日期</span>
                                             <div class="col-sm-6">
-                                                <input id="Start_Date" name="Start_Date" class="form-control" type="text" placeholder="开始日期">
+                                                <input id="Start_Date" name="Start_Date" class="form-control" type="date" placeholder="开始日期">
                                             </div>
                                         </div>
 
                                         <div class="form-group">
                                             <span class="col-sm-4 control-label">目标结束日期</span>
                                             <div class="col-sm-6">
-                                                <input id="Target_End_Date" name="Target_End_Date" class="form-control" type="text" placeholder="目标结束日期">
+                                                <input id="Target_End_Date" name="Target_End_Date" class="form-control" type="date" placeholder="目标结束日期">
                                             </div>
                                         </div>
 
                                         <div class="form-group">
                                             <span class="col-sm-4 control-label">实际结束日期</span>
                                             <div class="col-sm-6">
-                                                <input id="Actual_End_Date" name="Actual_End_Date" class="form-control" type="text" placeholder="实际结束日期">
+                                                <input id="Actual_End_Date" name="Actual_End_Date" class="form-control" type="date" placeholder="实际结束日期">
                                             </div>
                                         </div>
 

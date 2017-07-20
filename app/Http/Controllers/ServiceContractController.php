@@ -41,7 +41,7 @@ class ServiceContractController extends Controller
 
         $sc->save();
 
-        return suc();
+        return back();
     }
     public function del($id)
     {

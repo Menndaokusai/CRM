@@ -39,7 +39,7 @@ class ProjectController extends Controller
         }
         $project->save();
 
-        return suc();
+        return back();
     }
     public function del($id)
     {

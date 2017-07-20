@@ -52,14 +52,14 @@
                                         <div class="form-group">
                                             <span class="col-sm-4 control-label">开始日期</span>
                                             <div class="col-sm-6">
-                                                <input id="Start_Date" name="Start_Date" class="form-control" type="text" placeholder="开始日期">
+                                                <input id="Start_Date" name="Start_Date" class="form-control" type="date" placeholder="开始日期">
                                             </div>
                                         </div>
 
                                         <div class="form-group">
                                             <span class="col-sm-4 control-label">结束日期</span>
                                             <div class="col-sm-6">
-                                                <input id="End_Date" name="End_Date" class="form-control" type="text" placeholder="结束日期">
+                                                <input id="End_Date" name="End_Date" class="form-control" type="date" placeholder="结束日期">
 
                                             </div>
                                         </div>

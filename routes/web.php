@@ -90,7 +90,9 @@ Route::group(['middleware' => 'web'], function () {
     // 需要登陆的//
     Route::group(['prefix' => 'admin'], function () {
         Route::group(['middleware' => 'auth:web'], function () {
-            Route::get('/home', 'HomeController@index');
+            Route::get('/home', function(){
+                return view('/admin/home/index');
+            });
             // 用户管理
             Route::get('/users', 'UserController@index');
             Route::any('/users/store', 'UserController@store');
@@ -100,11 +102,6 @@ Route::group(['middleware' => 'web'], function () {
             Route::any('/contacts/add','ContactController@add');
             Route::any('/contacts/updt','ContactController@updt');
             Route::any('/contacts/del/{id}','ContactController@del');
-
-            Route::get('/faq', 'FAQController@index');
-            Route::any('/faq/add','FAQController@add');
-            Route::any('/faq/updt','FAQController@updt');
-            Route::any('/faq/del/{id}','FAQController@del');
 
             Route::get('/account','AccountController@index');
             Route::any('/accounts/add','AccountController@add');
@@ -134,22 +131,26 @@ Route::group(['middleware' => 'web'], function () {
             Route::get('/servicecontract','ServiceContractController@index');
             Route::any('/sc/add','ServiceContractController@add');
             Route::any('/sc/updt','ServiceContractController@updt');
-            Route::any('/sc/del','ServiceContractController@del');
+            Route::any('/sc/del/{id}','ServiceContractController@del');
 
             Route::get('/project','ProjectController@index');
             Route::any('/projects/add','ProjectController@add');
             Route::any('/projects/updt','ProjectController@updt');
-            Route::any('/projects/del','ProjectController@del');
+            Route::any('/projects/del/{id}','ProjectController@del');
 
             Route::get('/leads','LeadController@index');
             Route::any('/leads/add','LeadController@add');
             Route::any('/leads/updt','LeadController@updt');
-            Route::any('/leads/del','LeadController@del');
+            Route::any('/leads/del/{id}','LeadController@del');
 
-            Route::get('/chart','ChartController@index');
+            Route::get('/chart',function(){
+                return view("/admin/chart/index");
+            });
 
-
-    });
+            Route::get('/faq', function(){
+                return view("/admin/faq/index");
+            });
+        });
     });
 
 });

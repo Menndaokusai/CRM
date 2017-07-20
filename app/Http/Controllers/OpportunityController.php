@@ -41,7 +41,7 @@ class OpportunityController extends Controller
 
         $opp->save();
 
-        return suc();
+        return back();
     }
     public function del($id)
     {

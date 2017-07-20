@@ -39,7 +39,7 @@ class ContactController extends Controller
         }
 
         $contact->save();
-        return '添加成功！';
+        return back();
     }
 
     public function del($id)

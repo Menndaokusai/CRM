@@ -42,7 +42,7 @@ class PotentialCustomerController extends Controller
 
         $pc->save();
 
-        return suc();
+        return back();
     }
     public function del($id)
     {

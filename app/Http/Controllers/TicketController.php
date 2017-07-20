@@ -41,7 +41,7 @@ class TicketController extends Controller
 
         $ticket->save();
 
-        return suc();
+        return back();
     }
     public function del($id)
     {
