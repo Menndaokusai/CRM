@@ -48,7 +48,7 @@
                                         <div class="form-group">
                                             <span class="col-sm-4 control-label">家庭地址</span>
                                             <div class="col-sm-6">
-                                                <input id="Office_Phone" name="Office_Phone" class="form-control" type="text" placeholder="家庭地址">
+                                                <input id="Home_Address" name="Home_Address" class="form-control" type="text" placeholder="家庭地址">
 
                                             </div>
                                         </div>
@@ -79,12 +79,12 @@
                                             <div class="col-sm-6">
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" name="optionsRadios" id="optionsRadios1"
-                                                               value="option1" checked> 男
+                                                        <input type="radio" name="Sex" id="Sex"
+                                                               value="男" checked> 男
                                                     </label>
                                                     <label>
-                                                        <input type="radio" name="optionsRadios" id="optionsRadios2"
-                                                               value="option2">
+                                                        <input type="radio" name="Sex" id="Sex"
+                                                               value="女">
                                                         女
                                                     </label>
                                                 </div>
@@ -137,8 +137,7 @@
                                             </div>
                                         </div>
 
-
-
+                                        {{ csrf_field() }}
 
                                         <div class="form-group">
                                             <div class="col-sm-8 col-sm-offset-4">

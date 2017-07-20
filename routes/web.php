@@ -15,7 +15,7 @@ function user(){
 
 function contact()
 {
-    return new Contact;
+    return new \App\Contact();
 }
 
 function account()
