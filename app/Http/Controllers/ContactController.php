@@ -42,14 +42,10 @@ class ContactController extends Controller
         return '添加成功！';
     }
 
-    public function del(Request $request)
+    public function del($id)
     {
-        if(!is_logged())
-        {
-            return err('请先登录');
-        }
-        $contact=contact()->find($request->get('id'));
-        return $contact->delete()?['status'=>1,'msg'=>'删除成功']:['status'=>0,'msg'=>'删除失败'];
+        $user=contact()->find($id);
+        return $user->delete()?redirect('/admin/contact'):back();
     }
 
     public function updt(Request $request)

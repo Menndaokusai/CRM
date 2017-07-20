@@ -41,14 +41,10 @@ class ProjectController extends Controller
 
         return suc();
     }
-    public function del(Request $request)
+    public function del($id)
     {
-        if(!is_logged())
-        {
-            return err('请先登录');
-        }
-        $project=project()->find($request->get('id'));
-        return $project->delete()?['status'=>1,'msg'=>'删除成功']:['status'=>0,'msg'=>'删除失败'];
+        $user=project()->find($id);
+        return $user->delete()?redirect('/admin/project'):back();
     }
 
     public function updt(Request $request)

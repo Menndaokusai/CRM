@@ -19,8 +19,8 @@ class OpportunityController extends Controller
     }
     public function index()
     {
-        $opp = \App\Opportunity::paginate(15);
-        return view('/admin/opportunity/index',compact('opp'));
+        $opps = \App\Opportunity::paginate(15);
+        return view('/admin/opportunity/index',compact('opps'));
     }
     public function add(Request $request)
     {
@@ -43,14 +43,10 @@ class OpportunityController extends Controller
 
         return suc();
     }
-    public function del(Request $request)
+    public function del($id)
     {
-        if(!is_logged())
-        {
-            return err('请先登录');
-        }
-        $opp=opp()->find($request->get('id'));
-        return $opp->delete()?['status'=>1,'msg'=>'删除成功']:['status'=>0,'msg'=>'删除失败'];
+        $user=opp()->find($id);
+        return $user->delete()?redirect('/admin/potentialcustomer'):back();
     }
 
     public function updt(Request $request)

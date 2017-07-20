@@ -20,8 +20,8 @@ class PotentialCustomerController extends Controller
     }
     public function index()
     {
-        $pc = \App\PotentialCustomer::paginate(15);
-        return view('/admin/PotentialCustomer/index',compact('pc'));
+        $pcs = \App\PotentialCustomer::paginate(15);
+        return view('/admin/PotentialCustomer/index',compact('pcs'));
     }
     public function add(Request $request)
     {
@@ -44,16 +44,11 @@ class PotentialCustomerController extends Controller
 
         return suc();
     }
-    public function del(Request $request)
+    public function del($id)
     {
-        if(!is_logged())
-        {
-            return err('请先登录');
-        }
-        $pc=pc()->find($request->get('id'));
-        return $pc->delete()?['status'=>1,'msg'=>'删除成功']:['status'=>0,'msg'=>'删除失败'];
+        $user=pc()->find($id);
+        return $user->delete()?redirect('/admin/opportunity'):back();
     }
-
     public function updt(Request $request)
     {
         if(!is_logged())

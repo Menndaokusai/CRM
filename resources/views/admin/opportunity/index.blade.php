@@ -16,7 +16,7 @@
                                     <h4 class="modal-title" id="myModalLabel"><b>新增</b></h4>
                                 </div>
                                 <div class="modal-body">
-                                    <form class="form-horizontal"  id="editForm" action="/opp/add" method="post">
+                                    <form class="form-horizontal"  id="editForm" action="admin/opp/add" method="post">
                                         <div class="form-group">
                                             <span class="col-sm-4 control-label">销售机会名</span>
                                             <div class="col-sm-6">
@@ -115,7 +115,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($opp as $opp)
+                            @foreach($opps as $opp)
                                 <tr>
                                     <td>{{$opp->Opportunity_Name}}</td>
                                     <td>{{$opp->Account_Name}}</td>
@@ -126,13 +126,13 @@
                                     <td>{{$opp->Manager}}</td>
                                     <td>
                                         <a style="color: black;"><span class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#myModal" STYLE="margin-left: 10px; cursor:pointer"/></a>
-                                        <a style="color: black;"><span class="glyphicon glyphicon-trash" data-toggle="modal" data-target="#myModal" STYLE="margin-left: 10px; cursor:pointer"/></a>
+                                        <a href="/admin/opp/del/{{ $opp->id }}" style="color: black;"><span class="glyphicon glyphicon-trash" STYLE="margin-left: 10px; cursor:pointer"/></a>
                                     </td>
                                 </tr>
                             @endforeach
                             </tbody>
                         </table>
-                        {{$opp->links()}}
+                        {{$opps->links()}}
                     </div>
                 </div>
             </div>

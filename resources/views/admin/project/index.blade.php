@@ -16,7 +16,7 @@
                                     <h4 class="modal-title" id="myModalLabel"><b>新增</b></h4>
                                 </div>
                                 <div class="modal-body">
-                                    <form class="form-horizontal"  id="editForm" action="/projects/add" method="post">
+                                    <form class="form-horizontal"  id="editForm" action="admin/projects/add" method="post">
                                         <div class="form-group">
                                             <span class="col-sm-4 control-label">项目名</span>
                                             <div class="col-sm-6">
@@ -129,19 +129,19 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($projects as $projects)
+                            @foreach($projects as $project)
                                 <tr>
-                                    <td>{{$projects->Project_Name}}</td>
-                                    <td>{{$projects->Start_Date}}</td>
-                                    <td>{{$projects->Target_End_Date}}</td>
-                                    <td>{{$projects->Actual_End_Date}}</td>
-                                    <td>{{$projects->Target_Budget}}</td>
-                                    <td>{{$projects->Progress}}</td>
-                                    <td>{{$projects->Status}}</td>
-                                    <td>{{$projects->Manager}}</td>
+                                    <td>{{$project->Project_Name}}</td>
+                                    <td>{{$project->Start_Date}}</td>
+                                    <td>{{$project->Target_End_Date}}</td>
+                                    <td>{{$project->Actual_End_Date}}</td>
+                                    <td>{{$project->Target_Budget}}</td>
+                                    <td>{{$project->Progress}}</td>
+                                    <td>{{$project->Status}}</td>
+                                    <td>{{$project->Manager}}</td>
                                     <td>
                                         <a style="color: black;"><span class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#myModal" STYLE="margin-left: 10px; cursor:pointer"/></a>
-                                        <a style="color: black;"><span class="glyphicon glyphicon-trash" data-toggle="modal" data-target="#myModal" STYLE="margin-left: 10px; cursor:pointer"/></a>
+                                        <a href="/admin/projects/del/{{ $project->id }}" style="color: black;"><span class="glyphicon glyphicon-trash" STYLE="margin-left: 10px; cursor:pointer"/></a>
                                     </td>
                                 </tr>
                             @endforeach

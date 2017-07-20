@@ -16,7 +16,7 @@
                                     <h4 class="modal-title" id="myModalLabel"><b>新增</b></h4>
                                 </div>
                                 <div class="modal-body">
-                                    <form class="form-horizontal"  id="editForm" action="/tickets/add" method="post">
+                                    <form class="form-horizontal"  id="editForm" action="admin/tickets/add" method="post">
                                         <div class="form-group">
                                             <span class="col-sm-4 control-label">标题</span>
                                             <div class="col-sm-6">
@@ -134,17 +134,17 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($tickets as $tickets)
+                            @foreach($tickets as $ticket)
                                 <tr>
-                                    <td>{{$tickets->Title}}</td>
-                                    <td>{{$tickets->Account_Name}}</td>
-                                    <td>{{$tickets->Status}}</td>
-                                    <td>{{$tickets->Priority}}</td>
-                                    <td>{{$tickets->Maneger}}</td>
-                                    <td>{{$tickets->Contact_ID}}</td>
+                                    <td>{{$ticket->Title}}</td>
+                                    <td>{{$ticket->Account_Name}}</td>
+                                    <td>{{$ticket->Status}}</td>
+                                    <td>{{$ticket->Priority}}</td>
+                                    <td>{{$ticket->Maneger}}</td>
+                                    <td>{{$ticket->Contact_ID}}</td>
                                     <td>
                                         <a style="color: black;"><span class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#myModal" STYLE="margin-left: 10px; cursor:pointer"/></a>
-                                        <a style="color: black;"><span class="glyphicon glyphicon-trash" data-toggle="modal" data-target="#myModal" STYLE="margin-left: 10px; cursor:pointer"/></a>
+                                        <a href="/admin/tickets/del/{{ $tickets->id }}" style="color: black;"><span class="glyphicon glyphicon-trash" STYLE="margin-left: 10px; cursor:pointer"/></a>
                                     </td>
                                 </tr>
                             @endforeach

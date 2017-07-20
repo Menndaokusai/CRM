@@ -19,8 +19,8 @@ class ServiceContractController extends Controller
     }
     public function index()
     {
-        $sc = \App\ServiceContract::paginate(15);
-        return view('/admin/ServiceContract/index',compact('sc'));
+        $scs = \App\ServiceContract::paginate(15);
+        return view('/admin/ServiceContract/index',compact('scs'));
     }
     public function add(Request $request)
     {
@@ -43,14 +43,10 @@ class ServiceContractController extends Controller
 
         return suc();
     }
-    public function del(Request $request)
+    public function del($id)
     {
-        if(!is_logged())
-        {
-            return err('请先登录');
-        }
-        $sc=sc()->find($request->get('id'));
-        return $sc->delete()?['status'=>1,'msg'=>'删除成功']:['status'=>0,'msg'=>'删除失败'];
+        $user=sc()->find($id);
+        return $user->delete()?redirect('/admin/servicecontract'):back();
     }
 
     public function updt(Request $request)

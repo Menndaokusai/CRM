@@ -16,7 +16,7 @@
                                     <h4 class="modal-title" id="myModalLabel"><b>新增</b></h4>
                                 </div>
                                 <div class="modal-body">
-                                    <form class="form-horizontal"  id="editForm" action="/contacts/add" method="post">
+                                    <form class="form-horizontal"  id="editForm" action="admin/contacts/add" method="post">
                                         <div class="form-group">
                                             <span class="col-sm-4 control-label">联系人姓名</span>
                                             <div class="col-sm-6">
@@ -171,7 +171,7 @@
                                     <td>{{$contact->Office_Phone}}</td>
                                     <td>
                                         <a style="color: black;"><span class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#myModal" STYLE="margin-left: 10px; cursor:pointer"/></a>
-                                        <a style="color: black;"><span class="glyphicon glyphicon-trash" data-toggle="modal" data-target="#myModal" STYLE="margin-left: 10px; cursor:pointer"/></a>
+                                        <a href="/admin/contacts/del/{{ $contact->id }}" style="color: black;"><span class="glyphicon glyphicon-trash" STYLE="margin-left: 10px; cursor:pointer"/></a>
                                     </td>
                                 </tr>
                             @endforeach

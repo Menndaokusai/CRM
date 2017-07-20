@@ -45,14 +45,10 @@ class CampaignController extends Controller
 
         return suc();
     }
-    public function del(Request $request)
+    public function del($id)
     {
-        if(!is_logged())
-        {
-            return err('请先登录');
-        }
-        $campaign=campaign()->find($request->get('id'));
-        return $campaign->delete()?['status'=>1,'msg'=>'删除成功']:['status'=>0,'msg'=>'删除失败'];
+        $user=campaign()->find($id);
+        return $user->delete()?redirect('/admin/campaign'):back();
     }
 
     public function updt(Request $request)
