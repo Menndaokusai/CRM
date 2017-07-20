@@ -28,7 +28,7 @@
                                             <span class="col-sm-4 control-label">客户类型</span>
                                             <div class="col-sm-6">
 
-                                                <select id="select"   style="width: 260px; height: 30px; overflow-y:auto" >
+                                                <select id="select"  name="Account_Type"  style="width: 260px; height: 30px; overflow-y:auto" >
                                                     <option value="请选择">请选择</option>
                                                     <option value="有限责任公司">有限责任公司</option>
                                                     <option value="股份制公司">股份制公司</option>
@@ -81,6 +81,8 @@
                                                 <input id="Manager" name="Manager" class="form-control" type="text">
                                             </div>
                                         </div>
+
+                                        {{ csrf_field() }}
 
                                         <div class="form-group">
                                             <div class="col-sm-8 col-sm-offset-4">

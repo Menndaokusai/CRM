@@ -49,7 +49,7 @@
                                             <span class="col-sm-4 control-label">类型</span>
                                             <div class="col-sm-6">
 
-                                                <select id="select"   style="width: 260px; height: 30px; overflow-y:auto" >
+                                                <select id="select"  name="Type"  style="width: 260px; height: 30px; overflow-y:auto" >
                                                     <option value="请选择">请选择</option>
                                                     <option value="网络销售">网络销售</option>
                                                     <option value="线下销售">线下销售</option>
@@ -85,6 +85,8 @@
                                                 <input id="Manager" name="Manager" class="form-control" type="text">
                                             </div>
                                         </div>
+
+                                        {{ csrf_field() }}
 
                                         <div class="form-group">
                                             <div class="col-sm-8 col-sm-offset-4">

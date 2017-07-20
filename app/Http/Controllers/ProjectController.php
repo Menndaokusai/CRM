@@ -34,7 +34,7 @@ class ProjectController extends Controller
 
         foreach ($arr1 as $value){
             if(!empty($_POST[$value])){
-                $contact[$value]=$_POST[$value];
+                $project[$value]=$_POST[$value];
             }
         }
         $project->save();
@@ -64,7 +64,7 @@ class ProjectController extends Controller
 
         foreach ($arr1 as $value){
             if(!empty($_POST[$value])){
-                $contact[$value]=$_POST[$value];
+                $project[$value]=$_POST[$value];
             }
         }
 

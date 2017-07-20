@@ -34,7 +34,7 @@
                                         <div class="form-group">
                                             <span class="col-sm-4 control-label">状态</span>
                                             <div class="col-sm-6">
-                                                        <select id="select"   style="width: 260px; height: 30px; overflow-y:auto" >
+                                                        <select id="select" name="Type"  style="width: 260px; height: 30px; overflow-y:auto" >
                                                     <option value="请选择">请选择</option>
                                                     <option value="正在进行">正在进行</option>
                                                     <option value="等待开始">等待开始</option>
@@ -98,6 +98,8 @@
                                                 <input id="Manager" name="Manager" class="form-control" type="text">
                                             </div>
                                         </div>
+
+                                        {{ csrf_field() }}
 
                                         <div class="form-group">
                                             <div class="col-sm-8 col-sm-offset-4">

@@ -11,7 +11,7 @@ class AccountController extends Controller
     public function arr($num){
 
         $arr1=[
-            'Account_Name','Account_Type','Primary_Phone','Alternate_Phone','Address',
+            'Account_Name','Account_Type','Primary_Phone','Alternate_Phone','city',
             'Ownership','Email','Manager'
         ];
 
@@ -38,10 +38,9 @@ class AccountController extends Controller
 
         foreach ($arr1 as $value){
             if(!empty($_POST[$value])){
-                $contact[$value]=$_POST[$value];
+                $account[$value]=$_POST[$value];
             }
         }
-
         $account->save();
 
         return suc();
@@ -69,7 +68,7 @@ class AccountController extends Controller
 
         foreach ($arr1 as $value){
             if(!empty($_POST[$value])){
-                $contact[$value]=$_POST[$value];
+                $account[$value]=$_POST[$value];
             }
         }
 

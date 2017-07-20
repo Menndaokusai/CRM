@@ -35,7 +35,7 @@ class OpportunityController extends Controller
 
         foreach ($arr1 as $value){
             if(!empty($_POST[$value])){
-                $contact[$value]=$_POST[$value];
+                $opp[$value]=$_POST[$value];
             }
         }
 

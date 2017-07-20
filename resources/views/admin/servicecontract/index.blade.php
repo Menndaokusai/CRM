@@ -28,7 +28,7 @@
                                             <span class="col-sm-4 control-label">状态</span>
                                             <div class="col-sm-6">
 
-                                                <select id="select"   style="width: 260px; height: 30px; overflow-y:auto" >
+                                                <select id="select" name="Status"  style="width: 260px; height: 30px; overflow-y:auto" >
                                                     <option value="请选择">请选择</option>
                                                     <option value="进行中">进行中</option>
                                                     <option value="正在签约">正在签约</option>
@@ -41,7 +41,7 @@
                                             <span class="col-sm-4 control-label">类型</span>
                                             <div class="col-sm-6">
 
-                                                <select id="select"   style="width: 260px; height: 30px; overflow-y:auto" >
+                                                <select id="select" name="Type"  style="width: 260px; height: 30px; overflow-y:auto" >
                                                     <option value="请选择">请选择</option>
                                                     <option value="买卖合同">买卖合同</option>
                                                     <option value="租赁合同">租赁合同</option>
@@ -106,6 +106,8 @@
                                                 <input id="Manager" name="Manager" class="form-control" type="text">
                                             </div>
                                         </div>
+
+                                        {{ csrf_field() }}
 
                                         <div class="form-group">
                                             <div class="col-sm-8 col-sm-offset-4">

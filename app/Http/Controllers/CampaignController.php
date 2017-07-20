@@ -37,7 +37,7 @@ class CampaignController extends Controller
 
         foreach ($arr1 as $value){
             if(!empty($_POST[$value])){
-                $contact[$value]=$_POST[$value];
+                $campaign[$value]=$_POST[$value];
             }
         }
 
@@ -68,7 +68,7 @@ class CampaignController extends Controller
 
         foreach ($arr1 as $value){
             if(!empty($_POST[$value])){
-                $contact[$value]=$_POST[$value];
+                $campaign[$value]=$_POST[$value];
             }
         }
 

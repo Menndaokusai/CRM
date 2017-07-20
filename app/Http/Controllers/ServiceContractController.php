@@ -35,7 +35,7 @@ class ServiceContractController extends Controller
 
         foreach ($arr1 as $value){
             if(!empty($_POST[$value])){
-                $contact[$value]=$_POST[$value];
+                $sc[$value]=$_POST[$value];
             }
         }
 
@@ -66,7 +66,7 @@ class ServiceContractController extends Controller
 
         foreach ($arr1 as $value){
             if(!empty($_POST[$value])){
-                $contact[$value]=$_POST[$value];
+                $sc[$value]=$_POST[$value];
             }
         }
 

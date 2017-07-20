@@ -20,15 +20,15 @@ function contact()
 
 function account()
 {
-    return new Account;
+    return new \App\Account();
 }
 
 function lead(){
-    return new Lead;
+    return new \App\Lead();
 }
 
 function campaign(){
-    return new Campaign;
+    return new \App\Campaign();
 }
 
 function faq(){
@@ -36,7 +36,7 @@ function faq(){
 }
 
 function opp(){
-    return new Opportunity;
+    return new \App\Opportunity();
 }
 
 function pc(){
@@ -44,7 +44,7 @@ function pc(){
 }
 
 function project(){
-    return new Project;
+    return new \App\Project();
 }
 
 function sc(){
