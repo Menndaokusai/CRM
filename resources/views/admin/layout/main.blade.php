@@ -115,7 +115,7 @@
     $("#city").click(function (e) {
         SelCity(this,e);
     });
-
+</script>
 <!-- ChartJS -->
 <script src="/adminlte/bower_components/Chart.js/Chart.js"></script>
 <!-- FastClick -->
