@@ -27,7 +27,6 @@
                                         <div class="form-group">
                                             <span class="col-sm-4 control-label">状态</span>
                                             <div class="col-sm-6">
-
                                                 <select id="select" name="Status"  style="width: 260px; height: 30px; overflow-y:auto" >
                                                     <option value="请选择">请选择</option>
                                                     <option value="进行中">进行中</option>
@@ -96,7 +95,12 @@
                                         <div class="form-group">
                                             <span class="col-sm-4 control-label">优先级</span>
                                             <div class="col-sm-6">
-                                                <input id="Priority" name="Priority" class="form-control" type="text" placeholder="优先级">
+                                                <select id="select" name="Priority"   style="width: 260px; height: 30px; overflow-y:auto" >
+                                                    <option value="请选择">请选择</option>
+                                                    <option value="一等">一等</option>
+                                                    <option value="二等">二等</option>
+                                                    <option value="三等">三等</option>
+                                                </select>
                                             </div>
                                         </div>
 
