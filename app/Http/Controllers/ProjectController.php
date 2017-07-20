@@ -9,7 +9,7 @@ class ProjectController extends Controller
     public function arr($num){
         $arr1=[
             'Project_Name','Type','Status','Start_Date','Target_End_Date','Actual_End_Date',
-            'Target_Budget','Project_Url','Priority','Progress','Maneger'
+            'Target_Budget','Project_Url','Priority','Progress','Manager'
         ];
 
         if($num==1){

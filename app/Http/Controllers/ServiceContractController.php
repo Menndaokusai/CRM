@@ -9,7 +9,7 @@ class ServiceContractController extends Controller
     public function arr($num){
         $arr1=[
             'Subject','Status','Type','Start_Date','End_Date','Tracking_Unit',
-            'Total_Units','Used_Units','Related','Priority','Maneger'
+            'Total_Units','Used_Units','Related','Priority','Manager'
         ];
 
         if($num==1){

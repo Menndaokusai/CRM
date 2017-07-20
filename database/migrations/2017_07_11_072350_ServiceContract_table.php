@@ -25,7 +25,7 @@ class ServiceContractTable extends Migration
             $table->string('Used_Units')->nullable();
             $table->string('Related')->nullable();
             $table->string('Priority')->nullable();
-            $table->string('Maneger');
+            $table->string('Manager');
             $table->timestamps();
         });
     }

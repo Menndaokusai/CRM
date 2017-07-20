@@ -27,7 +27,7 @@ class TicketTable extends Migration
             $table->string('Priority');
             $table->string('Description')->nullable();
             $table->string('Solution')->nullable();
-            $table->string('Maneger');
+            $table->string('Manager');
             $table->timestamps();
 
             $table->foreign('Contact_ID')->references('id')->on('contacts');

@@ -151,11 +151,11 @@
                                     <td>{{$ticket->Account_Name}}</td>
                                     <td>{{$ticket->Status}}</td>
                                     <td>{{$ticket->Priority}}</td>
-                                    <td>{{$ticket->Maneger}}</td>
+                                    <td>{{$ticket->Manager}}</td>
                                     <td>{{$ticket->Contact_ID}}</td>
                                     <td>
                                         <a style="color: black;"><span class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#myModal" STYLE="margin-left: 10px; cursor:pointer"/></a>
-                                        <a href="/admin/tickets/del/{{ $tickets->id }}" style="color: black;"><span class="glyphicon glyphicon-trash" STYLE="margin-left: 10px; cursor:pointer"/></a>
+                                        <a href="/admin/tickets/del/{{ $ticket->id }}" style="color: black;"><span class="glyphicon glyphicon-trash" STYLE="margin-left: 10px; cursor:pointer"/></a>
                                     </td>
                                 </tr>
                             @endforeach

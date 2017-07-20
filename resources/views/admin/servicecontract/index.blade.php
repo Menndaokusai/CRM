@@ -143,7 +143,7 @@
                                 <tr>
                                     <td>{{$sc->Subject}}</td>
                                     <td>{{$sc->Related}}</td>
-                                    <td>{{$sc->Maneger}}</td>
+                                    <td>{{$sc->Manager}}</td>
                                     <td>{{$sc->Start_Date}}</td>
                                     <td>{{$sc->End_Date}}</td>
                                     <td>{{$sc->Status}}</td>

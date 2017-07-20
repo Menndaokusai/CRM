@@ -9,7 +9,7 @@ class TicketController extends Controller
     public function arr($num){
         $arr1=[
             'Title','Account_Name','Contact_ID','Status','Severity','Hours',
-            'Days','Category','Priority','Description','Solution','Maneger'
+            'Days','Category','Priority','Description','Solution','Manager'
         ];
 
         if($num==1){

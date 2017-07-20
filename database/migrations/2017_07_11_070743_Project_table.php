@@ -25,7 +25,7 @@ class ProjectTable extends Migration
             $table->string('Project_Url')->nullable();
             $table->string('Priority')->nullable();
             $table->string('Progress')->nullable();
-            $table->string('Maneger');
+            $table->string('Manager');
             $table->timestamps();
         });
     }
