@@ -16,7 +16,7 @@
                                     <h4 class="modal-title" id="myModalLabel"><b>新增</b></h4>
                                 </div>
                                 <div class="modal-body">
-                                    <form class="form-horizontal"  id="editForm" action="<%=path%>/com/update" method="post">
+                                    <form class="form-horizontal"  id="editForm" action="/admin/sc/add" method="post">
                                         <div class="form-group">
                                             <span class="col-sm-4 control-label">主题</span>
                                             <div class="col-sm-6">
@@ -27,14 +27,26 @@
                                         <div class="form-group">
                                             <span class="col-sm-4 control-label">状态</span>
                                             <div class="col-sm-6">
-                                                <input id="Status" name="Status" class="form-control" type="text" placeholder="状态">
+
+                                                <select id="select" name="Status"  style="width: 260px; height: 30px; overflow-y:auto" >
+                                                    <option value="请选择">请选择</option>
+                                                    <option value="进行中">进行中</option>
+                                                    <option value="正在签约">正在签约</option>
+                                                    <option value="其他">其他</option>
+                                                </select>
                                             </div>
                                         </div>
 
                                         <div class="form-group">
                                             <span class="col-sm-4 control-label">类型</span>
                                             <div class="col-sm-6">
-                                                <input id="Type" name="Type" class="form-control" type="text" placeholder="类型">
+
+                                                <select id="select" name="Type"  style="width: 260px; height: 30px; overflow-y:auto" >
+                                                    <option value="请选择">请选择</option>
+                                                    <option value="买卖合同">买卖合同</option>
+                                                    <option value="租赁合同">租赁合同</option>
+                                                    <option value="其他">其他</option>
+                                                </select>
                                             </div>
                                         </div>
 
@@ -95,6 +107,8 @@
                                             </div>
                                         </div>
 
+                                        {{ csrf_field() }}
+
                                         <div class="form-group">
                                             <div class="col-sm-8 col-sm-offset-4">
                                                 <button class="btn btn-primary btn-lg" type="submit">提交</button>
@@ -121,7 +135,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($sc as $sc)
+                            @foreach($scs as $sc)
                                 <tr>
                                     <td>{{$sc->Subject}}</td>
                                     <td>{{$sc->Related}}</td>
@@ -131,13 +145,13 @@
                                     <td>{{$sc->Status}}</td>
                                     <td>
                                         <a style="color: black;"><span class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#myModal" STYLE="margin-left: 10px; cursor:pointer"/></a>
-                                        <a style="color: black;"><span class="glyphicon glyphicon-trash" data-toggle="modal" data-target="#myModal" STYLE="margin-left: 10px; cursor:pointer"/></a>
+                                        <a href="/admin/sc/del/{{ $sc->id }}" style="color: black;"><span class="glyphicon glyphicon-trash" STYLE="margin-left: 10px; cursor:pointer"/></a>
                                     </td>
                                 </tr>
                             @endforeach
                             </tbody>
                         </table>
-                        {{$sc->links()}}
+                        {{$scs->links()}}
                     </div>
                 </div>
             </div>

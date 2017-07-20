@@ -33,7 +33,7 @@
 <link rel="stylesheet" href="/adminlte/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
 <link href="/css/demo/adminia.css" rel="stylesheet" type="text/css">
 <!--自定义样式-->
-
+<link href="/css/selectcity/city.css" rel="stylesheet" type="text/css">
 <link href="/css/demo/faq.css" rel="stylesheet" type="text/css">
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -107,6 +107,14 @@
 <!-- AdminLTE for demo purposes -->
 <script src="/adminlte/dist/js/demo.js"></script>
 <script src="{{ mix('/js/admin.js') }}"></script>
+<script src="/adminlte/dist/js/cityJson.js"></script>
+<script src="/adminlte/dist/js/citySet.js"></script>
+<script src="/adminlte/dist/js/Popt.js"></script>
+<script>
+
+    $("#city").click(function (e) {
+        SelCity(this,e);
+    });
 
 <!-- ChartJS -->
 <script src="/adminlte/bower_components/Chart.js/Chart.js"></script>
@@ -114,7 +122,6 @@
 <script src="/adminlte/bower_components/fastclick/lib/fastclick.js"></script>
 <!-- AdminLTE App -->
 <script src="/adminlte/dist/js/adminlte.min.js"></script>
-
 
 
 </body>

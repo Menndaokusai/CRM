@@ -11,7 +11,6 @@
                     <p class="home_font col-md--6" style=" font-size: 7rem;margin-left: 650px;margin-top: 150px;float: left;width: 700px;height: 300px;">欢迎使用TCS管理平台</p>
                 </div>
             </div>
-
         </div>
     </section>
 @endsection

@@ -16,7 +16,7 @@
                                     <h4 class="modal-title" id="myModalLabel"><b>新增</b></h4>
                                 </div>
                                 <div class="modal-body">
-                                    <form class="form-horizontal"  id="editForm" action="%=path%/com/update" method="post">
+                                    <form class="form-horizontal"  id="editForm" action="/admin/accounts/add" method="post">
                                         <div class="form-group">
                                             <span class="col-sm-4 control-label">客户名</span>
                                             <div class="col-sm-6">
@@ -27,7 +27,15 @@
                                         <div class="form-group">
                                             <span class="col-sm-4 control-label">客户类型</span>
                                             <div class="col-sm-6">
-                                                <input id="Account_Type" name="Account_Type" class="form-control" type="text" placeholder="客户类型">
+
+                                                <select id="select"  name="Account_Type"  style="width: 260px; height: 30px; overflow-y:auto" >
+                                                    <option value="请选择">请选择</option>
+                                                    <option value="有限责任公司">有限责任公司</option>
+                                                    <option value="股份制公司">股份制公司</option>
+                                                    <option value="集团公司">集团公司</option>
+                                                    <option value="一人制公司">一人制公司</option>
+
+                                                </select>
                                             </div>
                                         </div>
 
@@ -48,7 +56,7 @@
                                         <div class="form-group">
                                             <span class="col-sm-4 control-label">地址</span>
                                             <div class="col-sm-6">
-                                                <input id="Address" name="Address" class="form-control" type="text" placeholder="地址">
+                                                <input id="city" name="city" class="form-control" type="text" placeholder="地址">
 
                                             </div>
                                         </div>
@@ -74,6 +82,8 @@
                                             </div>
                                         </div>
 
+                                        {{ csrf_field() }}
+
                                         <div class="form-group">
                                             <div class="col-sm-8 col-sm-offset-4">
                                                 <button class="btn btn-primary btn-lg" type="submit">提交</button>
@@ -98,15 +108,15 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($accounts as $accounts)
+                            @foreach($accounts as $account)
                                 <tr>
-                                    <td>{{$accounts->Account_Name}}</td>
-                                    <td>{{$accounts->Primary_Phone}}</td>
-                                    <td>{{$accounts->Email}}</td>
-                                    <td>{{$accounts->Manager}}</td>
+                                    <td>{{$account->Account_Name}}</td>
+                                    <td>{{$account->Primary_Phone}}</td>
+                                    <td>{{$account->Email}}</td>
+                                    <td>{{$account->Manager}}</td>
                                     <td>
                                         <a style="color: black;"><span class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#myModal" STYLE="margin-left: 10px; cursor:pointer"/></a>
-                                        <a style="color: black;"><span class="glyphicon glyphicon-trash" data-toggle="modal" data-target="#myModal" STYLE="margin-left: 10px; cursor:pointer"/></a>
+                                        <a href="/admin/accounts/del/{{ $account->id }}" style="color: black;"><span class="glyphicon glyphicon-trash" STYLE="margin-left: 10px; cursor:pointer"/></a>
                                     </td>
                                 </tr>
                             @endforeach

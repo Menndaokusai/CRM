@@ -16,7 +16,7 @@
                                     <h4 class="modal-title" id="myModalLabel"><b>新增</b></h4>
                                 </div>
                                 <div class="modal-body">
-                                    <form class="form-horizontal"  id="editForm" action="<%=path%>/com/update" method="post">
+                                    <form class="form-horizontal"  id="editForm" action="/admin/opp/add" method="post">
                                         <div class="form-group">
                                             <span class="col-sm-4 control-label">销售机会名</span>
                                             <div class="col-sm-6">
@@ -48,7 +48,13 @@
                                         <div class="form-group">
                                             <span class="col-sm-4 control-label">类型</span>
                                             <div class="col-sm-6">
-                                                <input id="Type" name="Type" class="form-control" type="text" placeholder="类型">
+
+                                                <select id="select"  name="Type"  style="width: 260px; height: 30px; overflow-y:auto" >
+                                                    <option value="请选择">请选择</option>
+                                                    <option value="网络销售">网络销售</option>
+                                                    <option value="线下销售">线下销售</option>
+                                                    <option value="其他">其他</option>
+                                                </select>
                                             </div>
                                         </div>
 
@@ -80,6 +86,8 @@
                                             </div>
                                         </div>
 
+                                        {{ csrf_field() }}
+
                                         <div class="form-group">
                                             <div class="col-sm-8 col-sm-offset-4">
                                                 <button class="btn btn-primary btn-lg" type="submit">提交</button>
@@ -107,7 +115,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($opp as $opp)
+                            @foreach($opps as $opp)
                                 <tr>
                                     <td>{{$opp->Opportunity_Name}}</td>
                                     <td>{{$opp->Account_Name}}</td>
@@ -118,13 +126,13 @@
                                     <td>{{$opp->Manager}}</td>
                                     <td>
                                         <a style="color: black;"><span class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#myModal" STYLE="margin-left: 10px; cursor:pointer"/></a>
-                                        <a style="color: black;"><span class="glyphicon glyphicon-trash" data-toggle="modal" data-target="#myModal" STYLE="margin-left: 10px; cursor:pointer"/></a>
+                                        <a href="/admin/opp/del/{{ $opp->id }}" style="color: black;"><span class="glyphicon glyphicon-trash" STYLE="margin-left: 10px; cursor:pointer"/></a>
                                     </td>
                                 </tr>
                             @endforeach
                             </tbody>
                         </table>
-                        {{$opp->links()}}
+                        {{$opps->links()}}
                     </div>
                 </div>
             </div>
