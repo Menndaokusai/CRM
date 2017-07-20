@@ -9,7 +9,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-function user(){
+function user()
+{
     return new \App\User();
 }
 
@@ -31,7 +32,8 @@ function campaign(){
     return new \App\Campaign();
 }
 
-function faq(){
+function faq()
+{
     return new \App\FAQ();
 }
 
@@ -39,7 +41,8 @@ function opp(){
     return new \App\Opportunity();
 }
 
-function pc(){
+function pc()
+{
     return new \App\PotentialCustomer();
 }
 
@@ -51,18 +54,16 @@ function sc(){
     return new \App\ServiceContract();
 }
 
-function ticket(){
+function ticket()
+{
     return new \App\Ticket;
 }
 
 function is_logged()
 {
-    if(\Auth::guard("web")->user()->id)
-    {
+    if (\Auth::guard("web")->user()->id) {
         return true;
-    }
-    else
-    {
+    } else {
         return false;
     }
 }
@@ -76,21 +77,19 @@ function suc($data_to_add = [])
 {
     $data = ['status' => 1, 'data' => []];
     if ($data_to_add)
-        $data['data'] =$data_to_add;
+        $data['data'] = $data_to_add;
     return $data;
 }
 
 
-
-
 Route::group(['middleware' => 'web'], function () {
-        Route::get('/', 'LoginController@index');
-        Route::get('/login', 'LoginController@index');
-        Route::any('/admin/login', 'LoginController@login');
-        Route::get('/logout', 'LoginController@logout');
-        // 需要登陆的//
-    Route::group(['prefix' => 'admin'], function() {
-    Route::group(['middleware' => 'auth:web'], function () {
+    Route::get('/', 'LoginController@index');
+    Route::get('/login', 'LoginController@index');
+    Route::any('/admin/login', 'LoginController@login');
+    Route::get('/logout', 'LoginController@logout');
+    // 需要登陆的//
+    Route::group(['prefix' => 'admin'], function () {
+        Route::group(['middleware' => 'auth:web'], function () {
             Route::get('/home', 'HomeController@index');
             // 用户管理
             Route::get('/users', 'UserController@index');
@@ -152,6 +151,5 @@ Route::group(['middleware' => 'web'], function () {
 
     });
     });
-
 
 });
