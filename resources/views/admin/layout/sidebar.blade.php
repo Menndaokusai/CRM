@@ -62,7 +62,7 @@
                     <span class="pull-right-container"></span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="/admin/contact"><i class="fa fa-circle-o"></i> 统计图</a></li>
+                    <li><a href="/admin/chart"><i class="fa fa-circle-o"></i> 统计图</a></li>
                 </ul>
             </li>
         </ul>

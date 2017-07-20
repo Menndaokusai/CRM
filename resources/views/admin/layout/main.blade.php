@@ -7,8 +7,8 @@
 <title>TCS管理后台</title>
 <!-- Tell the browser to be responsive to screen width -->
 <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-<!-- Bootstrap 3.3.6 -->
 
+<!-- Bootstrap 3.3.6 -->
 <link rel="stylesheet" href="/adminlte/bootstrap/css/bootstrap.min.css">
 <!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -46,7 +46,9 @@
 <!-- jQuery 2.2.3 -->
 <script src="/adminlte/plugins/jQuery/jquery-2.2.3.min.js"></script>
 
-{{--jqgrid--}}
+{{--chart.js--}}
+<script src="/js/chart.js"></script>
+
 
 
 
@@ -105,6 +107,14 @@
 <!-- AdminLTE for demo purposes -->
 <script src="/adminlte/dist/js/demo.js"></script>
 <script src="{{ mix('/js/admin.js') }}"></script>
+
+<!-- ChartJS -->
+<script src="/adminlte/bower_components/Chart.js/Chart.js"></script>
+<!-- FastClick -->
+<script src="/adminlte/bower_components/fastclick/lib/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="/adminlte/dist/js/adminlte.min.js"></script>
+
 
 
 </body>

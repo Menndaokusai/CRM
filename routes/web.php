@@ -9,7 +9,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-function user(){
+function user()
+{
     return new \App\User();
 }
 
@@ -23,46 +24,51 @@ function account()
     return new Account;
 }
 
-function lead(){
+function lead()
+{
     return new Lead;
 }
 
-function campaign(){
+function campaign()
+{
     return new Campaign;
 }
 
-function faq(){
+function faq()
+{
     return new \App\FAQ();
 }
 
-function opp(){
+function opp()
+{
     return new Opportunity;
 }
 
-function pc(){
+function pc()
+{
     return new \App\PotentialCustomer();
 }
 
-function project(){
+function project()
+{
     return new Project;
 }
 
-function sc(){
+function sc()
+{
     return new \App\ServiceContract;
 }
 
-function ticket(){
+function ticket()
+{
     return new \App\Ticket;
 }
 
 function is_logged()
 {
-    if(\Auth::guard("web")->user()->id)
-    {
+    if (\Auth::guard("web")->user()->id) {
         return true;
-    }
-    else
-    {
+    } else {
         return false;
     }
 }
@@ -76,21 +82,19 @@ function suc($data_to_add = [])
 {
     $data = ['status' => 1, 'data' => []];
     if ($data_to_add)
-        $data['data'] =$data_to_add;
+        $data['data'] = $data_to_add;
     return $data;
 }
 
 
-
-
 Route::group(['middleware' => 'web'], function () {
-        Route::get('/', 'LoginController@index');
-        Route::get('/login', 'LoginController@index');
-        Route::any('/admin/login', 'LoginController@login');
-        Route::get('/logout', 'LoginController@logout');
-        // 需要登陆的//
-    Route::group(['prefix' => 'admin'], function() {
-    Route::group(['middleware' => 'auth:web'], function () {
+    Route::get('/', 'LoginController@index');
+    Route::get('/login', 'LoginController@index');
+    Route::any('/admin/login', 'LoginController@login');
+    Route::get('/logout', 'LoginController@logout');
+    // 需要登陆的//
+    Route::group(['prefix' => 'admin'], function () {
+        Route::group(['middleware' => 'auth:web'], function () {
             Route::get('/home', 'HomeController@index');
             // 用户管理
             Route::get('/users', 'UserController@index');
@@ -99,56 +103,59 @@ Route::group(['middleware' => 'web'], function () {
             Route::any('/users/del/{id}', 'UserController@del');
             Route::get('/contact', 'contactController@index');
             Route::get('/faq', 'FAQController@index');
-            Route::get('/account','AccountController@index');
-            Route::get('/campaign','CampaignController@index');
-            Route::get('/potentialcustomer','PotentialCustomerController@index');
-            Route::get('/opportunity','OpportunityController@index');
-            Route::get('/ticket','TicketController@index');
-            Route::get('/servicecontract','ServiceContractController@index');
-            Route::get('/project','ProjectController@index');
+            Route::get('/account', 'AccountController@index');
+            Route::get('/campaign', 'CampaignController@index');
+            Route::get('/potentialcustomer', 'PotentialCustomerController@index');
+            Route::get('/opportunity', 'OpportunityController@index');
+            Route::get('/ticket', 'TicketController@index');
+            Route::get('/servicecontract', 'ServiceContractController@index');
+            Route::get('/project', 'ProjectController@index');
+            Route::get('/chart', function () {
+                return view("admin/chart/index");
+            });
         });
     });
 
-    Route::any('/contacts/add','ContactController@add');
-    Route::any('/contacts/updt','ContactController@updt');
-    Route::any('/contacts/read','ContactController@read');
-    Route::any('/contacts/del','ContactController@del');
-    Route::any('/accounts/add','AccountController@add');
-    Route::any('/accounts/updt','AccountController@updt');
-    Route::any('/accounts/read','AccountController@read');
-    Route::any('/accounts/del','AccountController@del');
-    Route::any('/leads/add','LeadController@add');
-    Route::any('/leads/updt','LeadController@updt');
-    Route::any('/leads/read','LeadController@read');
-    Route::any('/leads/del','LeadController@del');
-    Route::any('/campaigns/add','CampaignController@add');
-    Route::any('/campaigns/updt','CampaignController@updt');
-    Route::any('/campaigns/read','CampaignController@read');
-    Route::any('/campaigns/del','CampaignController@del');
-    Route::any('/faq/add','FAQController@add');
-    Route::any('/faq/updt','FAQController@updt');
-    Route::any('/faq/read','FAQController@read');
-    Route::any('/faq/del','FAQController@del');
-    Route::any('/opp/add','OpportunityController@add');
-    Route::any('/opp/updt','OpportunityController@updt');
-    Route::any('/opp/read','OpportunityController@read');
-    Route::any('/opp/del','OpportunityController@del');
-    Route::any('/pc/add','PotentialCustomerController@add');
-    Route::any('/pc/updt','PotentialCustomerController@updt');
-    Route::any('/pc/read','PotentialCustomerController@read');
-    Route::any('/pc/del','PotentialCustomerController@del');
-    Route::any('/projects/add','ProjectController@add');
-    Route::any('/projects/updt','ProjectController@updt');
-    Route::any('/projects/read','ProjectController@read');
-    Route::any('/projects/del','ProjectController@del');
-    Route::any('/sc/add','ServiceContractController@add');
-    Route::any('/sc/updt','ServiceContractController@updt');
-    Route::any('/sc/read','ServiceContractController@read');
-    Route::any('/sc/del','ServiceContractController@del');
-    Route::any('/tickets/add','TicketController@add');
-    Route::any('/tickets/updt','TicketController@updt');
-    Route::any('/tickets/read','TicketController@read');
-    Route::any('/tickets/del','TicketController@del');
+    Route::any('/contacts/add', 'ContactController@add');
+    Route::any('/contacts/updt', 'ContactController@updt');
+    Route::any('/contacts/read', 'ContactController@read');
+    Route::any('/contacts/del', 'ContactController@del');
+    Route::any('/accounts/add', 'AccountController@add');
+    Route::any('/accounts/updt', 'AccountController@updt');
+    Route::any('/accounts/read', 'AccountController@read');
+    Route::any('/accounts/del', 'AccountController@del');
+    Route::any('/leads/add', 'LeadController@add');
+    Route::any('/leads/updt', 'LeadController@updt');
+    Route::any('/leads/read', 'LeadController@read');
+    Route::any('/leads/del', 'LeadController@del');
+    Route::any('/campaigns/add', 'CampaignController@add');
+    Route::any('/campaigns/updt', 'CampaignController@updt');
+    Route::any('/campaigns/read', 'CampaignController@read');
+    Route::any('/campaigns/del', 'CampaignController@del');
+    Route::any('/faq/add', 'FAQController@add');
+    Route::any('/faq/updt', 'FAQController@updt');
+    Route::any('/faq/read', 'FAQController@read');
+    Route::any('/faq/del', 'FAQController@del');
+    Route::any('/opp/add', 'OpportunityController@add');
+    Route::any('/opp/updt', 'OpportunityController@updt');
+    Route::any('/opp/read', 'OpportunityController@read');
+    Route::any('/opp/del', 'OpportunityController@del');
+    Route::any('/pc/add', 'PotentialCustomerController@add');
+    Route::any('/pc/updt', 'PotentialCustomerController@updt');
+    Route::any('/pc/read', 'PotentialCustomerController@read');
+    Route::any('/pc/del', 'PotentialCustomerController@del');
+    Route::any('/projects/add', 'ProjectController@add');
+    Route::any('/projects/updt', 'ProjectController@updt');
+    Route::any('/projects/read', 'ProjectController@read');
+    Route::any('/projects/del', 'ProjectController@del');
+    Route::any('/sc/add', 'ServiceContractController@add');
+    Route::any('/sc/updt', 'ServiceContractController@updt');
+    Route::any('/sc/read', 'ServiceContractController@read');
+    Route::any('/sc/del', 'ServiceContractController@del');
+    Route::any('/tickets/add', 'TicketController@add');
+    Route::any('/tickets/updt', 'TicketController@updt');
+    Route::any('/tickets/read', 'TicketController@read');
+    Route::any('/tickets/del', 'TicketController@del');
 
 });
 //ojectController@del');
