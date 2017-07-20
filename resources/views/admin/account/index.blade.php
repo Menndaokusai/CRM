@@ -27,7 +27,15 @@
                                         <div class="form-group">
                                             <span class="col-sm-4 control-label">客户类型</span>
                                             <div class="col-sm-6">
-                                                <input id="Account_Type" name="Account_Type" class="form-control" type="text" placeholder="客户类型">
+
+                                                <select id="select"   style="width: 260px; height: 30px; overflow-y:auto" >
+                                                    <option value="请选择">请选择</option>
+                                                    <option value="有限责任公司">有限责任公司</option>
+                                                    <option value="股份制公司">股份制公司</option>
+                                                    <option value="集团公司">集团公司</option>
+                                                    <option value="一人制公司">一人制公司</option>
+
+                                                </select>
                                             </div>
                                         </div>
 

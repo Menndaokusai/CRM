@@ -16,6 +16,7 @@
                                     <h4 class="modal-title" id="myModalLabel"><b>新增</b></h4>
                                 </div>
                                 <div class="modal-body">
+                                <div class="form-group">
                                     <form class="form-horizontal"  id="editForm" action="/campaigns/add" method="post">
                                         <div class="form-group">
                                             <span class="col-sm-4 control-label">营销活动名</span>
@@ -27,14 +28,29 @@
                                         <div class="form-group">
                                             <span class="col-sm-4 control-label">状态</span>
                                             <div class="col-sm-6">
-                                                <input id="Status" name="Status" class="form-control" type="text" placeholder="状态">
+                                                <select id="select"   style="width: 260px; height: 30px; overflow-y:auto" >
+                                                    <option value="请选择">请选择</option>
+                                                    <option value="营销中">营销中</option>
+                                                    <option value="待定中">待定中</option>
+                                                    <option value="已结束">已结束</option>
+                                                    <option value="其他">其他</option>
+
+                                                </select>
                                             </div>
                                         </div>
 
                                         <div class="form-group">
                                             <span class="col-sm-4 control-label">类型</span>
                                             <div class="col-sm-6">
-                                                <input id="Type" name="Type" class="form-control" type="text" placeholder="类型">
+
+                                                   <select id="select"   style="width: 260px; height: 30px; overflow-y:auto" >
+                                                       <option value="请选择">请选择</option>
+                                                       <option value="互动型活动">互动型活动</option>
+                                                       <option value="猎奇型活动">猎奇型活动</option>
+                                                       <option value="体验型活动">体验型活动</option>
+                                                       <option value="认同型活动">认同型活动</option>
+                                                       <option value="隐私型活动">隐私型活动</option>
+                                                   </select>
                                             </div>
                                         </div>
 
@@ -200,3 +216,7 @@
         </div>
     </section>
 @endsection
+
+
+
+

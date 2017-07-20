@@ -41,7 +41,12 @@
                                         <div class="form-group">
                                             <span class="col-sm-4 control-label">状态</span>
                                             <div class="col-sm-6">
-                                                <input id="Status" name="Status" class="form-control" type="text" placeholder="状态">
+                                                <select id="select"   style="width: 260px; height: 30px; overflow-y:auto" >
+                                                    <option value="请选择">请选择</option>
+                                                    <option value="正在解决">正在解决</option>
+                                                    <option value="等待解决">等待解决</option>
+                                                    <option value="其他">其他</option>
+                                                </select>
                                             </div>
                                         </div>
 

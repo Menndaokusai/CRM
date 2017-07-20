@@ -48,7 +48,13 @@
                                         <div class="form-group">
                                             <span class="col-sm-4 control-label">类型</span>
                                             <div class="col-sm-6">
-                                                <input id="Type" name="Type" class="form-control" type="text" placeholder="类型">
+
+                                                <select id="select"   style="width: 260px; height: 30px; overflow-y:auto" >
+                                                    <option value="请选择">请选择</option>
+                                                    <option value="网络销售">网络销售</option>
+                                                    <option value="线下销售">线下销售</option>
+                                                    <option value="其他">其他</option>
+                                                </select>
                                             </div>
                                         </div>
 
