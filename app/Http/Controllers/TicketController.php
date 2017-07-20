@@ -35,7 +35,7 @@ class TicketController extends Controller
 
         foreach ($arr1 as $value){
             if(!empty($_POST[$value])){
-                $tickets[$value]=$_POST[$value];
+                $ticket[$value]=$_POST[$value];
             }
         }
 
@@ -63,7 +63,7 @@ class TicketController extends Controller
 
         foreach ($arr1 as $value){
             if(!empty($_POST[$value])){
-                $tickets[$value]=$_POST[$value];
+                $ticket[$value]=$_POST[$value];
             }
         }
 
