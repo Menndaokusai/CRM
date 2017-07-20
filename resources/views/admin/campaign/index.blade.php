@@ -28,7 +28,7 @@
                                         <div class="form-group">
                                             <span class="col-sm-4 control-label">状态</span>
                                             <div class="col-sm-6">
-                                                <select id="select"   style="width: 260px; height: 30px; overflow-y:auto" >
+                                                <select id="select" name="Status"   style="width: 260px; height: 30px; overflow-y:auto" >
                                                     <option value="请选择">请选择</option>
                                                     <option value="营销中">营销中</option>
                                                     <option value="待定中">待定中</option>
@@ -43,7 +43,7 @@
                                             <span class="col-sm-4 control-label">类型</span>
                                             <div class="col-sm-6">
 
-                                                   <select id="select"   style="width: 260px; height: 30px; overflow-y:auto" >
+                                                   <select id="select"   name="Type" style="width: 260px; height: 30px; overflow-y:auto" >
                                                        <option value="请选择">请选择</option>
                                                        <option value="互动型活动">互动型活动</option>
                                                        <option value="猎奇型活动">猎奇型活动</option>

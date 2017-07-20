@@ -27,7 +27,7 @@
                                         <div class="form-group">
                                             <span class="col-sm-4 control-label">行业</span>
                                             <div class="col-sm-6">
-                                                <select id="select"   style="width: 260px; height: 30px" >
+                                                <select id="select"  name="Industry"  style="width: 260px; height: 30px" >
                                                     <option value="请选择">请选择</option>
                                                     <option value="农、林、牧、渔业">农、林、牧、渔业</option>
                                                     <option value="煤炭开采和洗选业">煤炭开采和洗选业</option>
