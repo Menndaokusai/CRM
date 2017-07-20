@@ -16,8 +16,7 @@
                                     <h4 class="modal-title" id="myModalLabel"><b>新增</b></h4>
                                 </div>
                                 <div class="modal-body">
-                                <div class="form-group">
-                                    <form class="form-horizontal"  id="editForm" action="/campaigns/add" method="post">
+                                    <form class="form-horizontal"  id="editForm" action="/admin/campaigns/add" method="post">
                                         <div class="form-group">
                                             <span class="col-sm-4 control-label">营销活动名</span>
                                             <div class="col-sm-6">
@@ -43,7 +42,7 @@
                                             <span class="col-sm-4 control-label">类型</span>
                                             <div class="col-sm-6">
 
-                                                   <select id="select"   name="Type" style="width: 260px; height: 30px; overflow-y:auto" >
+                                                   <select id="select" name="Type"  style="width: 260px; height: 30px; overflow-y:auto" >
                                                        <option value="请选择">请选择</option>
                                                        <option value="互动型活动">互动型活动</option>
                                                        <option value="猎奇型活动">猎奇型活动</option>
@@ -167,6 +166,8 @@
                                             </div>
                                         </div>
 
+                                        {{ csrf_field() }}
+
                                         <div class="form-group">
                                             <div class="col-sm-8 col-sm-offset-4">
                                                 <button class="btn btn-primary btn-lg" type="submit">提交</button>
@@ -193,17 +194,17 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($campaigns as $campaigns)
+                            @foreach($campaigns as $campaign)
                                 <tr>
-                                    <td>{{$campaigns->Campaign_Name}}</td>
-                                    <td>{{$campaigns->Type}}</td>
-                                    <td>{{$campaigns->Status}}</td>
-                                    <td>{{$campaigns->Expected_Revenue}}</td>
-                                    <td>{{$campaigns->Expected_Close_Date}}</td>
-                                    <td>{{$campaigns->Manager}}</td>
+                                    <td>{{$campaign->Campaign_Name}}</td>
+                                    <td>{{$campaign->Type}}</td>
+                                    <td>{{$campaign->Status}}</td>
+                                    <td>{{$campaign->Expected_Revenue}}</td>
+                                    <td>{{$campaign->Expected_Close_Date}}</td>
+                                    <td>{{$campaign->Manager}}</td>
                                     <td>
                                         <a style="color: black;"><span class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#myModal" STYLE="margin-left: 10px; cursor:pointer"/></a>
-                                        <a style="color: black;"><span class="glyphicon glyphicon-trash" data-toggle="modal" data-target="#myModal" STYLE="margin-left: 10px; cursor:pointer"/></a>
+                                        <a href="/admin/campaigns/del/{{ $campaign->id }}" style="color: black;"><span class="glyphicon glyphicon-trash" STYLE="margin-left: 10px; cursor:pointer"/></a>
                                     </td>
                                 </tr>
                             @endforeach

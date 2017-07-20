@@ -14,25 +14,11 @@ class ContactController extends Controller
             'Work_Address','Asst_Phone','Asst_Name','Sex','Department',
             'Designation','Email','Company','Manager','Birth'
         ];
-        $arr2=[
-            Contact_Name,Mobile_Phone,Home_Phone,Office_Phone,
-            Home_Address,Work_Address,Asst_Phone,Asst_Name,Sex,
-            Department,Designation,Email,Company,Manager,Birth
-        ];
-        $arr3=[
-            'id','Contact_Name','Designation','Email','Office_Phone',
-            'Manager','created_at','updated_at'
-        ];
 
         if($num==1){
             return $arr1;
         }
-        if($num==2){
-            return $arr2;
-        }
-        if($num==3){
-            return $arr3;
-        }
+
     }
 
     public function add(Request $request)
@@ -45,24 +31,23 @@ class ContactController extends Controller
         $contact=contact();
 
         $arr1=$this->arr(1);
-        $arr2=$this->arr(2);
 
-        for($i=0;$i<count($arr1);$i++){
-            $contact->$arr2[$i]=$request->get($arr1[$i]);
+        foreach ($arr1 as $value){
+            if(!empty($_POST[$value])){
+                $contact[$value]=$_POST[$value];
+            }
         }
 
         $contact->save();
         return '添加成功！';
     }
-    public function del(Request $request)
+
+    public function del($id)
     {
-        if(!is_logged())
-        {
-            return err('请先登录');
-        }
-        $contact=contact()->find($request->get('id'));
-        return $contact->delete()?['status'=>1,'msg'=>'删除成功']:['status'=>0,'msg'=>'删除失败'];
+        $user=contact()->find($id);
+        return $user->delete()?redirect('/admin/contact'):back();
     }
+
     public function updt(Request $request)
     {
         if(!is_logged())
@@ -70,12 +55,12 @@ class ContactController extends Controller
             return err('请先登录');
         }
         $contact=Contact()->find($request->get('id'));
-        $arr1=$this->arr(1);
-        $arr2=$this->arr(2);
 
-        for($i=0;$i<count($arr1);$i++){
-            if($request->get($arr1[$i])){
-                $contact->$arr2[$i]=$request->get($arr1[$i]);
+        $arr1=$this->arr(1);
+
+        foreach ($arr1 as $value){
+            if(!empty($_POST[$value])){
+                $contact[$value]=$_POST[$value];
             }
         }
 
@@ -84,21 +69,22 @@ class ContactController extends Controller
         return suc('success');
 
     }
-    public function read()
-    {
-        if(!is_logged())
-        {
-            return err('请先登录');
-        }
-        $contact=contact()
-            ->orderBy('created_at')
-            ->get($this->arr(3))
-            ->keyBy('id');
-        return ['status' => 1, 'data' => $contact];
-    }
+//    public function read()
+//    {
+//        if(!is_logged())
+//        {
+//            return err('请先登录');
+//        }
+//        $contact=contact()
+//            ->orderBy('created_at')
+//            ->get($this->arr(3))
+//            ->keyBy('id');
+//        return ['status' => 1, 'data' => $contact];
+//    }
     public function index()
     {
         $contacts = \App\Contact::paginate(15);
         return view('/admin/contact/index',compact('contacts'));
+
     }
 }

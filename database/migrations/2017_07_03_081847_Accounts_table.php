@@ -19,7 +19,7 @@ class AccountsTable extends Migration
             $table->string('Account_Type')->nullable();
             $table->string('Primary_Phone');
             $table->string('Alternate_Phone')->nullable();
-            $table->text('Address')->nullable();
+            $table->text('city')->nullable();
             $table->string('Ownership')->nullable();
             $table->string('Email')->nullable();
             $table->string('Manager');

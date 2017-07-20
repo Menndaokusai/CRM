@@ -16,7 +16,7 @@
                                     <h4 class="modal-title" id="myModalLabel"><b>新增</b></h4>
                                 </div>
                                 <div class="modal-body">
-                                    <form class="form-horizontal"  id="editForm" action="/accounts/add" method="post">
+                                    <form class="form-horizontal"  id="editForm" action="/admin/accounts/add" method="post">
                                         <div class="form-group">
                                             <span class="col-sm-4 control-label">客户名</span>
                                             <div class="col-sm-6">
@@ -82,6 +82,8 @@
                                             </div>
                                         </div>
 
+                                        {{ csrf_field() }}
+
                                         <div class="form-group">
                                             <div class="col-sm-8 col-sm-offset-4">
                                                 <button class="btn btn-primary btn-lg" type="submit">提交</button>
@@ -106,15 +108,15 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($accounts as $accounts)
+                            @foreach($accounts as $account)
                                 <tr>
-                                    <td>{{$accounts->Account_Name}}</td>
-                                    <td>{{$accounts->Primary_Phone}}</td>
-                                    <td>{{$accounts->Email}}</td>
-                                    <td>{{$accounts->Manager}}</td>
+                                    <td>{{$account->Account_Name}}</td>
+                                    <td>{{$account->Primary_Phone}}</td>
+                                    <td>{{$account->Email}}</td>
+                                    <td>{{$account->Manager}}</td>
                                     <td>
                                         <a style="color: black;"><span class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#myModal" STYLE="margin-left: 10px; cursor:pointer"/></a>
-                                        <a style="color: black;"><span class="glyphicon glyphicon-trash" data-toggle="modal" data-target="#myModal" STYLE="margin-left: 10px; cursor:pointer"/></a>
+                                        <a href="/admin/accounts/del/{{ $account->id }}" style="color: black;"><span class="glyphicon glyphicon-trash" STYLE="margin-left: 10px; cursor:pointer"/></a>
                                     </td>
                                 </tr>
                             @endforeach
