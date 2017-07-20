@@ -9,7 +9,7 @@ class PotentialCustomerController extends Controller
     public function arr($num){
 
         $arr1=[
-            'PC_Name','Industry','Primary_Phone','Mobile_Phone','Address',
+            'PC_Name','Industry','Primary_Phone','Mobile_Phone','city',
             'Company','Email','Manager'
         ];
 

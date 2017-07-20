@@ -10,8 +10,8 @@ class ContactController extends Controller
     //
     public function arr($num){
         $arr1=[
-            'Contact_Name','Mobile_Phone','Home_Phone','Office_Phone','Home_Address',
-            'Work_Address','Asst_Phone','Asst_Name','Sex','Department',
+            'Contact_Name','Mobile_Phone','Home_Phone','Office_Phone','city',
+            'Asst_Phone','Asst_Name','Sex','Department',
             'Designation','Email','Company','Manager','Birth'
         ];
 

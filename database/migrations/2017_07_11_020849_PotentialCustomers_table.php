@@ -19,7 +19,7 @@ class PotentialCustomersTable extends Migration
             $table->string('Industry');
             $table->string('Primary_Phone');
             $table->string('Mobile_Phone')->nullable();
-            $table->text('Address')->nullable();
+            $table->text('city')->nullable();
             $table->string('Company')->nullable();
             $table->string('Email')->nullable();
             $table->string('Manager');

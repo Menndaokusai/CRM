@@ -18,8 +18,7 @@ class ContactsTable extends Migration
             $table->string('Mobile_Phone');
             $table->string('Home_Phone')->nullable();
             $table->string('Office_Phone')->nullable();
-            $table->text('Home_Address')->nullable();
-            $table->text('Work_Address')->nullable();
+            $table->text('city')->nullable();
             $table->string('Asst_Phone')->nullable();
             $table->string('Asst_Name')->nullable();
             $table->string('Sex')->nullable();

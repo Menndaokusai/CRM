@@ -48,15 +48,8 @@
                                         <div class="form-group">
                                             <span class="col-sm-4 control-label">家庭地址</span>
                                             <div class="col-sm-6">
-                                                <input id="Home_Address" name="Home_Address" class="form-control" type="text" placeholder="家庭地址">
+                                                <input id="city" name="city" class="form-control" type="text" placeholder="家庭地址">
 
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <span class="col-sm-4 control-label">工作地址</span>
-                                            <div class="col-sm-6">
-                                                <input id="Work_Address" name="Work_Address" class="form-control" type="text" placeholder="工作地址">
                                             </div>
                                         </div>
 

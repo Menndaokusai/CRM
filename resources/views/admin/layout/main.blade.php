@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -46,13 +47,8 @@
 <!-- jQuery 2.2.3 -->
 <script src="/adminlte/plugins/jQuery/jquery-2.2.3.min.js"></script>
 
-{{--chart.js--}}
-<script src="/js/chart.js"></script>
+    <script src="/js/demo/faq.js"></script>
 
-
-
-
-<script src="/js/demo/faq.js"></script>
 
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
@@ -121,7 +117,7 @@
 <!-- FastClick -->
 <script src="/adminlte/bower_components/fastclick/lib/fastclick.js"></script>
 <!-- AdminLTE App -->
-<script src="/adminlte/dist/js/adminlte.min.js"></script>
+<script src="/adminlte/dist/js/adminlte.js"></script>
 
 
 </body>
