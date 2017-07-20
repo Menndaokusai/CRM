@@ -16,8 +16,9 @@
                                     <h4 class="modal-title" id="myModalLabel"><b>新增</b></h4>
                                 </div>
                                 <div class="modal-body">
-                                    <form class="form-horizontal"  id="editForm" action="">
-                                       <div class="form-group">
+                                <div class="form-group">
+                                    <form class="form-horizontal"  id="editForm" action="/campaigns/add" method="post">
+                                        <div class="form-group">
                                             <span class="col-sm-4 control-label">营销活动名</span>
                                             <div class="col-sm-6">
                                                 <input id="Campaign_Name" name="Campaign_Name" class="form-control" type="text" placeholder="营销活动名">

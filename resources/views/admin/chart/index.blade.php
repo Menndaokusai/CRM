@@ -5,19 +5,23 @@
             <div class="col-xs-12">
                 <div class="box">
                     <div class="box-header">
-                        <h1 class="box-title" ><B>Accounts</B></h1>
+                        <h1 class="box-title"><B>account</B></h1>
                         <a><span class="glyphicon glyphicon-plus" data-toggle="modal" data-target="#myModal" STYLE="margin-left: 10px; cursor:pointer"/></a>
                     </div>
-                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                         style="height: 700px;">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                                aria-hidden="true">&times;</span></button>
                                     <h4 class="modal-title" id="myModalLabel"><b>新增</b></h4>
                                 </div>
                                 <div class="modal-body">
-                                    <form class="form-horizontal"  id="editForm" action="/accounts/add" method="post">
+                                    <form class="form-horizontal" id="editForm" action="%=path%/com/update" method="post">
                                         <div class="form-group">
+
+
                                             <span class="col-sm-4 control-label">客户名</span>
                                             <div class="col-sm-6">
                                                 <input id="Account_Name" name="Account_Name" class="form-control" type="text" placeholder="客户名">
@@ -27,15 +31,7 @@
                                         <div class="form-group">
                                             <span class="col-sm-4 control-label">客户类型</span>
                                             <div class="col-sm-6">
-
-                                                <select id="select"   style="width: 260px; height: 30px; overflow-y:auto" >
-                                                    <option value="请选择">请选择</option>
-                                                    <option value="有限责任公司">有限责任公司</option>
-                                                    <option value="股份制公司">股份制公司</option>
-                                                    <option value="集团公司">集团公司</option>
-                                                    <option value="一人制公司">一人制公司</option>
-
-                                                </select>
+                                                <input id="Account_Type" name="Account_Type" class="form-control" type="text" placeholder="客户类型">
                                             </div>
                                         </div>
 
@@ -98,29 +94,31 @@
                         <table id="example2" class="table table-bordered table-hover">
                             <thead>
                             <tr>
-                                <th>客户名</th>
-                                <th>常用电话</th>
-                                <th>邮箱</th>
-                                <th>负责人</th>
+                                <th>id</th>
+                                <th>Contact_Name</th>
+                                <th>Mobile_Phone</th>
+                                <th>Home_Phone</th>
+                                <th>Office_Phone</th>
                                 <th>操作选项</th>
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($accounts as $accounts)
-                                <tr>
-                                    <td>{{$accounts->Account_Name}}</td>
-                                    <td>{{$accounts->Primary_Phone}}</td>
-                                    <td>{{$accounts->Email}}</td>
-                                    <td>{{$accounts->Manager}}</td>
-                                    <td>
-                                        <a style="color: black;"><span class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#myModal" STYLE="margin-left: 10px; cursor:pointer"/></a>
-                                        <a style="color: black;"><span class="glyphicon glyphicon-trash" data-toggle="modal" data-target="#myModal" STYLE="margin-left: 10px; cursor:pointer"/></a>
-                                    </td>
-                                </tr>
+                            @foreach($contacts as $contact)
+                            <tr data-toggle="modal" data-target="#myModal1">
+                            <td>{{$contact->id}}.</td>
+                            <td>{{$contact->Contact_Name}}</td>
+                            <td>{{$contact->Mobile_Phone}}</td>
+                            <td>{{$contact->Home_Phone}}</td>
+                            <td>{{$contact->Office_Phone}}</td>
+                                <td>
+                                    <a style="color: black;"><span class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#myModal" STYLE="margin-left: 10px; cursor:pointer"/></a>
+                                    <a style="color: black;"><span class="glyphicon glyphicon-trash" data-toggle="modal" data-target="#myModal" STYLE="margin-left: 10px; cursor:pointer"/></a>
+                                </td>
+                            </tr>
                             @endforeach
                             </tbody>
                         </table>
-                        {{$accounts->links()}}
+                        {{$contacts->links()}}
                     </div>
                 </div>
             </div>
