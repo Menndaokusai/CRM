@@ -5,7 +5,7 @@
             <div class="col-xs-12">
                 <div class="box">
                     <div class="box-header">
-                        <h1 class="box-title" ><B>Opportunities</B></h1>
+                        <h1 class="box-title" ><B>营销机会</B></h1>
                         <a><span class="glyphicon glyphicon-plus" data-toggle="modal" data-target="#myModal" STYLE="margin-left: 10px; cursor:pointer"/></a>
                     </div>
                     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">

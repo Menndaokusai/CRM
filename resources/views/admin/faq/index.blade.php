@@ -5,7 +5,7 @@
         <div class="span9">
             <h1 class="page-title">
                 <i class="icon-pushpin"></i>
-                Frequently Asked Questions
+                常见问答
             </h1>
 
             <div class="widget">

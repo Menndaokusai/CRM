@@ -10,11 +10,10 @@
 
                     <div class="box-header with-border">
                         <h3 class="box-title">用户列表</h3>
+                        <a><span type="button" class="glyphicon glyphicon-plus" data-toggle="modal" data-target="#myModal" STYLE="margin-left: 10px; cursor:pointer"></span></a>
                     </div>
 
-                    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-                        添加管理員
-                    </button>
+
                     <form role="form" action="/admin/users/store" method="POST">
                         {{ csrf_field() }}
                     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="height: 370px;">
@@ -23,7 +22,7 @@
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                                                 aria-hidden="true">×</span></button>
-                                    <h4 class="modal-title" id="exampleModalLabel">New Admin</h4>
+                                    <h4 class="modal-title" id="exampleModalLabel">新的管理员</h4>
                                 </div>
                                 <div class="modal-body">
                                     <form>
