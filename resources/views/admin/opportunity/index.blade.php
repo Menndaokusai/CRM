@@ -6,7 +6,10 @@
                 <div class="box">
                     <div class="box-header">
                         <h1 class="box-title" ><B>Opportunities</B></h1>
-                        <a><span class="glyphicon glyphicon-plus" data-toggle="modal" data-target="#myModal" STYLE="margin-left: 10px; cursor:pointer"/></a>
+                        <button class="btn btn-primary btn-sm" type="button" data-toggle="modal" data-target="#myModal"
+                                style="font-size: 1em;padding-left: 0px;float: right;margin-right: 30px;">
+                            <span class="glyphicon glyphicon-plus" STYLE="margin-left: 10px; cursor:pointer"/>添加
+                        </button>
                     </div>
                     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                         <div class="modal-dialog" role="document">
