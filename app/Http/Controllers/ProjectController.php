@@ -47,14 +47,14 @@ class ProjectController extends Controller
         return $user->delete()?redirect('/admin/project'):back();
     }
 
-    public function updt(Request $request)
+    public function updt(Request $request,$id)
     {
         if(!is_logged())
         {
             return err('请先登录');
         }
 
-        $project=project()->find($request->get('id'));
+        $project=project()->find($id);
 
         $arr1=$this->arr(1);
 
@@ -69,18 +69,9 @@ class ProjectController extends Controller
         return suc();
 
     }
-//    public function read()
-//    {
-//        if(!is_logged())
-//        {
-//            return err('请先登录');
-//        }
-//
-//        $project=project()
-//            ->orderBy('created_at')
-//            ->get($this->arr(3))
-//            ->keyBy('id');
-//
-//        return suc($project);
-//    }
+    public function read($id)
+    {
+        $read=\project()->find($id);
+        return view('/admin/project/read',compact('read'));
+    }
 }

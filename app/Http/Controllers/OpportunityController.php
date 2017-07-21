@@ -46,17 +46,17 @@ class OpportunityController extends Controller
     public function del($id)
     {
         $user=opp()->find($id);
-        return $user->delete()?redirect('/admin/potentialcustomer'):back();
+        return $user->delete()?redirect('/admin/opportunity'):back();
     }
 
-    public function updt(Request $request)
+    public function updt(Request $request,$id)
     {
         if(!is_logged())
         {
             return err('请先登录');
         }
 
-        $opp=opp()->find($request->get('id'));
+        $opp=opp()->find($id);
 
         $arr1=$this->arr(1);
 
@@ -71,18 +71,9 @@ class OpportunityController extends Controller
         return suc();
 
     }
-//    public function read()
-//    {
-//        if(!is_logged())
-//        {
-//            return err('请先登录');
-//        }
-//
-//        $opp=opp()
-//            ->orderBy('created_at')
-//            ->get($this->arr(3))
-//            ->keyBy('id');
-//
-//        return suc($opp);
-//    }
+    public function read($id)
+    {
+        $read=\opp()->find($id);
+        return view('/admin/opportunity/read',compact('read'));
+    }
 }

@@ -47,16 +47,16 @@ class PotentialCustomerController extends Controller
     public function del($id)
     {
         $user=pc()->find($id);
-        return $user->delete()?redirect('/admin/opportunity'):back();
+        return $user->delete()?redirect('/admin/potentialcustomer'):back();
     }
-    public function updt(Request $request)
+    public function updt(Request $request,$id)
     {
         if(!is_logged())
         {
             return err('请先登录');
         }
 
-        $pc=pc()->find($request->get('id'));
+        $pc=pc()->find($id);
 
         $arr1=$this->arr(1);
 
@@ -71,18 +71,9 @@ class PotentialCustomerController extends Controller
         return suc();
 
     }
-//    public function read()
-//    {
-//        if(!is_logged())
-//        {
-//            return err('请先登录');
-//        }
-//
-//        $pc=pc()
-//            ->orderBy('created_at')
-//            ->get($this->arr(3))
-//            ->keyBy('id');
-//
-//        return suc($pc);
-//    }
+    public function read($id)
+    {
+        $read=\pc()->find($id);
+        return view('/admin/PotentialCustomer/read',compact('read'));
+    }
 }

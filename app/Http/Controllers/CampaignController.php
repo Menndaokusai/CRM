@@ -51,14 +51,14 @@ class CampaignController extends Controller
         return $user->delete()?redirect('/admin/campaign'):back();
     }
 
-    public function updt(Request $request)
+    public function updt(Request $request,$id)
     {
         if(!is_logged())
         {
             return err('请先登录');
         }
 
-        $campaign=campaign()->find($request->get('id'));
+        $campaign=campaign()->find($id);
 
         $arr1=$this->arr(1);
 
@@ -73,16 +73,10 @@ class CampaignController extends Controller
         return suc();
 
     }
-//    public function read()
-//    {
-//        if(!is_logged())
-//        {
-//            return err('请先登录');
-//        }
-//        $campaign=campaign()
-//            ->orderBy('created_at')
-//            ->get($this->arr(3))
-//            ->keyBy('id');
-//        return suc($campaign);
-//    }
+    public function read($id)
+    {
+        $read=\campaign()->find($id);
+        return view('/admin/campaign/read',compact('read'));
+    }
+
 }

@@ -50,14 +50,14 @@ class TicketController extends Controller
     }
 
 
-    public function updt(Request $request)
+    public function updt(Request $request,$id)
     {
         if(!is_logged())
         {
             return err('请先登录');
         }
 
-        $ticket=ticket()->find($request->get('id'));
+        $ticket=ticket()->find($id);
 
         $arr1=$this->arr(1);
 
@@ -72,18 +72,9 @@ class TicketController extends Controller
         return suc();
 
     }
-//    public function read()
-//    {
-//        if(!is_logged())
-//        {
-//            return err('请先登录');
-//        }
-//
-//        $ticket=ticket()
-//            ->orderBy('created_at')
-//            ->get($this->arr(3))
-//            ->keyBy('id');
-//
-//        return suc($ticket);
-//    }
+    public function read($id)
+    {
+        $read=\ticket()->find($id);
+        return view('/admin/ticket/read',compact('read'));
+    }
 }

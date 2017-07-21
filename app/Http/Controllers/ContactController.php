@@ -33,12 +33,13 @@ class ContactController extends Controller
         $arr1=$this->arr(1);
 
         foreach ($arr1 as $value){
-            if(!empty($_POST[$value])){
-                $contact[$value]=$_POST[$value];
+            if(!empty($request->get($value))){
+                $contact[$value]=$request->get($value);
             }
         }
 
         $contact->save();
+
         return back();
     }
 
@@ -48,39 +49,34 @@ class ContactController extends Controller
         return $user->delete()?redirect('/admin/contact'):back();
     }
 
-    public function updt(Request $request)
+    public function updt(Request $request,$id)
     {
         if(!is_logged())
         {
             return err('请先登录');
         }
-        $contact=Contact()->find($request->get('id'));
+        $contact=Contact()->find($id);
 
         $arr1=$this->arr(1);
 
         foreach ($arr1 as $value){
-            if(!empty($_POST[$value])){
-                $contact[$value]=$_POST[$value];
+            if(!empty($request->get($value))){
+                $contact[$value]=$request->get($value);
             }
         }
 
         $contact->save();
 
+
         return suc('success');
 
     }
-//    public function read()
-//    {
-//        if(!is_logged())
-//        {
-//            return err('请先登录');
-//        }
-//        $contact=contact()
-//            ->orderBy('created_at')
-//            ->get($this->arr(3))
-//            ->keyBy('id');
-//        return ['status' => 1, 'data' => $contact];
-//    }
+    public function read($id)
+    {
+        $read=contact()->find($id);
+        return view('/admin/contact/read',compact('read'));
+    }
+
     public function index()
     {
         $contacts = \App\Contact::paginate(15);

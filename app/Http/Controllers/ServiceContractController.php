@@ -49,14 +49,14 @@ class ServiceContractController extends Controller
         return $user->delete()?redirect('/admin/servicecontract'):back();
     }
 
-    public function updt(Request $request)
+    public function updt(Request $request,$id)
     {
         if(!is_logged())
         {
             return err('请先登录');
         }
 
-        $sc=sc()->find($request->get('id'));
+        $sc=sc()->find($id);
 
         $arr1=$this->arr(1);
 
@@ -71,18 +71,9 @@ class ServiceContractController extends Controller
         return suc();
 
     }
-//    public function read()
-//    {
-//        if(!is_logged())
-//        {
-//            return err('请先登录');
-//        }
-//
-//        $sc=sc()
-//            ->orderBy('created_at')
-//            ->get($this->arr(3))
-//            ->keyBy('id');
-//
-//        return suc($sc);
-//    }
+    public function read($id)
+    {
+        $read=\sc()->find($id);
+        return view('/admin/ServiceContract/read',compact('read'));
+    }
 }

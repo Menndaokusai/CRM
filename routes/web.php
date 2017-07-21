@@ -32,11 +32,6 @@ function campaign(){
     return new \App\Campaign();
 }
 
-function faq()
-{
-    return new \App\FAQ();
-}
-
 function opp(){
     return new \App\Opportunity();
 }
@@ -100,48 +95,57 @@ Route::group(['middleware' => 'web'], function () {
 
             Route::get('/contact', 'contactController@index');
             Route::any('/contacts/add','ContactController@add');
-            Route::any('/contacts/updt','ContactController@updt');
+            Route::put('/contacts/updt/{read}','ContactController@updt');
             Route::any('/contacts/del/{id}','ContactController@del');
+            Route::any('/contacts/read/{id}','ContactController@read');
 
             Route::get('/account','AccountController@index');
             Route::any('/accounts/add','AccountController@add');
-            Route::any('/accounts/updt','AccountController@updt');
+            Route::any('/accounts/updt/{read}','AccountController@updt');
             Route::any('/accounts/del/{id}','AccountController@del');
+            Route::any('/accounts/read/{id}','ContactController@read');
+
 
             Route::get('/campaign','CampaignController@index');
             Route::any('/campaigns/add','CampaignController@add');
-            Route::any('/campaigns/updt','CampaignController@updt');
+            Route::any('/campaigns/updt/{read}','CampaignController@updt');
             Route::any('/campaigns/del/{id}','CampaignController@del');
+            Route::any('/campaigns/read/{id}','ContactController@read');
 
             Route::get('/potentialcustomer','PotentialCustomerController@index');
             Route::any('/pc/add','PotentialCustomerController@add');
-            Route::any('/pc/updt','PotentialCustomerController@updt');
+            Route::any('/pc/updt/{read}','PotentialCustomerController@updt');
             Route::any('/pc/del/{id}','PotentialCustomerController@del');
+            Route::any('/pc/read/{id}','PotentialCustomerController@read');
 
             Route::get('/opportunity','OpportunityController@index');
             Route::any('/opp/add','OpportunityController@add');
-            Route::any('/opp/updt','OpportunityController@updt');
+            Route::any('/opp/updt/{read}','OpportunityController@updt');
             Route::any('/opp/del/{id}','OpportunityController@del');
+            Route::any('/opp/read/{id}','OpportunityController@read');
 
             Route::get('/ticket','TicketController@index');
             Route::any('/tickets/add','TicketController@add');
-            Route::any('/tickets/updt','TicketController@updt');
+            Route::any('/tickets/updt/{read}','TicketController@updt');
             Route::any('/tickets/del/{id}','TicketController@del');
+            Route::any('/tickets/read/{id}','TicketController@read');
 
             Route::get('/servicecontract','ServiceContractController@index');
             Route::any('/sc/add','ServiceContractController@add');
-            Route::any('/sc/updt','ServiceContractController@updt');
+            Route::any('/sc/updt/{read}','ServiceContractController@updt');
             Route::any('/sc/del/{id}','ServiceContractController@del');
+            Route::any('/sc/read/{id}','ServiceContractController@read');
 
             Route::get('/project','ProjectController@index');
             Route::any('/projects/add','ProjectController@add');
-            Route::any('/projects/updt','ProjectController@updt');
+            Route::any('/projects/updt/{read}','ProjectController@updt');
             Route::any('/projects/del/{id}','ProjectController@del');
+            Route::any('/projects/read/{id}','ProjectController@read');
 
-            Route::get('/leads','LeadController@index');
-            Route::any('/leads/add','LeadController@add');
-            Route::any('/leads/updt','LeadController@updt');
-            Route::any('/leads/del/{id}','LeadController@del');
+//            Route::get('/leads','LeadController@index');
+//            Route::any('/leads/add','LeadController@add');
+//            Route::any('/leads/updt','LeadController@updt');
+//            Route::any('/leads/del/{id}','LeadController@del');
 
             Route::get('/chart',function(){
                 return view("/admin/chart/index");

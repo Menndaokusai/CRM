@@ -50,14 +50,14 @@ class AccountController extends Controller
         return $user->delete()?redirect('/admin/account'):back();
     }
 
-    public function updt(Request $request)
+    public function updt(Request $request,$id)
     {
         if(!is_logged())
         {
             return err('请先登录');
         }
 
-        $account=account()->find($request->get('id'));
+        $account=account()->find($id);
 
         $arr1=$this->arr(1);
 
@@ -72,16 +72,10 @@ class AccountController extends Controller
         return suc();
 
     }
-//    public function read()
-//    {
-//        if(!is_logged())
-//        {
-//            return err('请先登录');
-//        }
-//        $account=account()
-//            ->orderBy('created_at')
-//            ->get($this->arr(3))
-//            ->keyBy('id');
-//        return suc($account);
-//    }
+
+    public function read($id)
+    {
+        $read=account()->find($id);
+        return view('/admin/account/read',compact('read'));
+    }
 }
