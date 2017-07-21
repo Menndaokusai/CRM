@@ -21,12 +21,12 @@
                         <img src="/adminlte/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
                         <span class="hidden-xs">{{\Auth::guard("web")->user()->name}}</span>
                     </a>
-                    <ul class="dropdown-menu">
+                    <ul class="dropdown-menu" style="min-width: 95px;width:95px;right: 0%;">
                         <!-- User image -->
                         <!-- Menu Footer-->
                         <li class="user-footer">
-                            <div class="pull-right">
-                                <a href="/logout" class="btn btn-default btn-flat">Sign out</a>
+                            <div>
+                                <a href="/logout" class="btn btn-default btn-block">登出</a>
                             </div>
                         </li>
                     </ul>
