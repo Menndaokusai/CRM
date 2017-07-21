@@ -63,7 +63,7 @@
                                     </td>
                                     @elseif($user->count()!=1)
                                     <td>
-                                        <a type="button" class="btn" href="/admin/users/del/{{ $user->id }}" >删除</a>
+                                        <a  href="/admin/users/del/{{ $user->id }}" >删除</a>
                                     </td>
                                         @endif
                                 </tr>

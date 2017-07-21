@@ -6,6 +6,10 @@
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
 <title>TCS管理后台</title>
+
+<!-- jQuery 2.2.3 -->
+<script src="/adminlte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="/adminlte/bower_components/jquery-ui/jquery-ui.min.js"></script>
 <!-- Tell the browser to be responsive to screen width -->
 <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
@@ -43,11 +47,7 @@
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-
-<!-- jQuery 2.2.3 -->
-<script src="/adminlte/plugins/jQuery/jquery-2.2.3.min.js"></script>
-
-    <script src="/js/demo/faq.js"></script>
+<script src="/js/demo/faq.js"></script>
 
 
 </head>
@@ -72,11 +72,12 @@
 </div>
 
 
+<script src="/adminlte/plugins/morris.js"></script>
+
 <!-- Bootstrap 3.3.6 -->
 <script src="/adminlte/bootstrap/js/bootstrap.min.js"></script>
 <!-- Morris.js charts -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-<script src="/adminlte/plugins/morris/morris.min.js"></script>
 <!-- Sparkline -->
 <script src="/adminlte/plugins/sparkline/jquery.sparkline.min.js"></script>
 <!-- jvectormap -->

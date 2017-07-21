@@ -10,13 +10,13 @@
                     <div class="box-header with-border">
                         <h3 class="box-title">Line Chart</h3>
 
-                        <div class="box-tools pull-right">
-                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
-                                        class="fa fa-minus"></i>
-                            </button>
-                            <button type="button" class="btn btn-box-tool" data-widget="remove"><i
-                                        class="fa fa-times"></i></button>
-                        </div>
+                        {{--<div class="box-tools pull-right">--}}
+                            {{--<button type="button" class="btn btn-box-tool" data-widget="collapse"><i--}}
+                                        {{--class="fa fa-minus"></i>--}}
+                            {{--</button>--}}
+                            {{--<button type="button" class="btn btn-box-tool" data-widget="remove"><i--}}
+                                        {{--class="fa fa-times"></i></button>--}}
+                        {{--</div>--}}
                     </div>
                     <div class="box-body">
                         <div class="chart">
@@ -98,7 +98,7 @@
             //Boolean - Whether to fill the dataset with a color
             datasetFill: true,
             //String - A legend template
-            legendTemplate: '<ul class="<%=name.toLowerCase()%>-legend"><% for (var i=0; i<datasets.length; i++){%><li><span style="background-color:<%=datasets[i].lineColor%>"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>',
+            legendTemplate: '<ul class="</%=name.toLowerCase()%>-legend"><% for (var i=0; i<datasets.length; i++){%><li><span style="background-color:</%=datasets[i].lineColor%>"></span><%if(datasets[i].label){%><%/=datasets[i].label%><%}%></li><%}%></ul>',
         //Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
         maintainAspectRatio: true,
         //Boolean - whether to make the chart responsive to window resizing
