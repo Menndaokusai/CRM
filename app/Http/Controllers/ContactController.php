@@ -68,7 +68,7 @@ class ContactController extends Controller
         $contact->save();
 
 
-        return suc('success');
+        return back();
 
     }
     public function read($id)

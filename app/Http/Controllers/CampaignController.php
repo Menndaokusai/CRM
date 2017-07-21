@@ -70,7 +70,7 @@ class CampaignController extends Controller
 
         $campaign->save();
 
-        return suc();
+        return back();
 
     }
     public function read($id)
