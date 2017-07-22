@@ -69,7 +69,7 @@ class TicketController extends Controller
 
         $ticket->save();
 
-        return back();
+        return redirect('/admin/ticket');
 
     }
     public function read($id)

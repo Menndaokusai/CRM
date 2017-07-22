@@ -68,7 +68,7 @@ class ServiceContractController extends Controller
 
         $sc->save();
 
-        return back();
+        return redirect('/admin/servicecontract');
 
     }
     public function read($id)

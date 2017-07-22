@@ -148,7 +148,7 @@
                                     <td>{{$sc->End_Date}}</td>
                                     <td>{{$sc->Status}}</td>
                                     <td>
-                                        <a style="color: black;"><span class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#myModal" STYLE="margin-left: 10px; cursor:pointer"/></a>
+                                        <a href="/admin/sc/read/{{ $sc->id }}" style="color: black;"><span class="glyphicon glyphicon-pencil" STYLE="margin-left: 10px; cursor:pointer"/></a>
                                         <a href="/admin/sc/del/{{ $sc->id }}" style="color: black;"><span class="glyphicon glyphicon-trash" STYLE="margin-left: 10px; cursor:pointer"/></a>
                                     </td>
                                 </tr>

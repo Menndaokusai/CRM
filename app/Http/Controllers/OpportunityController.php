@@ -61,14 +61,14 @@ class OpportunityController extends Controller
         $arr1=$this->arr(1);
 
         foreach ($arr1 as $value){
-            if(!empty($_POST[$value])){
-                $contact[$value]=$_POST[$value];
+            if(!empty($request->get($value))){
+                $opp[$value]=$request->get($value);
             }
         }
 
         $opp->save();
 
-        return back();
+        return redirect('/admin/opportunity');
 
     }
     public function read($id)

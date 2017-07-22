@@ -66,7 +66,7 @@ class ProjectController extends Controller
 
         $project->save();
 
-        return back();
+        return redirect('/admin/project');
 
     }
     public function read($id)

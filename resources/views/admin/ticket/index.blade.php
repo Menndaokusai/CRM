@@ -113,7 +113,7 @@
                                         <div class="form-group">
                                             <span class="col-sm-4 control-label">负责人</span>
                                             <div class="col-sm-6">
-                                                <input id="Manager" name="Manager" class="form-control" type="text">
+                                                <input id="Manager" name="Manager" class="form-control" type="text" placeholder="负责人">
                                             </div>
                                         </div>
 
@@ -154,7 +154,7 @@
                                     <td>{{$ticket->Manager}}</td>
                                     <td>{{$ticket->Contact_ID}}</td>
                                     <td>
-                                        <a style="color: black;"><span class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#myModal" STYLE="margin-left: 10px; cursor:pointer"/></a>
+                                        <a href="/admin/tickets/read/{{ $ticket->id }}" style="color: black;"><span class="glyphicon glyphicon-pencil" STYLE="margin-left: 10px; cursor:pointer"/></a>
                                         <a href="/admin/tickets/del/{{ $ticket->id }}" style="color: black;"><span class="glyphicon glyphicon-trash" STYLE="margin-left: 10px; cursor:pointer"/></a>
                                     </td>
                                 </tr>

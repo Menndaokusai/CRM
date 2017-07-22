@@ -68,7 +68,7 @@ class PotentialCustomerController extends Controller
 
         $pc->save();
 
-        return back();
+        return redirect('/admin/potentialcustomer');
 
     }
     public function read($id)

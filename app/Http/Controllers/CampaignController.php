@@ -70,7 +70,7 @@ class CampaignController extends Controller
 
         $campaign->save();
 
-        return back();
+        return redirect('/admin/campaign');
 
     }
     public function read($id)

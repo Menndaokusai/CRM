@@ -69,7 +69,7 @@ class AccountController extends Controller
 
         $account->save();
 
-        return back();
+        return redirect('/admin/account');
 
     }
 

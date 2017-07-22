@@ -2,10 +2,10 @@
 @section("content")
     <style type="text/css">
         .content{
-            padding:180px;
+            padding:150px;
         }
     </style>
-<section class="content">
+    <section class="content">
                 <form class="form-horizontal"  id="editForm" action="/admin/contacts/updt/{{$read->id}}}" method="post">
                     <div class="form-group">
                         <span class="col-sm-2 control-label">联系人姓名</span>
@@ -102,16 +102,13 @@
                     </div>
 
 
-
-
                     {{ method_field("PUT")}}
                     {{ csrf_field() }}
 
                     <div class="form-group">
                         <div class="col-sm-8 col-sm-offset-5">
-                            <button class="btn btn-primary btn-lg" type="submit">提交</button>
-
-                            <button class="btn btn-default btn-lg" data-dismiss="modal" style="margin-left:30px">取消</button>
+                            <button class="btn btn-primary btn-small" type="submit">提交</button>
+                            <a href="/admin/contact"><span class="btn btn-default btn-small" data-dismiss="modal" style="margin-left:10px;">取消</span></a>
                         </div>
                     </div>
                 </form>
